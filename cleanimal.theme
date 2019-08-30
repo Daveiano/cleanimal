@@ -48,7 +48,8 @@ function cleanimal_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#attributes']['class'][] = 'use-ajax-submit';
   }
 
-  $form_ids_scroll_navigation = ['node_buch_form', 'node_artikel_form', 'user_form'];
+  // TODO: Not usable as published theme.
+  $form_ids_scroll_navigation = ['node_buch_form', 'node_artikel_form', 'user_form', 'node_institution_form', 'node_personen_form', 'node_personen_edit_form'];
   // Build and add the scroll navigation.
   if ((strpos($form_id, 'node_') !== FALSE || strpos($form_id, 'user_') !== FALSE)
     && $form_id !== 'node_type_edit_form'
@@ -66,13 +67,17 @@ function cleanimal_form_alter(&$form, &$form_state, $form_id) {
     $scroll_navigation = '<ul>';
 
     for ($i = 0; $i < count($field_groups['group_' . $base_group]['children']); $i++) {
-      $scroll_navigation .= <<<EOT
-<li>
-  <a href="#{$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['format_settings']['id']}">
-    {$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['label']}
-  </a>
-</li>
+      $child = $field_groups['group_' . $base_group]['children'][$i];
+
+      if (strpos($child, 'group_') !== FALSE) {
+        $scroll_navigation .= <<<EOT
+          <li>
+            <a href="#{$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['format_settings']['id']}">
+              {$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['label']}
+            </a>
+          </li>
 EOT;
+      }
     }
 
     $scroll_navigation .= '</ul>';
@@ -81,6 +86,59 @@ EOT;
 
     $form['#attached']['library'][] = 'cleanimal/scroll_navigation';
   }
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_args = explode('/', $current_path);
+
+  if ($current_path === "/admin/content") {
+    $content_type = $path_args[2];
+  } else {
+    $content_type = $path_args[3];
+  }
+
+  if ($form_id === "views_form_" . $content_type . "_page_1") {
+    $form["header"]["views_bulk_operations_bulk_form"]["multipage"]['#type'] = "fieldset";
+  }
+
+}
+
+/**
+ * @param array $variables
+ */
+function cleanimal_preprocess_views_exposed_form(array &$variables) {
+  $available_filters_norm = $variables["form"]["#info"];
+  $available_filters_results = [];
+  $form_elements_edit = array_keys($variables["form"]);
+
+  foreach ($available_filters_norm as $item){
+    $available_filters_results[] = $item["value"];
+  }
+
+  foreach ($form_elements_edit as $key => $item){
+    if (strpos($item, '#') !== FALSE || strpos($item, 'column_selector') !== FALSE )  {
+      unset($form_elements_edit[$key]);
+      continue;
+    }
+
+    $found = false;
+
+    foreach ($available_filters_results as $element) {
+
+      $found = strpos($item, $element);
+
+      if ($found !== false) {
+        break;
+      }
+    }
+
+    if ($found === false) {
+      unset($form_elements_edit[$key]);
+    }
+
+  }
+
+  $variables['form_elements_edit'] = $form_elements_edit;
+  $variables['implode_list'] = '"'.implode('", "', $form_elements_edit).'"';
 }
 
 /**
@@ -154,6 +212,20 @@ function cleanimal_theme_suggestions_alter(array &$suggestions, array $variables
 
   if ($hook == 'views_view_table') {
     $suggestions[] = 'views_view_table__cleanimal';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cleanimal_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  if (array_key_exists('#id', $element)) {
+    $id = $element['#id'];
+
+    if (strpos($id, 'edit-views-bulk-operations-bulk-form') !== FALSE ){
+      $suggestions[] = 'container__edit_views_bulk';
+    }
   }
 }
 

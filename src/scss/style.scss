@@ -98,7 +98,7 @@ body:not(.node-add-edit) {
   margin: 0 -2.5em;
   background: $white;
 }
-div[id*="primary"] nav.tabs {
+nav.tabs {
   margin: 0 2.5em;
   nav{
     ul.tabs.primary{
@@ -146,7 +146,7 @@ div[id*="primary"] nav.tabs {
   }
 }
 
-#block-diaphanes-backend-primary-local-tasks{
+#block-cleanimal-primary-local-tasks{
   background: $white;
 }
 
@@ -165,7 +165,7 @@ div[id*="primary"] nav.tabs {
 
 // Tabs on node edit/add pages.
 body.node-add-edit{
-  div[id*="primary"] nav.tabs {
+  nav.tabs {
     @include grid-parent();
     max-width: none;
     margin: 0 2.5em;
@@ -401,3 +401,7 @@ a{
     }
   }
 }
+.js .paragraph-top {
+  grid-template-columns: 200px auto 1fr auto;
+}
+

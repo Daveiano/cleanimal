@@ -150,85 +150,12 @@
   }
 }
 
-// Column ordering
+
+
 .views-exposed-form{
   .form--inline{
-    details[id^=edit-flexible-tables-fieldset], details#edit-flexible-tables-fieldset{
-      border: none;
-      summary{
-        background-color: $white;
-        color: $black;
-        font-size: 14px;
-        font-weight: 600 !important;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.29;
-        letter-spacing: 0.16px;
-      }
-      .seven-details__wrapper{
-        border: 1px solid $bright-grey;
-        .js-form-item-available-columns, .js-form-item-selected-columns{
-          label{
-            font-size: 12px;
-            line-height: 16px;
-            letter-spacing: 0.32px;
-            color: $grey;
-          }
-          select{
-            &::-webkit-scrollbar{
-              width: 12px;
-              background-color: #F5F5F5;
-            }
-            &::-webkit-scrollbar-track{
-              -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-              border-radius: 10px;
-              background-color: #F5F5F5;
-            }
-            &::-webkit-scrollbar-thumb{
-              border-radius: 10px;
-              -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-              background-color: #555;
-            }
-            &.form-select{
-              padding: 7px 10px 7px 2px;
-              background-color: white;
-              border: 1px solid $bright-grey;
-              option{
-                padding: 7px 5px;
-                &:hover{
-                  color: black;
-                  background-color: #f0f0f0;
-                }
-                &:checked{
-                  color: white !important;
-                  background-color: $primary !important;
-                }
-              }
-            }
-          }
-        }
-        .move-buttons{
-          > div{
-            font-size: 0;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: $white;
-          }
-          .move-right{
-            background-image: url("/themes/custom/cleanimal/images/icons/right-24.svg");
-          }
-          .move-left{
-            background-image: url("/themes/custom/cleanimal/images/icons/left-24.svg");
-          }
-          .move-top{
-            background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-up.svg");
-          }
-          .move-down{
-            background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg");
-          }
-        }
-      }
-    }
+    border: none !important;
+    @include detailssummary;
   }
 }
 
@@ -335,13 +262,13 @@
   @include tertiary-button;
 }
 
-#edit-submit-content, #edit-submit--2 ,#edit-submit-files, #edit-submit-media-library--WbaIvT_NYBM, #edit-submit-media-library, .ief-entity-submit, #preview-submit{
+#edit-submit-content, #edit-submit--2 ,#edit-submit-files, #edit-submit-media-library--WbaIvT_NYBM, #edit-submit-media-library, .ief-entity-submit, #preview-submit, #edit-submit-institutionen{
   @include font-plex-regular;
   @include primary-button;
   @include small;
 }
 
-#edit-reset {
+#edit-reset, #edit-clear {
   @include font-plex-regular;
   @include tertiary-button;
   @include small;
@@ -407,8 +334,13 @@
     background-image: none !important;
     text-shadow: none !important;
     .dropbutton{
+      width: auto;
+      min-width: 100px;
       .dropbutton-action{
-        a{
+        //height: 28px;
+        width: auto;
+        min-width: 100px;
+        a, input{
           @include font-plex-regular;
           border: 1px solid $primary-dark;
           color: $primary-dark;
@@ -430,6 +362,10 @@
             box-shadow: none;
           }
         }
+        input{
+          height: 28px;
+          width: 100% !important;
+        }
       }
       .dropbutton-toggle{
         button{
@@ -445,7 +381,7 @@
           .dropbutton-arrow{
             background-image: url("/themes/custom/cleanimal/images/icons/dots_primary.svg");
             background-repeat: no-repeat;
-            background-position: 3px 3px;
+            background-position: center;
             position: relative;
             top: auto;
             right: auto;
@@ -460,11 +396,15 @@
             border-bottom-color: transparent;
             border-left-color: transparent;
             line-height: 0;
+            @media screen and (max-width: 1440px) {
+              background-size: 15px;
+            }
           }
         }
       }
       .secondary-action{
-        width: 167px;
+        width: auto;
+        min-width: 100px;
         background-color: white;
         border-left: 1px solid $primary-dark;
         border-top: 0;
@@ -492,8 +432,14 @@
         .dropbutton-toggle{
           button{
             .dropbutton-arrow{
-              background-position: 3px 3px;
+              background-position: 4px 3px;
             }
+          }
+        }
+        .secondary-action{
+          input{
+            border-top: none !important;
+            border-right: none !important;
           }
         }
       }
@@ -505,6 +451,9 @@
 .seven-details{
   position: relative;
   background-color: white !important;
+  &:first-child{
+    border: none !important;
+  }
   &:before{
     width: 10px;
     content: " ";
@@ -514,7 +463,7 @@
     position: absolute;
     top: auto;
     right: 7px;
-    bottom: 10px;
+    bottom: 17px;
     height: 10px;
   }
   &:first-child{
@@ -542,7 +491,7 @@
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    top: 12px;
+    top: 17px;
     right: 7px;
     bottom: auto;
     height: 10px;
@@ -588,7 +537,21 @@
   }
 }
 
-.field-group-html-element.flex.col-2{
+.flex{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > div {
+    flex: 1;
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.flex.col-2{
   > div {
     width: 48%;
     flex: 0 1 auto;

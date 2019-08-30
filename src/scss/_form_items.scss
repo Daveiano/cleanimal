@@ -10,10 +10,15 @@
     margin-bottom: 8px;
   }
   // General Select Field
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1440px){
+    select{
+      font-size: 10px !important;
+    }
+  }
   select{
     padding: 7px 2em 7px 1em;
     transition: none;
-    border: 2px solid $white;
+    border: 1px solid $white;
     border-radius: 0;
     background: none;
     background-color: $white;
@@ -22,7 +27,7 @@
     -webkit-font-smoothing: none;
     &:focus{
       border-radius: 0;
-      border: solid 2px $primary-light;
+      border: solid 1px $primary-light !important;
       outline: none;
       background-color: $white;
     }
@@ -107,6 +112,92 @@
 // Link Field
 .field--type-link{
 
+}
+
+@mixin chosen-singel() {
+  padding: 7px 2em 7px 1em;
+  transition: none;
+  border: 2px solid $white;
+  border-radius: 2px;
+  background: $white;
+  box-shadow: none;
+  color: $black;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  height: 36px;
+  @media screen and (max-width: 1440px){
+    font-size: 10px;
+    height: 30px;
+  }
+  div{
+    b{
+      background-image: url(/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg) !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: 19px 19px !important;
+    }
+  }
+}
+
+
+//
+.field--type-integer{
+  .form-type-number{
+    input, .field-suffix{
+      display: inline-block;
+    }
+    input{
+      width: 85% !important;
+    }
+    .field-suffix{
+      width: auto;
+    }
+  }
+}
+// Commerce Number field
+.form-type-commerce-price{
+  .js-form-type-commerce-number{
+    input, .field-suffix{
+      display: inline-block;
+    }
+    input{
+      width: 85% !important;
+    }
+    .field-suffix{
+      width: auto;
+    }
+  }
+}
+
+
+// Chosen Select field
+.chosen-container{
+  width: 100% !important;
+  &.chosen-with-drop{
+    background-color: black;
+    .chosen-single{
+      @include chosen-singel;
+    }
+  }
+  .chosen-single{
+    @include chosen-singel;
+  }
+  .chosen-drop{
+    border: none;
+    background: $white;
+  }
+  .chosen-results{
+    li{
+      &.highlighted{
+        background-color: $primary;
+        background-image: none;
+        color: #fff;
+      }
+    }
+  }
 }
 
 // Select Field
@@ -264,20 +355,37 @@ select[multiple='multiple']{
   }
 }
 
+//
+.field--type-office-hours{
+  .seven-details__wrapper{
+    padding: 0 !important;
+  }
+  .office-hours-add-link, .office-hours-delete-link, .office-hours-copy-link{
+    display: block;
+  }
+}
+
 // Entity Revisons Field
 .field--type-entity-reference-revisions{
-
+  border: none !important;
 }
 
 // Draggable
 .draggable{
-  .tabledrag-handle{
-    .handle{
-      background: url(/themes/custom/cleanimal/images/icons/action.svg) no-repeat 6px 5px;
-    }
-    &:hover{
+  .field-multiple-drag{
+    vertical-align: middle !important;
+    .tabledrag-handle{
       .handle{
-        background: url(/themes/custom/cleanimal/images/icons/action.svg) no-repeat 6px 5px;
+        width: 19px;
+        height: 19px;
+        padding: 0;
+        margin: 0;
+        background: url(/themes/custom/cleanimal/images/icons/action.svg) no-repeat;
+      }
+      &:hover{
+        .handle{
+          background: url(/themes/custom/cleanimal/images/icons/action.svg) no-repeat;
+        }
       }
     }
   }
@@ -333,6 +441,31 @@ select[multiple='multiple']{
               &:focus{
                 background-color: $white;
                 box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.field--widget-entity-reference-paragraphs{
+  table{
+    tbody{
+      tr{
+        td{
+          .paragraphs-dropbutton-wrapper{
+            .dropbutton-wrapper.dropbutton-multiple{
+              &.open{
+                .dropbutton-widget{
+                  .dropbutton{
+                    .secondary-action{
+                      border-left: none;
+                      border-bottom: none;
+                    }
+                  }
+                }
               }
             }
           }

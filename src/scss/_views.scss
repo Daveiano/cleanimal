@@ -3,7 +3,6 @@
     .view-filters{
       .views-exposed-form{
         .form--inline{
-          @include general-padding;
           border: 1px solid $bright-grey;
           border-bottom: none;
           .js-form-item{
@@ -22,29 +21,57 @@
       }
     }
     .view-content{
-      .views-form{
-        #edit-header{
-          @include general-padding;
-          border-left: 1px solid $bright-grey;
-          border-right: 1px solid $bright-grey;
-          .js-form-wrapper:not(div[id~="vbo"]) {
-            display: flex;
-            align-items: flex-end;
-            .js-form-item{
-              margin-right: 0.5em;
-            }
-          }
-        }
-        .media-library-views-form{
-          .form-actions{
-            input{
-              @include primary-button;
-              @include small;
-            }
-          }
-        }
-      }
+    }
+  }
+}
 
+.views-form{
+  #edit-header{
+    @include detailssummary;
+    #vbo-action-form-wrapper{
+      border-left: 1px solid $alternativ-grey;
+      border-right: 1px solid $alternativ-grey;
+      border-bottom: 1px solid $alternativ-grey;
+      .vbo-multipage-selector{
+        border: 0;
+        legend{
+          position: relative;
+          top: auto;
+        }
+
+      }
+      .form-actions, .js-form-item{
+        @include general-padding;
+        margin: 0;
+      }
+      .js-form-type-select, .vbo-multipage-selector{
+        display: inline-block;
+      }
+      .js-form-item-select-all{
+        border-bottom: 1px solid $alternativ-grey;
+      }
+      .form-actions{
+        background-color: $white;
+        @include general-padding;
+        margin: 0;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+    .js-form-wrapper:not(div[id~="vbo"]) {
+      display: flex;
+      align-items: flex-end;
+      .js-form-item{
+        margin-right: 0.5em;
+      }
+    }
+  }
+  .media-library-views-form{
+    .form-actions{
+      input{
+        @include primary-button;
+        @include small;
+      }
     }
   }
 }
@@ -57,9 +84,6 @@
 // Editing Views View
 .views-edit-view{
   form.form-edit{
-    h1{
-
-    }
     .views-displays{
       border: none;
       .views-display-top{

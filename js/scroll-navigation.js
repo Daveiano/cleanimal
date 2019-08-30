@@ -58,7 +58,7 @@
           $nodeSecondary = $('.layout-region.layout-region-node-secondary'),
           $body = $('body'),
           $header = $('header.content-header'),
-          $secondaryNav = $('#block-diaphanes-backend-primary-local-tasks'),
+          $secondaryNav = $('#block-cleanimal-primary-local-tasks'),
           bodyPadding = parseInt($body.css('padding-top')),
           // @todo dynamic header height is not working because of animating header to specific height have to do it static
           //headerHeight = $header.outerHeight(),

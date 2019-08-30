@@ -1,14 +1,15 @@
 $black: #171717;
 $white: #f3f3f3;
 $grey-dark: #434343;
-$primary: #c78fe4;
-$primary-light: #e2c0f4;
-$primary-middle: #ba81d7;
-$primary-dark: #a874c3;
-$secondary: #5767ff;
+$primary: #00376a;
+$primary-light: #89d2f6;
+$primary-middle: #00b6ed;
+$primary-dark: #2d2376;
+$secondary: #00a69e;
 $grey: #565656;
 $grey-light: #8c8c8c;
 $bright-grey: #dcdcdc;
+$alternativ-grey: #cccccc;
 
 @mixin clear-after() {
   &:after{
@@ -37,22 +38,31 @@ $bright-grey: #dcdcdc;
 @mixin font-plex-light {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 300;
+  @media screen and (max-width: 1440px) {
+    font-size: 10px;
+  }
 }
 
 @mixin font-plex-regular {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.29;
+  line-height: 1.29 !important;
   letter-spacing: 0.2px;
   font-size: 14px;
+  @media screen and (max-width: 1440px) {
+    font-size: 10px !important;
+  }
 }
 
 @mixin font-plex-medium {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 500;
   font-stretch: normal;
-  line-height: 1.29;
+  line-height: 1.29 !important;
   letter-spacing: normal;
+  @media screen and (max-width: 1440px) {
+    font-size: 10px;
+  }
 }
 
 @mixin font-plex-semi-bold {
@@ -63,6 +73,9 @@ $bright-grey: #dcdcdc;
 @mixin font-plex-bold {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
+  @media screen and (max-width: 1440px) {
+    font-size: 10px;
+  }
 }
 
 @mixin gradient-purple-blue {
@@ -152,4 +165,140 @@ $bright-grey: #dcdcdc;
 // Button Helper
 @mixin small {
   height: 32px;
+}
+
+// Detail Summary
+@mixin detailssummary {
+  .cleanimal-details{
+    border: none;
+    &:first-child{
+      border: none !important;
+    }
+    summary{
+      background-color: $white;
+      color: $black;
+      font-size: 14px;
+      font-weight: 600 !important;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.29;
+      letter-spacing: 0.16px;
+      height: 32px;
+      border-radius: 2px !important;
+      border: solid 1px $alternativ-grey;
+      display: flex;
+      align-items: center;
+      &[aria-expanded="true"]{
+        border-radius: 0 !important;
+        border-top-left-radius: 2px !important;
+        border-top-right-radius: 2px !important;
+      }
+    }
+    .filter-wrapper{
+      border-left: 1px solid $alternativ-grey;
+      border-right: 1px solid $alternativ-grey;
+      border-bottom: 1px solid $alternativ-grey;
+      .filters-wrapper{
+        @include general-padding;
+        display: flex;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid $alternativ-grey;
+        .filters, .columns{
+          flex-grow: 1;
+        }
+        .filters{
+          flex-basis: 60%;
+          .active-filters{
+            .filter-wrap{
+              margin: 0;
+              width: 100%;
+              .form-item{
+
+              }
+            }
+          }
+          .select-filters{
+            .form-item{
+              width: auto !important;
+            }
+          }
+        }
+        .columns{
+          flex-basis: 40%;
+          .js-form-item-available-columns, .js-form-item-selected-columns{
+            width: auto !important;
+            #flexible-table-selected-columns, #flexible-table-available-columns{
+              min-width: 200px;
+            }
+            label{
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.32px;
+              color: $grey;
+            }
+            select{
+              /*&::-webkit-scrollbar{
+                width: 12px;
+                background-color: #F5F5F5;
+              }
+              &::-webkit-scrollbar-track{
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                border-radius: 10px;
+                background-color: #F5F5F5;
+              }
+              &::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                background-color: #555;
+              }*/
+              overflow: auto;
+              &.form-select{
+                padding: 7px 10px 7px 2px;
+                background-color: white;
+                border: 1px solid $bright-grey;
+                option{
+                  padding: 7px 5px;
+                  &:hover{
+                    color: black;
+                    background-color: #f0f0f0;
+                  }
+                  &:checked{
+                    color: white !important;
+                    background-color: $primary !important;
+                  }
+                }
+              }
+            }
+          }
+          .move-buttons{
+            .move-right, .move-left, .move-top, .move-down{
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: $white;
+              font-size: 0 !important;
+            }
+            .move-right{
+              background-image: url("/themes/custom/cleanimal/images/icons/right-24.svg") !important;
+            }
+            .move-left{
+              background-image: url("/themes/custom/cleanimal/images/icons/left-24.svg") !important;
+            }
+            .move-top{
+              background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-up.svg") !important;
+            }
+            .move-down{
+              background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg") !important;
+            }
+          }
+        }
+      }
+      .form-actions{
+        background-color: $white;
+        @include general-padding;
+        margin: 0;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  }
 }
