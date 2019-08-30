@@ -134,7 +134,7 @@
   }
   div{
     b{
-      background-image: url(/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg) !important;
+      background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
       background-repeat: no-repeat !important;
       background-position: center !important;
       background-size: 19px 19px !important;
@@ -204,7 +204,7 @@
 // TODO: Find a way to exclude multiple (attribute) selects.
 
 select{
-  background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg") !important;
+  background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
   background-repeat: no-repeat !important;
   background-position: right !important;
 }
@@ -268,7 +268,7 @@ select[multiple='multiple']{
           width: 20px !important;
           height: 20px;
           margin: 0;
-          background: url("/themes/custom/cleanimal/images/icons/delete.svg");
+          background: url("../../images/icons/delete.svg");
           background-repeat: no-repeat;
           border: none;
           margin-top: 15px;
@@ -380,11 +380,11 @@ select[multiple='multiple']{
         height: 19px;
         padding: 0;
         margin: 0;
-        background: url(/themes/custom/cleanimal/images/icons/action.svg) no-repeat;
+        background: url(../../images/icons/action.svg) no-repeat;
       }
       &:hover{
         .handle{
-          background: url(/themes/custom/cleanimal/images/icons/action.svg) no-repeat;
+          background: url(../../images/icons/action.svg) no-repeat;
         }
       }
     }
@@ -401,7 +401,7 @@ select[multiple='multiple']{
             &.paragraphs-icon-button-collapse{
               border: none;
               background-color: transparent;
-              background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-up.svg");
+              background-image: url("../../images/icons/icon-navigation-chevron-up.svg");
               background-repeat: no-repeat;
               width: 20px !important;
               height: 20px !important;
@@ -410,7 +410,7 @@ select[multiple='multiple']{
             &.paragraphs-icon-button-edit{
               border: none;
               background-color: transparent;
-              background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg");
+              background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
               background-repeat: no-repeat;
               width: 20px !important;
               height: 20px !important;
@@ -435,7 +435,7 @@ select[multiple='multiple']{
               }
             }
             .paragraphs-dropdown-toggle{
-              background-image: url("/themes/custom/cleanimal/images/icons/dots.svg");
+              background-image: url("../../images/icons/dots.svg");
               background-size: 20px 20px;
               border: none;
               &:focus{
@@ -510,7 +510,7 @@ select[multiple='multiple']{
       border: 1px solid $primary;
       .autocomplete-deluxe-item-delete{
         background: none;
-        background-image: url("/themes/custom/cleanimal/images/icons/close_white.svg");
+        background-image: url("../../images/icons/close_white.svg");
         background-repeat: no-repeat;
         background-size: 90%;
         background-position: center;
@@ -572,7 +572,7 @@ select[multiple='multiple']{
 }
 
 .autocomplete-deluxe-open{
-  background: url("/themes/custom/cleanimal/images/icons/loading-small.svg") no-repeat 0px;
+  background: url("../../images/icons/loading-small.svg") no-repeat 0px;
   -webkit-animation: spin .8s infinite linear;
   animation: spin .8s infinite linear;
 }
@@ -604,7 +604,7 @@ input[type="checkbox"] + label{
 input[type="checkbox"] + label::before {
   width: 18px;
   height: 18px;
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-01-unselected.svg");
+  background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
   display: flex;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -615,19 +615,19 @@ input[type="checkbox"] + label::before {
 }
 input[type="checkbox"]:checked+label::before {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-02-selected.svg");
+  background-image: url("../../images/icons/checkbox-box-02-selected.svg");
   text-indent: 0;
 }
 
 input[type="checkbox"]:checked:focus+label::before {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-05-focus-selected.svg");
+  background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
   text-indent: 0;
 }
 
 input[type="checkbox"]:focus+label::before {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-04-focus-unselected.svg");
+  background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg");
   text-indent: 0;
 }
 
@@ -639,7 +639,7 @@ label + input[type="checkbox"]{
 label::before + input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-01-unselected.svg");
+  background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
   display: flex;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -650,19 +650,19 @@ label::before + input[type="checkbox"] {
 }
 label::before+input[type="checkbox"]:checked {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-02-selected.svg");
+  background-image: url("../../images/icons/checkbox-box-02-selected.svg");
   text-indent: 0;
 }
 
 label::before+input[type="checkbox"]:checked:focus {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-05-focus-selected.svg");
+  background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
   text-indent: 0;
 }
 
 label::before+input[type="checkbox"]:focus {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-04-focus-unselected.svg");
+  background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg");
   text-indent: 0;
 }
 
@@ -696,7 +696,7 @@ body.system-modules-uninstall
   input[type="checkbox"] + label::before {
     width: 18px;
     height: 18px;
-    background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-01-unselected.svg");
+    background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
     display: none;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -707,19 +707,19 @@ body.system-modules-uninstall
   }
   input[type="checkbox"]:checked+label::before {
     content: "";
-    background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-02-selected.svg");
+    background-image: url("../../images/icons/checkbox-box-02-selected.svg");
     text-indent: 0;
   }
 
   input[type="checkbox"]:checked:focus+label::before {
     content: "";
-    background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-05-focus-selected.svg");
+    background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
     text-indent: 0;
   }
 
   input[type="checkbox"]:focus+label::before {
     content: "";
-    background-image: url("/themes/custom/cleanimal/images/icons/checkbox-box-04-focus-unselected.svg");
+    background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg");
     text-indent: 0;
   }
 
@@ -765,7 +765,7 @@ input[type="radio"]+label{
 input[type="radio"]+label::before {
   width: 17.5px;
   height: 17.5px;
-  background-image: url("/themes/custom/cleanimal/images/icons/radio-button-piece-01-unselected.svg");
+  background-image: url("../../images/icons/radio-button-piece-01-unselected.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -775,7 +775,5 @@ input[type="radio"]+label::before {
 }
 input[type="radio"]:checked+label::before {
   content: "";
-  background-image: url("/themes/custom/cleanimal/images/icons/radio-button-piece-03-selected.svg");
+  background-image: url("../../images/icons/radio-button-piece-03-selected.svg");
 }
-
-/*** End ***/

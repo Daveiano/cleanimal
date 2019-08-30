@@ -379,7 +379,7 @@
             box-shadow: none;
           }
           .dropbutton-arrow{
-            background-image: url("/themes/custom/cleanimal/images/icons/dots_primary.svg");
+            background-image: url("../../images/icons/dots_primary.svg");
             background-repeat: no-repeat;
             background-position: center;
             position: relative;
@@ -457,7 +457,7 @@
   &:before{
     width: 10px;
     content: " ";
-    background-image: url(/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg);
+    background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
@@ -486,7 +486,7 @@
   &:before{
     width: 10px;
     content: " ";
-    background-image: url(/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg);
+    background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
     transform: rotate(180deg);
     background-repeat: no-repeat;
     background-position: center;

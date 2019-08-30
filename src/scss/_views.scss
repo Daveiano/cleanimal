@@ -200,10 +200,10 @@ table.views-table, table.sticky-header, table.ief-entity-table ,table.diff-revis
             span{
               &.tablesort{
                 &.tablesort--asc{
-                  background-image: url(/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg);
+                  background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
                 }
                 &.tablesort--desc{
-                  background-image: url(/themes/custom/cleanimal/images/icons/icon-navigation-chevron-up.svg);
+                  background-image: url(../../images/icons/icon-navigation-chevron-up.svg);
                 }
               }
             }
@@ -237,7 +237,7 @@ table.views-table, table.sticky-header, table.ief-entity-table ,table.diff-revis
       td{
         &.views-field-field-inhalt-pdf-{
           span.file--mime-application-pdf{
-            background-image: url("/themes/custom/cleanimal/images/icons/icon-file-download.svg");
+            background-image: url("../../images/icons/icon-file-download.svg");
             padding-left: 0;
             min-height: 20px;
             min-width: 20px;

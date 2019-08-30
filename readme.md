@@ -1,6 +1,6 @@
 # Installation
 
-## compsoer.json
+## composer.json
 
 Add this under the repositories key:
 
@@ -29,3 +29,10 @@ See https://getcomposer.org/doc/06-config.md#secure-http
 ## Command line
 
 `composer require efork/cleanimal`
+
+
+## Other
+
+Use this after color settings have changed (new color added in theme for coniguration):
+
+`drush cdel color.theme.cleanimal`

@@ -3,9 +3,9 @@ $white: #f3f3f3;
 $grey-dark: #434343;
 $primary: #00376a;
 $primary-light: #89d2f6;
-$primary-middle: #00b6ed;
+$primary-middle: #00b6ed;;
 $primary-dark: #2d2376;
-$secondary: #00a69e;
+$secondary: #c3a201;
 $grey: #565656;
 $grey-light: #8c8c8c;
 $bright-grey: #dcdcdc;
@@ -278,16 +278,16 @@ $alternativ-grey: #cccccc;
               font-size: 0 !important;
             }
             .move-right{
-              background-image: url("/themes/custom/cleanimal/images/icons/right-24.svg") !important;
+              background-image: url("../../images/icons/right-24.svg") !important;
             }
             .move-left{
-              background-image: url("/themes/custom/cleanimal/images/icons/left-24.svg") !important;
+              background-image: url("../../images/icons/left-24.svg") !important;
             }
             .move-top{
-              background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-up.svg") !important;
+              background-image: url("../../images/icons/icon-navigation-chevron-up.svg") !important;
             }
             .move-down{
-              background-image: url("/themes/custom/cleanimal/images/icons/icon-navigation-chevron-down.svg") !important;
+              background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
             }
           }
         }

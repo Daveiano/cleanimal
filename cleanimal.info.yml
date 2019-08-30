@@ -5,7 +5,6 @@ core: 8.x
 
 libraries:
   - cleanimal/global-styling
-  - cleanimal/color
   - cleanimal/global-js
 
 base theme: seven
