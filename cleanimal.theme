@@ -1,0 +1,192 @@
+<?php
+
+/**
+ * @file
+ * Theme function.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\views\ViewExecutable;
+use \Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RemoveCommand;
+use Drupal\Core\Ajax\RedirectCommand;
+use \Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function cleanimal_preprocess_html(&$variables) {
+  // Get route
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier(str_replace('.', '-', $route_name));
+
+  // Add create class
+  if ($route_name == 'node.add' || $route_name == 'entity.node.edit_form') {
+    $variables['attributes']['class'][] = 'node-add-edit';
+  }
+
+  // Add node id to js settings.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $variables['#attached']['drupalSettings']['cleanimal']['nodeId'] = $node->id();
+    $variables['#attached']['drupalSettings']['cleanimal']['nodeType'] = $node->type->entity->label();
+  }
+}
+
+/**
+ * Implements theme_form_alter().
+ *
+ */
+function cleanimal_form_alter(&$form, &$form_state, $form_id) {
+  // Split Screen ajax submit.
+  if (strpos($form_id, '_split_screen_form') !== FALSE) {
+    $form['actions']['submit']['#submit'][] = '_cleanimal_split_screen_ajax_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'use-ajax-submit';
+  }
+
+  $form_ids_scroll_navigation = ['node_buch_form', 'node_artikel_form', 'user_form'];
+  // Build and add the scroll navigation.
+  if ((strpos($form_id, 'node_') !== FALSE || strpos($form_id, 'user_') !== FALSE)
+    && $form_id !== 'node_type_edit_form'
+    && $form_id !== 'node_type_add_form'
+    && (strpos($form_id, '_edit_form') !== FALSE || strpos($form_id, '_add_form') !== FALSE || in_array($form_id, $form_ids_scroll_navigation)))
+  {
+    $entity = $form_state->getFormObject()->getEntity();
+    // TODO: Throws error when creating a new content type.
+    $form_display = EntityFormDisplay::collectRenderDisplay($entity, 'default');
+    $field_groups = $form_display->getThirdPartySettings('field_group');
+    $base_group = str_replace(['node_', '_edit_form', '_add_form', '_form'], [''], $form_id);
+
+    $form['#attributes']['class'][] = 'node-edit-' . $entity->id();
+
+    $scroll_navigation = '<ul>';
+
+    for ($i = 0; $i < count($field_groups['group_' . $base_group]['children']); $i++) {
+      $scroll_navigation .= <<<EOT
+<li>
+  <a href="#{$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['format_settings']['id']}">
+    {$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['label']}
+  </a>
+</li>
+EOT;
+    }
+
+    $scroll_navigation .= '</ul>';
+
+    $form['cleanimal_scroll_navigation']['#markup'] = $scroll_navigation;
+
+    $form['#attached']['library'][] = 'cleanimal/scroll_navigation';
+  }
+}
+
+/**
+ * Implemenets theme_preprocess_form_element().
+ */
+function cleanimal_preprocess_form_element(&$variables) {
+  $element = $variables['element'];
+  if (isset($element["#id"])) {
+    if (
+      $element["#type"] === 'checkbox' &&
+      isset($element["#id"]) &&
+      strpos($element["#id"], 'edit-node-bulk-form') !== FALSE ||
+      strpos($element["#id"], 'edit-media-library-select-form') !== FALSE ||
+      strpos($element["#id"], 'edit-commerce-product-bulk-form') !== FALSE
+    ) {
+      $variables['label_display'] = 'after';
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function cleanimal_field_widget_inline_entity_form_complex_table_view_mode_form_alter(&$element, &$form_state, $context) {
+  // Split Screen Dialog Edit for inline entity form complex.
+  $entities = $context['items']->referencedEntities();
+
+  foreach ($entities as $key => $entity) {
+    unset($element['entities'][$key]['actions']['ief_entity_edit']);
+    $element['entities'][$key]['actions']['edit_splitscreen'] = [
+      '#title' => t('Edit'),
+      '#type' => 'link',
+      '#url' => Url::fromRoute(
+        'content_helper.edit_form_split_screen',
+        ['node' => $entity->id()],
+        ['query' => [
+          'destination' => \Drupal::service('path.current')->getPath()
+        ]]
+      ),
+      '#weight' => -100,
+      '#attributes' => array(
+        'class' => 'use-ajax button',
+        'data-dialog-type' => 'dialog',
+        'data-dialog-options' => '{"width":650, "appendTo":"#nodeEditThirdColumn", "classes": {"ui-dialog": "splitscreen-edit"}}',
+      ),
+      '#attached' => [
+        'library' => [
+          'core/drupal.dialog.ajax',
+        ],
+      ],
+      '#ief_row_delta' => $key,
+      '#ief_row_form' => 'edit',
+    ];
+  }
+}
+
+/**
+ * Implements theme_theme_suggestions_alter().
+ */
+function cleanimal_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'node_edit_form') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $content_type = $node->bundle();
+    } else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', $current_path);
+      $content_type = $path_args[3];
+    }
+    $suggestions[] = 'node_edit_form__' . $content_type;
+  }
+
+  if ($hook == 'views_view_table') {
+    $suggestions[] = 'views_view_table__cleanimal';
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_table().
+ */
+/*function cleanimal_preprocess_views_view_table(&$variables) {
+  $view = $variables['header'];
+}*/
+
+function _cleanimal_split_screen_ajax_submit(array $form, FormStateInterface &$form_state) {
+  $response = new AjaxResponse();
+  // TODO: Close triggers jQuery error.
+  $response->addCommand(new RemoveCommand('.ui-dialog.splitscreen-edit'));
+  $form_state->setResponse($response);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function cleanimal_form_user_form_alter(&$form, FormStateInterface $form_state) {
+  $form['#theme'] = ['user_edit_form'];
+  $form['#attributes']['class'][] = 'layout-node-form';
+  $form['#attributes']['class'][] = 'clearfix';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cleanimal_theme($existing, $type, $theme, $path) {
+  return [
+    'user_edit_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}

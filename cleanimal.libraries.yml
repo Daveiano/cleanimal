@@ -1,0 +1,28 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap': {type: external}
+      dist/assets/style.css: {}
+
+color:
+  css:
+    theme:
+      #dist/css/color.css: {}
+
+global-js:
+  version: 1.x
+  js:
+    js/cleanimal.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+scroll_navigation:
+  version: 1.x
+  js:
+    js/scroll-navigation.js: {}
+  dependencies:
+    - core/jquery

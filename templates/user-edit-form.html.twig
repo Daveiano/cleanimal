@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{ attributes }}>
+  <nav id="scroll-nav" class="sticky">
+    {{ form.cleanimal_scroll_navigation }}
+  </nav>
+  <div class="layout-region layout-region-node-main">
+    {{ form|without('advanced', 'footer', 'actions', 'cleanimal_scroll_navigation') }}
+  </div>
+  <div class="layout-region layout-region-node-secondary sticky">
+    {{ form.actions }}
+    {{ form.footer }}
+    {{ form.advanced }}
+  </div>
+</form>

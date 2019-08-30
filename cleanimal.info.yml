@@ -1,0 +1,26 @@
+name: Cleanimal
+type: theme
+description: 'Clean and minimalistic Drupal backend theme.'
+core: 8.x
+
+libraries:
+  - cleanimal/global-styling
+  - cleanimal/color
+  - cleanimal/global-js
+
+base theme: seven
+
+regions:
+  header_first: 'Header First column'
+  header_second: 'Header second column'
+  header_third: 'Header third column'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

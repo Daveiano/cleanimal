@@ -1,0 +1,19 @@
+.primary_color {
+  color: #ffa07a;
+}
+
+.primary_color_bg {
+  background-color: #ffa07a;
+}
+
+.primary_color_bg {
+  border-color: #ffa07a;
+}
+
+div[id*="primary"] nav.tabs ul.tabs.primary li:hover a {
+  border-bottom: 2px solid #ffa07a !important;
+}
+
+div[id*="primary"] nav.tabs ul.tabs.primary li.is-active a {
+  border-bottom: 2px solid #ffa07a !important;
+}

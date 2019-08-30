@@ -1,0 +1,155 @@
+$black: #171717;
+$white: #f3f3f3;
+$grey-dark: #434343;
+$primary: #c78fe4;
+$primary-light: #e2c0f4;
+$primary-middle: #ba81d7;
+$primary-dark: #a874c3;
+$secondary: #5767ff;
+$grey: #565656;
+$grey-light: #8c8c8c;
+$bright-grey: #dcdcdc;
+
+@mixin clear-after() {
+  &:after{
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+/**
+ * Grid system.
+ */
+@mixin grid-parent() {
+  display: grid;
+  grid-template-columns: repeat(16, [col-start] 1fr);
+  grid-gap: 32px;
+  max-width: 100%;
+}
+
+@mixin grid-item($start, $span) {
+  grid-column: col-start $start / span $span;
+  float: none;
+  width: auto;
+}
+
+@mixin font-plex-light {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 300;
+}
+
+@mixin font-plex-regular {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+}
+
+@mixin font-plex-medium {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+}
+
+@mixin font-plex-semi-bold {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+}
+
+@mixin font-plex-bold {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+}
+
+@mixin gradient-purple-blue {
+  border-image-source: linear-gradient(to right, $primary, $secondary);
+  border-image-slice: 1;
+}
+
+@mixin gradient-background {
+  background-image: linear-gradient(to right, $primary, $secondary);
+}
+
+
+@mixin general-padding {
+  padding: 7px 2em 7px 1em !important;
+}
+
+/*** Buttons ***/
+// General Button
+@mixin primary-button {
+  color: #fff;
+  border-color: $primary;
+  background-image: none;
+  text-shadow: none;
+  font-weight: 500;
+  -webkit-font-smoothing: none;
+  height: 48px;
+  background-color: $primary;
+  @include font-plex-regular;
+  &:hover{
+    color: #fff !important;
+    border-color: $primary-middle;
+    background-color: $primary-middle;
+    background-image: none;
+    box-shadow: none;
+  }
+  &:focus{
+    z-index: 10;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@mixin tertiary-button {
+  color: $primary-dark;
+  height: 48px;
+  background-color: white;
+  background-image: none;
+  border: 1px solid $primary;
+  &:hover{
+    color: white !important;
+    border-color: $primary;
+    background-color: $primary;
+    background-image: none;
+    box-shadow: none;
+  }
+  &:focus{
+    z-index: 10;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@mixin delete-button{
+  color: #ff0000;
+  @include font-plex-regular;
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+  transition: none;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+  line-height: normal;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-font-smoothing: none;
+  &:hover{
+    text-decoration: none;
+    box-shadow: none;
+    color: #ff0000 !important;
+  }
+}
+// Button Helper
+@mixin small {
+  height: 32px;
+}
