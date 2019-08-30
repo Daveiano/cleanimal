@@ -9,12 +9,12 @@ Add this under the repositories key:
     "type": "package",
     "package": {
         "name": "efork/cleanimal",
-        "version": "dev-master",
+        "version": "1.0",
         "type":"drupal-theme",
         "source": {
             "url": "http://gitlab.e-fork.local/dba/cleanimal.git",
             "type": "git",
-            "reference": "master"
+            "reference": "8.x-1.x"
         }
     }
 }
