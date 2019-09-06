@@ -172,7 +172,7 @@ $alternativ-grey: #cccccc;
   .cleanimal-details{
     border: none;
     &:first-child{
-      border: none !important;
+      border: none;
     }
     summary{
       background-color: $white;

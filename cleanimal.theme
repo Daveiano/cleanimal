@@ -104,6 +104,8 @@ EOT;
 
 /**
  * @param array $variables
+ *
+ * TODO: Check this.
  */
 function cleanimal_preprocess_views_exposed_form(array &$variables) {
   $available_filters_norm = $variables["form"]["#info"];
@@ -217,6 +219,8 @@ function cleanimal_theme_suggestions_alter(array &$suggestions, array $variables
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * TODO: Belongs to flexible views.
  */
 function cleanimal_theme_suggestions_container_alter(array &$suggestions, array $variables) {
   $element = $variables['element'];

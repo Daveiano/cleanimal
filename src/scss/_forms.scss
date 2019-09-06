@@ -452,7 +452,7 @@
   position: relative;
   background-color: white !important;
   &:first-child{
-    border: none !important;
+    border: none;
   }
   &:before{
     width: 10px;
@@ -467,7 +467,7 @@
     height: 10px;
   }
   &:first-child{
-    border-top: 1px solid $bright-grey !important;
+    border-top: 1px solid $bright-grey;
   }
   summary.seven-details__summary{
     padding: 7px 2em 7px 1em !important;

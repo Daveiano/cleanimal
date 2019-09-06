@@ -19,6 +19,8 @@
           $pager.append($viewFooter);
         }
       });
+
+      // TODO: Show Views VBO Actions only if a row is selected.
     }
   };
 
