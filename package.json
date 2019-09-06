@@ -12,7 +12,7 @@
   "author": "dba <dba@e-fork.de>",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "4.2.1",
+    "bootstrap": "4.3.1",
     "prop-types": "15.7.2",
     "react": "16.7.0",
     "react-dom": "16.7.0",
