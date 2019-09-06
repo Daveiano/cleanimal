@@ -1,6 +1,8 @@
-# Installation
+# Cleanimal
 
-## composer.json
+## Installation
+
+### composer.json
 
 Add this under the repositories key:
 
@@ -12,26 +14,20 @@ Add this under the repositories key:
         "version": "1.0",
         "type":"drupal-theme",
         "source": {
-            "url": "http://gitlab.e-fork.local/dba/cleanimal.git",
+            "url": "https://github.com/Daveiano/cleanimal.git",
             "type": "git",
             "reference": "8.x-1.x"
         }
     }
-}
+},
 ```
 
-Also add this to the config key:
-
-`"secure-http": false`
-
-See https://getcomposer.org/doc/06-config.md#secure-http
-
-## Command line
+### Command line
 
 `composer require efork/cleanimal`
 
 
-## Other
+### Other
 
 Use this after color settings have changed (new color added in theme for coniguration):
 
