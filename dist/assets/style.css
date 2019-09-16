@@ -92,8 +92,6 @@
       font-size: 10px !important; } }
 .field--type-integer .form-type-number input, .field--type-integer .form-type-number .field-suffix {
   display: inline-block; }
-.field--type-integer .form-type-number input {
-  width: 85% !important; }
 .field--type-integer .form-type-number .field-suffix {
   width: auto; }
 .form-type-commerce-price .js-form-type-commerce-number input, .form-type-commerce-price .js-form-type-commerce-number .field-suffix {
@@ -799,7 +797,7 @@ input[type="radio"]:checked + label::before {
 .views-exposed-form .form--inline .cleanimal-details {
     border: none; }
 .views-exposed-form .form--inline .cleanimal-details:first-child {
-      border: none !important; }
+      border: none; }
 .views-exposed-form .form--inline .cleanimal-details summary {
       background-color: #f3f3f3;
       color: #171717;
@@ -1389,7 +1387,7 @@ input[type="radio"]:checked + label::before {
   position: relative;
   background-color: white !important; }
 .seven-details:first-child {
-    border: none !important; }
+    border: none; }
 .seven-details:before {
     width: 10px;
     content: " ";
@@ -1402,7 +1400,7 @@ input[type="radio"]:checked + label::before {
     bottom: 17px;
     height: 10px; }
 .seven-details:first-child {
-    border-top: 1px solid #dcdcdc !important; }
+    border-top: 1px solid #dcdcdc; }
 .seven-details summary.seven-details__summary {
     padding: 7px 2em 7px 1em !important;
     font-weight: 300 !important;
@@ -1534,7 +1532,7 @@ input[type="radio"]:checked + label::before {
 .views-form #edit-header .cleanimal-details {
   border: none; }
 .views-form #edit-header .cleanimal-details:first-child {
-    border: none !important; }
+    border: none; }
 .views-form #edit-header .cleanimal-details summary {
     background-color: #f3f3f3;
     color: #171717;

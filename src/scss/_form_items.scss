@@ -114,6 +114,7 @@
 
 }
 
+// TODO
 @mixin chosen-singel() {
   padding: 7px 2em 7px 1em;
   transition: none;
@@ -142,21 +143,18 @@
   }
 }
 
-
 //
 .field--type-integer{
   .form-type-number{
     input, .field-suffix{
       display: inline-block;
     }
-    input{
-      width: 85% !important;
-    }
     .field-suffix{
       width: auto;
     }
   }
 }
+
 // Commerce Number field
 .form-type-commerce-price{
   .js-form-type-commerce-number{
