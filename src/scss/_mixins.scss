@@ -162,6 +162,7 @@ $alternativ-grey: #cccccc;
     color: #ff0000 !important;
   }
 }
+
 // Button Helper
 @mixin small {
   height: 32px;
@@ -212,9 +213,6 @@ $alternativ-grey: #cccccc;
             .filter-wrap{
               margin: 0;
               width: 100%;
-              .form-item{
-
-              }
             }
           }
           .select-filters{
@@ -237,20 +235,6 @@ $alternativ-grey: #cccccc;
               color: $grey;
             }
             select{
-              /*&::-webkit-scrollbar{
-                width: 12px;
-                background-color: #F5F5F5;
-              }
-              &::-webkit-scrollbar-track{
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-                border-radius: 10px;
-                background-color: #F5F5F5;
-              }
-              &::-webkit-scrollbar-thumb{
-                border-radius: 10px;
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-                background-color: #555;
-              }*/
               overflow: auto;
               &.form-select{
                 padding: 7px 10px 7px 2px;

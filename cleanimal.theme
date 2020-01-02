@@ -7,24 +7,19 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
-use Drupal\views\ViewExecutable;
-use \Drupal\Core\Url;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\RemoveCommand;
-use Drupal\Core\Ajax\RedirectCommand;
-use \Drupal\node\NodeInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_preprocess_html().
  */
 function cleanimal_preprocess_html(&$variables) {
-  // Get route
+  // Get route.
   $route_name = \Drupal::routeMatch()->getRouteName();
 
   $variables['attributes']['class'][] = Html::cleanCssIdentifier(str_replace('.', '-', $route_name));
 
-  // Add create class
+  // Add create class.
   if ($route_name == 'node.add' || $route_name == 'entity.node.edit_form') {
     $variables['attributes']['class'][] = 'node-add-edit';
   }
@@ -39,23 +34,15 @@ function cleanimal_preprocess_html(&$variables) {
 
 /**
  * Implements theme_form_alter().
- *
  */
 function cleanimal_form_alter(&$form, &$form_state, $form_id) {
-  // Split Screen ajax submit.
-  if (strpos($form_id, '_split_screen_form') !== FALSE) {
-    $form['actions']['submit']['#submit'][] = '_cleanimal_split_screen_ajax_submit';
-    $form['actions']['submit']['#attributes']['class'][] = 'use-ajax-submit';
-  }
-
   // TODO: Not usable as published theme.
   $form_ids_scroll_navigation = ['node_buch_form', 'node_artikel_form', 'user_form', 'node_institution_form', 'node_personen_form', 'node_personen_edit_form'];
   // Build and add the scroll navigation.
   if ((strpos($form_id, 'node_') !== FALSE || strpos($form_id, 'user_') !== FALSE)
     && $form_id !== 'node_type_edit_form'
     && $form_id !== 'node_type_add_form'
-    && (strpos($form_id, '_edit_form') !== FALSE || strpos($form_id, '_add_form') !== FALSE || in_array($form_id, $form_ids_scroll_navigation)))
-  {
+    && (strpos($form_id, '_edit_form') !== FALSE || strpos($form_id, '_add_form') !== FALSE || in_array($form_id, $form_ids_scroll_navigation))) {
     $entity = $form_state->getFormObject()->getEntity();
     // TODO: Throws error when creating a new content type.
     $form_display = EntityFormDisplay::collectRenderDisplay($entity, 'default');
@@ -86,61 +73,47 @@ EOT;
 
     $form['#attached']['library'][] = 'cleanimal/scroll_navigation';
   }
-
-  $current_path = \Drupal::service('path.current')->getPath();
-  $path_args = explode('/', $current_path);
-
-  if ($current_path === "/admin/content") {
-    $content_type = $path_args[2];
-  } else {
-    $content_type = $path_args[3];
-  }
-
-  if ($form_id === "views_form_" . $content_type . "_page_1") {
-    $form["header"]["views_bulk_operations_bulk_form"]["multipage"]['#type'] = "fieldset";
-  }
-
 }
 
 /**
- * @param array $variables
+ * Implements theme_preprocess_views_exposed_form().
  *
- * TODO: Check this.
+ * @todo: Check this.
  */
 function cleanimal_preprocess_views_exposed_form(array &$variables) {
   $available_filters_norm = $variables["form"]["#info"];
   $available_filters_results = [];
   $form_elements_edit = array_keys($variables["form"]);
 
-  foreach ($available_filters_norm as $item){
+  foreach ($available_filters_norm as $item) {
     $available_filters_results[] = $item["value"];
   }
 
-  foreach ($form_elements_edit as $key => $item){
-    if (strpos($item, '#') !== FALSE || strpos($item, 'column_selector') !== FALSE )  {
+  foreach ($form_elements_edit as $key => $item) {
+    if (strpos($item, '#') !== FALSE || strpos($item, 'column_selector') !== FALSE) {
       unset($form_elements_edit[$key]);
       continue;
     }
 
-    $found = false;
+    $found = FALSE;
 
     foreach ($available_filters_results as $element) {
 
       $found = strpos($item, $element);
 
-      if ($found !== false) {
+      if ($found !== FALSE) {
         break;
       }
     }
 
-    if ($found === false) {
+    if ($found === FALSE) {
       unset($form_elements_edit[$key]);
     }
 
   }
 
   $variables['form_elements_edit'] = $form_elements_edit;
-  $variables['implode_list'] = '"'.implode('", "', $form_elements_edit).'"';
+  $variables['implode_list'] = '"' . implode('", "', $form_elements_edit) . '"';
 }
 
 /**
@@ -162,58 +135,19 @@ function cleanimal_preprocess_form_element(&$variables) {
 }
 
 /**
- * Implements hook_field_widget_WIDGET_TYPE_form_alter().
- */
-function cleanimal_field_widget_inline_entity_form_complex_table_view_mode_form_alter(&$element, &$form_state, $context) {
-  // Split Screen Dialog Edit for inline entity form complex.
-  $entities = $context['items']->referencedEntities();
-
-  foreach ($entities as $key => $entity) {
-    unset($element['entities'][$key]['actions']['ief_entity_edit']);
-    $element['entities'][$key]['actions']['edit_splitscreen'] = [
-      '#title' => t('Edit'),
-      '#type' => 'link',
-      '#url' => Url::fromRoute(
-        'content_helper.edit_form_split_screen',
-        ['node' => $entity->id()],
-        ['query' => [
-          'destination' => \Drupal::service('path.current')->getPath()
-        ]]
-      ),
-      '#weight' => -100,
-      '#attributes' => array(
-        'class' => 'use-ajax button',
-        'data-dialog-type' => 'dialog',
-        'data-dialog-options' => '{"width":650, "appendTo":"#nodeEditThirdColumn", "classes": {"ui-dialog": "splitscreen-edit"}}',
-      ),
-      '#attached' => [
-        'library' => [
-          'core/drupal.dialog.ajax',
-        ],
-      ],
-      '#ief_row_delta' => $key,
-      '#ief_row_form' => 'edit',
-    ];
-  }
-}
-
-/**
  * Implements theme_theme_suggestions_alter().
  */
 function cleanimal_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
   if ($hook == 'node_edit_form') {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
       $content_type = $node->bundle();
-    } else {
+    }
+    else {
       $current_path = \Drupal::service('path.current')->getPath();
       $path_args = explode('/', $current_path);
       $content_type = $path_args[3];
     }
     $suggestions[] = 'node_edit_form__' . $content_type;
-  }
-
-  if ($hook == 'views_view_table') {
-    $suggestions[] = 'views_view_table__cleanimal';
   }
 }
 
@@ -227,24 +161,11 @@ function cleanimal_theme_suggestions_container_alter(array &$suggestions, array 
   if (array_key_exists('#id', $element)) {
     $id = $element['#id'];
 
-    if (strpos($id, 'edit-views-bulk-operations-bulk-form') !== FALSE ){
+    // Structure actions inside a fieldset.
+    if (strpos($id, 'edit-views-bulk-operations-bulk-form') !== FALSE) {
       $suggestions[] = 'container__edit_views_bulk';
     }
   }
-}
-
-/**
- * Implements hook_preprocess_views_view_table().
- */
-/*function cleanimal_preprocess_views_view_table(&$variables) {
-  $view = $variables['header'];
-}*/
-
-function _cleanimal_split_screen_ajax_submit(array $form, FormStateInterface &$form_state) {
-  $response = new AjaxResponse();
-  // TODO: Close triggers jQuery error.
-  $response->addCommand(new RemoveCommand('.ui-dialog.splitscreen-edit'));
-  $form_state->setResponse($response);
 }
 
 /**

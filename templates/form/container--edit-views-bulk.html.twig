@@ -17,8 +17,6 @@
      containers.
  *
  * @see template_preprocess_container()
- *
- * @todo: Belongs to flexible views.
  */
 #}
 {%
@@ -30,7 +28,7 @@
 
 <details open="open" id="actions-columns" class="js-form-wrapper form-wrapper seven-details cleanimal-details">
   <summary role="button" aria-controls="actions-columns" class="seven-details__summary">
-    Aktionen
+    {{ 'Actions'|trans }}
   </summary>
   <div{{ attributes.addClass(classes) }}>{{ children }}</div>
 </details>

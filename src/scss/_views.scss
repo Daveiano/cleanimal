@@ -1,26 +1,22 @@
 .views-element-container{
-  .view-content, .view-files, .media-library-view, .view-user-admin-people, .view-inhalt-buecher{
-    .view-filters{
-      .views-exposed-form{
-        .form--inline{
-          border: 1px solid $bright-grey;
-          border-bottom: none;
-          .js-form-item{
-            width: 15%;
-            input, select{
-              width: 100%;
-            }
+  .view-filters{
+    .views-exposed-form{
+      .form--inline{
+        border: 1px solid $bright-grey;
+        border-bottom: none;
+        .js-form-item{
+          width: 15%;
+          input, select{
+            width: 100%;
           }
-          .form-actions{
-            input{
-              @include primary-button;
-              @include small;
-            }
+        }
+        .form-actions{
+          input{
+            @include primary-button;
+            @include small;
           }
         }
       }
-    }
-    .view-content{
     }
   }
 }
@@ -165,7 +161,7 @@
   }
 }
 
-// general table styling
+// General table styling
 table.views-table, table.sticky-header, table.ief-entity-table ,table.diff-revisions, table{
   @include font-plex-regular;
   thead{
@@ -270,54 +266,48 @@ table.views-table, table.sticky-header, table.ief-entity-table ,table.diff-revis
   }
 }
 
-
-
-// Files List
-.view-files{
-  .view-filters{
-    margin-top: 1em;
-  }
-}
-
 // Pager
-// Pager Small
-.pager{
-  height: 48px;
-  position: relative;
-  background-color: $white;
+div.pager{
   display: flex;
   align-items: center;
   justify-content: center;
-  .pager__items{
-    .pager__item{
-      @include font-plex-regular;
-      color: $black;
-      &:hover{
-        border-bottom-width: 0;
-        border-bottom-color: transparent;
-      }
-      a{
+  nav.pager{
+    position: relative;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pager__items{
+      .pager__item{
         @include font-plex-regular;
         color: $black;
         &:hover{
           border-bottom-width: 0;
           border-bottom-color: transparent;
         }
-      }
-      &.is-active{
-        color: $black;
-        border-bottom-width: 4px;
-        border-bottom-color: $primary-dark;
         a{
+          @include font-plex-regular;
+          color: $black;
+          &:hover{
+            border-bottom-width: 0;
+            border-bottom-color: transparent;
+          }
+        }
+        &.is-active{
           color: $black;
           border-bottom-width: 4px;
           border-bottom-color: $primary-dark;
+          a{
+            color: $black;
+            border-bottom-width: 4px;
+            border-bottom-color: $primary-dark;
+          }
         }
       }
     }
   }
   .view-footer{
     position: absolute;
-    left: 15px;
+    left: 0;
   }
 }

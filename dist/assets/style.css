@@ -846,20 +846,6 @@ input[type="radio"]:checked + label::before {
               letter-spacing: 0.32px;
               color: #565656; }
 .views-exposed-form .form--inline .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-available-columns select, .views-exposed-form .form--inline .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-selected-columns select {
-              /*&::-webkit-scrollbar{
-                width: 12px;
-                background-color: #F5F5F5;
-              }
-              &::-webkit-scrollbar-track{
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-                border-radius: 10px;
-                background-color: #F5F5F5;
-              }
-              &::-webkit-scrollbar-thumb{
-                border-radius: 10px;
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-                background-color: #555;
-              }*/
               overflow: auto; }
 .views-exposed-form .form--inline .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-available-columns select.form-select, .views-exposed-form .form--inline .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-selected-columns select.form-select {
                 padding: 7px 10px 7px 2px;
@@ -1493,14 +1479,14 @@ input[type="radio"]:checked + label::before {
   float: none; }
 .field--type-entity-reference.field--widget-inline-entity-form-complex-table-view-mode .ief-form.ief-form-row.js-form-wrapper.form-wrapper .form-item .container-inline, .field--type-entity-reference.field--widget-inline-entity-form-complex-table-view-mode .ief-form.ief-form-row.js-form-wrapper.form-wrapper .form-wrapper .container-inline {
   display: block; }
-.views-element-container .view-content .view-filters .views-exposed-form .form--inline, .views-element-container .view-files .view-filters .views-exposed-form .form--inline, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline {
+.views-element-container .view-filters .views-exposed-form .form--inline {
   border: 1px solid #dcdcdc;
   border-bottom: none; }
-.views-element-container .view-content .view-filters .views-exposed-form .form--inline .js-form-item, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .js-form-item, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .js-form-item, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .js-form-item, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .js-form-item {
+.views-element-container .view-filters .views-exposed-form .form--inline .js-form-item {
     width: 15%; }
-.views-element-container .view-content .view-filters .views-exposed-form .form--inline .js-form-item input, .views-element-container .view-content .view-filters .views-exposed-form .form--inline .js-form-item select, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .js-form-item input, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .js-form-item select, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .js-form-item input, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .js-form-item select, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .js-form-item input, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .js-form-item select, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .js-form-item input, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .js-form-item select {
+.views-element-container .view-filters .views-exposed-form .form--inline .js-form-item input, .views-element-container .view-filters .views-exposed-form .form--inline .js-form-item select {
       width: 100%; }
-.views-element-container .view-content .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .form-actions input {
+.views-element-container .view-filters .views-exposed-form .form--inline .form-actions input {
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -1516,15 +1502,15 @@ input[type="radio"]:checked + label::before {
     font-size: 14px;
     height: 32px; }
 @media screen and (max-width: 1440px) {
-      .views-element-container .view-content .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .form-actions input, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .form-actions input {
+      .views-element-container .view-filters .views-exposed-form .form--inline .form-actions input {
         font-size: 10px !important; } }
-.views-element-container .view-content .view-filters .views-exposed-form .form--inline .form-actions input:hover, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .form-actions input:hover, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .form-actions input:hover, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .form-actions input:hover, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .form-actions input:hover {
+.views-element-container .view-filters .views-exposed-form .form--inline .form-actions input:hover {
       color: #fff !important;
       border-color: #00b6ed;
       background-color: #00b6ed;
       background-image: none;
       box-shadow: none; }
-.views-element-container .view-content .view-filters .views-exposed-form .form--inline .form-actions input:focus, .views-element-container .view-files .view-filters .views-exposed-form .form--inline .form-actions input:focus, .views-element-container .media-library-view .view-filters .views-exposed-form .form--inline .form-actions input:focus, .views-element-container .view-user-admin-people .view-filters .views-exposed-form .form--inline .form-actions input:focus, .views-element-container .view-inhalt-buecher .view-filters .views-exposed-form .form--inline .form-actions input:focus {
+.views-element-container .view-filters .views-exposed-form .form--inline .form-actions input:focus {
       z-index: 10;
       border: none;
       box-shadow: none;
@@ -1581,20 +1567,6 @@ input[type="radio"]:checked + label::before {
             letter-spacing: 0.32px;
             color: #565656; }
 .views-form #edit-header .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-available-columns select, .views-form #edit-header .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-selected-columns select {
-            /*&::-webkit-scrollbar{
-                width: 12px;
-                background-color: #F5F5F5;
-              }
-              &::-webkit-scrollbar-track{
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-                border-radius: 10px;
-                background-color: #F5F5F5;
-              }
-              &::-webkit-scrollbar-thumb{
-                border-radius: 10px;
-                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-                background-color: #555;
-              }*/
             overflow: auto; }
 .views-form #edit-header .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-available-columns select.form-select, .views-form #edit-header .cleanimal-details .filter-wrapper .filters-wrapper .columns .js-form-item-selected-columns select.form-select {
               padding: 7px 10px 7px 2px;
@@ -1890,29 +1862,17 @@ table.views-table tbody tr td .form-actions .js-form-submit:focus, table.sticky-
       border: none;
       box-shadow: none;
       outline: none; }
-.view-files .view-filters {
-  margin-top: 1em; }
-.pager {
-  height: 48px;
-  position: relative;
-  background-color: #f3f3f3;
+div.pager {
   display: flex;
   align-items: center;
   justify-content: center; }
-.pager .pager__items .pager__item {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.29 !important;
-    letter-spacing: 0.2px;
-    font-size: 14px;
-    color: #171717; }
-@media screen and (max-width: 1440px) {
-      .pager .pager__items .pager__item {
-        font-size: 10px !important; } }
-.pager .pager__items .pager__item:hover {
-      border-bottom-width: 0;
-      border-bottom-color: transparent; }
-.pager .pager__items .pager__item a {
+div.pager nav.pager {
+    position: relative;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+div.pager nav.pager .pager__items .pager__item {
       font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 400;
       line-height: 1.29 !important;
@@ -1920,22 +1880,35 @@ table.views-table tbody tr td .form-actions .js-form-submit:focus, table.sticky-
       font-size: 14px;
       color: #171717; }
 @media screen and (max-width: 1440px) {
-        .pager .pager__items .pager__item a {
+        div.pager nav.pager .pager__items .pager__item {
           font-size: 10px !important; } }
-.pager .pager__items .pager__item a:hover {
+div.pager nav.pager .pager__items .pager__item:hover {
         border-bottom-width: 0;
         border-bottom-color: transparent; }
-.pager .pager__items .pager__item.is-active {
-      color: #171717;
-      border-bottom-width: 4px;
-      border-bottom-color: #2d2376; }
-.pager .pager__items .pager__item.is-active a {
+div.pager nav.pager .pager__items .pager__item a {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 400;
+        line-height: 1.29 !important;
+        letter-spacing: 0.2px;
+        font-size: 14px;
+        color: #171717; }
+@media screen and (max-width: 1440px) {
+          div.pager nav.pager .pager__items .pager__item a {
+            font-size: 10px !important; } }
+div.pager nav.pager .pager__items .pager__item a:hover {
+          border-bottom-width: 0;
+          border-bottom-color: transparent; }
+div.pager nav.pager .pager__items .pager__item.is-active {
         color: #171717;
         border-bottom-width: 4px;
         border-bottom-color: #2d2376; }
-.pager .view-footer {
+div.pager nav.pager .pager__items .pager__item.is-active a {
+          color: #171717;
+          border-bottom-width: 4px;
+          border-bottom-color: #2d2376; }
+div.pager .view-footer {
     position: absolute;
-    left: 15px; }
+    left: 0; }
 * {
   border-radius: 0 !important; }
 h1.page-title {
