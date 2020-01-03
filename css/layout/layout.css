@@ -1,8 +1,51 @@
-::-webkit-input-placeholder {
-  color: red; }
-:-ms-input-placeholder {
-  color: red; }
-::-ms-input-placeholder {
-  color: red; }
-::placeholder {
-  color: red; }
+/* Base imports */
+/* From here its todo. */
+/*** Buttons ***/
+/* Layout imports */
+body.node-add-edit .page-content {
+  margin: 0; }
+  body.node-add-edit .page-content nav.tabs {
+    max-width: none;
+    margin: 0 2.5em; }
+  body.node-add-edit .page-content header.content-header .layout-container .region.region-header {
+    display: flex;
+    align-items: center; }
+  body.node-add-edit .page-content .layout-node-form {
+    margin: 0 -2.5em;
+    display: flex; }
+    body.node-add-edit .page-content .layout-node-form nav#scroll-nav.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 250px;
+      height: 330px; }
+    body.node-add-edit .page-content .layout-node-form .layout-region-node-main {
+      padding: 0 2.5em 50px 2.5em;
+      background: white; }
+    body.node-add-edit .page-content .layout-node-form .layout-region-node-secondary {
+      padding: 0 2.5em; }
+
+/* General layout rules */
+.fixed {
+  z-index: 10;
+  position: fixed;
+  width: 100%; }
+
+.js .paragraph-top {
+  grid-template-columns: 200px auto 1fr auto; }
+
+/* Use these in form display config for field groups to layout fields
+ * @todo: Add to readme and separate in own file.
+ */
+.field-group-html-element.flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .field-group-html-element.flex > div {
+    flex: 1;
+    margin-right: 15px; }
+    .field-group-html-element.flex > div:last-child {
+      margin-right: 0; }
+
+.field-group-html-element.alignment-start {
+  align-items: flex-start; }

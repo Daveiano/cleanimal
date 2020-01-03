@@ -1,0 +1,4 @@
+// On default hide the node bulk form, only show them if nodes are selected.
+.view #edit-header div[id^="edit-node-bulk-form"].hidden {
+  display: none !important;
+}

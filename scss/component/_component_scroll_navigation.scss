@@ -1,0 +1,64 @@
+.layout-node-form {
+  nav#scroll-nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      padding-right: 32px;
+      margin: 0;
+
+      li {
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        a {
+          @include font-plex-regular;
+          color: $grey;
+          height: 40px;
+          line-height: 3;
+          width: 100%;
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+
+          &:after {
+            content: "";
+            bottom: 0;
+            border-bottom: 1px solid $bright-grey;
+            height: 1px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            display: block;
+          }
+
+          &.active {
+            color: $black;
+            font-weight: 700;
+
+            &:after {
+              @include gradient-purple-blue;
+              border-bottom: 2px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+  .layout-region-node-main {
+    > div {
+      .scroll-nav-content {
+        padding-top: 150px;
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+    .field-group-html-element {
+      h4 {
+        @include font-plex-bold;
+      }
+    }
+  }
+}

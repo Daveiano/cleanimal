@@ -1,0 +1,89 @@
+/* Basic imports */
+@import "./theme_colors";
+@import "../component/mixins";
+
+/* Theme imports */
+@import "./theme_node_add_edit";
+@import "./theme_views_config";
+
+/* General theming rules */
+* {
+  border-radius: 0 !important;
+}
+
+body.cke_editable {
+  @include font-plex-regular;
+}
+
+body {
+  @include font-plex-regular;
+}
+
+header.content-header {
+  background-color: $black;
+  color: $white;
+  transition: max-height ease-in 300ms;
+  max-height: 210px;
+  min-height: 120px;
+}
+
+h1.page-title {
+  @include font-plex-medium;
+  font-size: 28px;
+  line-height: 1.29;
+  letter-spacing: normal;
+}
+
+a {
+  color: $primary-dark;
+  &:after {
+    transition: none;
+    border: none;
+  }
+  &:hover {
+    color: $primary-dark !important;
+    &:after {
+      transition: none;
+      border: none;
+    }
+  }
+}
+
+// Cron Button
+.cron-description__run-cron{
+  .button{
+    top: 0em;
+    height: auto;
+  }
+}
+
+// Add Icon.
+// TODO: What is this?
+.add {
+  a {
+    .icon {
+      &.add {
+        background-image: url("../../images/icons/icon-navigation-add.svg");
+        background-size: 18px;
+        background-position: -2px 0px;
+      }
+    }
+    &:hover {
+      .icon {
+        &.add {
+          background-image: url("../../images/icons/icon-navigation-add.svg");
+          background-size: 18px !important;
+          background-position: -2px 0px !important;
+        }
+      }
+    }
+  }
+}
+
+// Draggable widget Link.
+.tabledrag-toggle-weight {
+  color: $primary-dark;
+  &:focus, &:hover {
+    color: $primary-dark;
+  }
+}

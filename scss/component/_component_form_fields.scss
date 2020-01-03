@@ -1,6 +1,8 @@
+@import "./components_form_fields/component_chosen";
+
 // General Styling for Every Field (e.g. Backgroundcolor, Height, Font...)
-.js-form-item{
-  label{
+.form-item {
+  label {
     @include font-plex-regular;
     height: 16px;
     font-size: 12px;
@@ -10,12 +12,12 @@
     margin-bottom: 8px;
   }
   // General Select Field
-  @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1440px){
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1440px) {
     select{
       font-size: 10px !important;
     }
   }
-  select{
+  select {
     padding: 7px 2em 7px 1em;
     transition: none;
     border: 1px solid $white;
@@ -25,59 +27,78 @@
     text-shadow: none;
     -webkit-appearance: none;
     -webkit-font-smoothing: none;
-    &:focus{
+    &:focus {
       border-radius: 0;
       border: solid 1px $primary-light !important;
       outline: none;
       background-color: $white;
     }
-    &:hover{
+    &:hover {
       box-shadow: none;
     }
-    option{
+    option {
       @include font-plex-regular;
-      &:hover{
+      &:hover {
         background-color: $primary-dark;
       }
-      &:focus{
+      &:focus {
         outline: none;
       }
     }
   }
   // General Input Field
-  input{
-    max-width: 100%;
-    padding: 7px 2em 7px 1em;
-    transition: none;
-    border: 2px solid $white;
-    border-radius: 2px;
-    background: $white;
-    box-shadow: none;
-    color: $black;
-    @include font-plex-regular;
-    &:focus{
-      border: solid 2px $primary-light;
-      outline: none;
-      box-shadow: none;
-      background-color: $white;
+  input {
+    @include input();
+  }
+}
+
+// Select Field
+// TODO: Find a way to exclude multiple (attribute) selects.
+select {
+  background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: right !important;
+}
+
+select[multiple='multiple'] {
+  background-image: none !important;
+}
+
+.layout-node-form {
+  .layout-region-node-main {
+    input, select {
+      width: 100%;
+    }
+    input[type="checkbox"], .autocomplete-deluxe-form {
+      width: auto;
     }
   }
-  .form-checkbox{
+}
 
+.field--type-text-long, .field--type-link, .field--type-entity-reference-revisions {
+  .js-form-submit{
+    margin-top: 10px;
+    @include primary-button;
+    @include small;
+    &:focus{
+      @include primary-button;
+      @include small;
+    }
+    &:hover{
+      margin-top: 10px;
+    }
+  }
+  .field-add-more-submit{
+    width: auto !important;
+    float: right;
   }
 }
 
-// Text Field
-.field--type-string{
-  .js-form-type-textfield{
-
-  }
-}
-
-// Text Area
-.js-form-type-textarea{
-  .form-textarea-wrapper{
-    textarea{
+// Text Area.
+.form-type-textarea {
+  .form-textarea-wrapper {
+    textarea {
+      @include font-plex-regular;
       padding: 7px 2em 7px 1em;
       transition: none;
       border: none;
@@ -90,18 +111,123 @@
   }
 }
 
-// Text Long Field
-.field--type-text-long{
-  .js-form-item{
-    .form-textarea-wrapper{
-      textarea{
-        @include font-plex-regular;
+// Number field.
+.form-type-number {
+  input, .field-suffix {
+    display: inline-block;
+  }
+  .field-suffix{
+    width: auto;
+  }
+}
 
+// Datetime Field
+.field--widget-datetime-default {
+  .label {
+    @include font-plex-regular;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.3px;
+    color: $grey;
+  }
+  .form-item.js-form-type-date {
+    margin: 6px 0 0 0;
+    display: block;
+  }
+}
+
+// Commerce Number field
+.form-type-commerce-price {
+  .js-form-type-commerce-number {
+    input, .field-suffix {
+      display: inline-block;
+    }
+    input {
+      width: 85% !important;
+    }
+    .field-suffix {
+      width: auto;
+    }
+  }
+}
+
+// Office hours field.
+.field--type-office-hours{
+  .seven-details__wrapper{
+    padding: 0 !important;
+  }
+  .office-hours-add-link, .office-hours-delete-link, .office-hours-copy-link{
+    display: block;
+  }
+}
+
+// Entity Revisons Field
+.field--type-entity-reference-revisions{
+  border: none !important;
+}
+
+// TODO: So much entity reference...
+.field--type-entity-reference{
+  .js-form-submit{
+    @include primary-button;
+    @include small;
+    &:focus{
+      @include primary-button;
+      @include small;
+    }
+  }
+  .js-form-wrapper{
+    input{
+      width: auto !important;
+      float: right;
+    }
+  }
+}
+
+// Entity Reference Field
+.field--type-entity-reference{
+  > div{
+    > .js-form-wrapper{
+      border-top: 1px solid $bright-grey;
+      border: 1px solid $bright-grey;
+    }
+    .js-form-wrapper{
+      summary.seven-details__summary{
+        color: $black !important;
       }
-      .cke_editor_edit{
-        .cke_inner{
-          .cke_contents{
-
+      .seven-details__wrapper{
+        table.ief-entity-table{
+          tbody{
+            tr{
+              td{
+                .ief-entity-operations{
+                  display: flex;
+                  align-items: center;
+                  input, a{
+                    @include tertiary-button;
+                    @include small;
+                  }
+                  a{
+                    width: 100%;
+                  }
+                }
+                .ief-form{
+                  input.js-form-submit{
+                    @include primary-button;
+                    @include small;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .container-inline{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          > input{
+            @include primary-button;
+            @include small;
           }
         }
       }
@@ -109,135 +235,29 @@
   }
 }
 
-// Link Field
-.field--type-link{
-
-}
-
-// TODO
-@mixin chosen-singel() {
-  padding: 7px 2em 7px 1em;
-  transition: none;
-  border: 2px solid $white;
-  border-radius: 2px;
-  background: $white;
-  box-shadow: none;
-  color: $black;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 400;
-  line-height: 1.29;
-  letter-spacing: 0.2px;
-  font-size: 14px;
-  height: 36px;
-  @media screen and (max-width: 1440px){
-    font-size: 10px;
-    height: 30px;
-  }
-  div{
-    b{
-      background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
-      background-repeat: no-repeat !important;
-      background-position: center !important;
-      background-size: 19px 19px !important;
-    }
-  }
-}
-
-//
-.field--type-integer{
-  .form-type-number{
-    input, .field-suffix{
-      display: inline-block;
-    }
-    .field-suffix{
-      width: auto;
-    }
-  }
-}
-
-// Commerce Number field
-.form-type-commerce-price{
-  .js-form-type-commerce-number{
-    input, .field-suffix{
-      display: inline-block;
-    }
+/*Inline entity form*/
+.field--type-entity-reference fieldset.js-form-wrapper.form-wrapper .fieldset-wrapper{
+  .form-item, .form-wrapper{
     input{
-      width: 85% !important;
+      width: 100%;
+      float: none;
     }
-    .field-suffix{
-      width: auto;
+    .container-inline{
+      display: block;
     }
   }
 }
 
-
-// Chosen Select field
-.chosen-container{
-  width: 100% !important;
-  &.chosen-with-drop{
-    background-color: black;
-    .chosen-single{
-      @include chosen-singel;
-    }
-  }
-  .chosen-single{
-    @include chosen-singel;
-  }
-  .chosen-drop{
-    border: none;
-    background: $white;
-  }
-  .chosen-results{
-    li{
-      &.highlighted{
-        background-color: $primary;
-        background-image: none;
-        color: #fff;
+/*Inline entity form - Table view mode*/
+.field--type-entity-reference.field--widget-inline-entity-form-complex-table-view-mode {
+  .ief-form.ief-form-row.js-form-wrapper.form-wrapper{
+    .form-item, .form-wrapper{
+      input{
+        width: 100%;
+        float: none;
       }
-    }
-  }
-}
-
-// Select Field
-// TODO: Find a way to exclude multiple (attribute) selects.
-
-select{
-  background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
-  background-repeat: no-repeat !important;
-  background-position: right !important;
-}
-
-select[multiple='multiple']{
-  background-image: none !important;
-}
-
-// Datetime Field
-.field--widget-datetime-default{
-  .label{
-    @include font-plex-regular;
-    font-size: 12px;
-    line-height: 1.33;
-    letter-spacing: 0.3px;
-    color: $grey;
-  }
-  .js-form-item.form-item.js-form-type-date{
-    margin: 6px 0 0 0;
-    display: block;
-    input{
-      max-width: 100%;
-      padding: 7px 2em 7px 1em;
-      transition: none;
-      border: 2px solid $white;
-      border-radius: 2px;
-      background: $white;
-      box-shadow: none;
-      color: $black;
-      @include font-plex-regular;
-      &:focus{
-        border: solid 2px $primary-light;
-        outline: none;
-        box-shadow: none;
-        background-color: $white;
+      .container-inline{
+        display: block;
       }
     }
   }
@@ -302,95 +322,8 @@ select[multiple='multiple']{
   }
 }
 
-// Entity Reference Field
-.field--type-entity-reference{
-  > div{
-    > .js-form-wrapper{
-      border-top: 1px solid $bright-grey;
-      border: 1px solid $bright-grey;
-    }
-    .js-form-wrapper{
-      summary.seven-details__summary{
-        color: $black !important;
-      }
-      .seven-details__wrapper{
-        table.ief-entity-table{
-          tbody{
-            tr{
-              td{
-                .ief-entity-operations{
-                  display: flex;
-                  align-items: center;
-                  input, a{
-                    @include tertiary-button;
-                    @include small;
-                  }
-                  a{
-                    width: 100%;
-                  }
-                }
-                .ief-form{
-                  input.js-form-submit{
-                    @include primary-button;
-                    @include small;
-                  }
-                }
-              }
-            }
-          }
-        }
-        .container-inline{
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          > input{
-            @include primary-button;
-            @include small;
-          }
-        }
-      }
-    }
-  }
-}
-
-//
-.field--type-office-hours{
-  .seven-details__wrapper{
-    padding: 0 !important;
-  }
-  .office-hours-add-link, .office-hours-delete-link, .office-hours-copy-link{
-    display: block;
-  }
-}
-
-// Entity Revisons Field
-.field--type-entity-reference-revisions{
-  border: none !important;
-}
-
-// Draggable
-.draggable{
-  .field-multiple-drag{
-    vertical-align: middle !important;
-    .tabledrag-handle{
-      .handle{
-        width: 19px;
-        height: 19px;
-        padding: 0;
-        margin: 0;
-        background: url(../../images/icons/action.svg) no-repeat;
-      }
-      &:hover{
-        .handle{
-          background: url(../../images/icons/action.svg) no-repeat;
-        }
-      }
-    }
-  }
-}
-
 // Paragraph
-.field-multiple-table{
+.field-multiple-table {
   tbody{
     tr.draggable{
       .paragraph-top{
@@ -473,7 +406,6 @@ select[multiple='multiple']{
   }
 }
 
-/*** Autocomplete Field ****/
 // Autocomplete Deluxe
 .field--widget-autocomplete-deluxe{
   label{
@@ -542,6 +474,7 @@ select[multiple='multiple']{
     }
   }
 }
+
 // Autocomplete List
 .ui-autocomplete{
   background-color: $white;
@@ -563,10 +496,6 @@ select[multiple='multiple']{
       }
     }
   }
-}
-
-.autocomplete-deluxe-throbber{
-
 }
 
 .autocomplete-deluxe-open{
@@ -673,7 +602,6 @@ label::before+input[type="checkbox"]:focus {
 }
 
 /*** Checkboxes End ***/
-
 /*Bring old checkboxes back*/
 body.user-admin-permissions,
 body.system-modules-list,
@@ -749,7 +677,6 @@ body.system-modules-uninstall
     }
   }
 }
-
 
 /* Create a custom radio button */
 input[type="radio"] {

@@ -1,0 +1,18 @@
+.views-exposed-form {
+  .form--inline {
+    border: none;
+    @include detailssummary;
+    .js-form-item{
+      width: 15%;
+      input, select{
+        width: 100%;
+      }
+    }
+    .form-actions{
+      input{
+        @include primary-button;
+        @include small;
+      }
+    }
+  }
+}

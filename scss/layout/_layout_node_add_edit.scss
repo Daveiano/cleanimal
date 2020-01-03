@@ -1,0 +1,39 @@
+body.node-add-edit {
+  .page-content {
+    margin: 0;
+    // Tabs on node edit/add pages.
+    nav.tabs {
+      max-width: none;
+      margin: 0 2.5em;
+      nav {
+
+      }
+    }
+    header.content-header {
+      .layout-container {
+        .region.region-header {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .layout-node-form {
+      margin: 0 -2.5em;
+      display: flex;
+      nav#scroll-nav {
+        &.sticky {
+          position: sticky;
+          top: 250px;
+          height: 330px;
+        }
+      }
+      .layout-region-node-main {
+        padding: 0 2.5em 50px 2.5em;
+        background: white;
+      }
+      .layout-region-node-secondary {
+        padding: 0 2.5em;
+      }
+    }
+  }
+}

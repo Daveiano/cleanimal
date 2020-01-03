@@ -1,0 +1,44 @@
+// Buttons
+.button--primary{
+  @include primary-button;
+}
+
+.button--danger, #edit-delete-translation, #edit-cancel, #edit-actions-cancel, #edit-reset-alphabetical{
+  @include delete-button;
+}
+
+#edit-submit{
+  @include font-plex-regular;
+  @include primary-button;
+}
+
+#edit-preview{
+  @include font-plex-regular;
+  @include tertiary-button;
+}
+
+#edit-submit-content, #edit-submit--2 ,#edit-submit-files, #edit-submit-media-library--WbaIvT_NYBM, #edit-submit-media-library, .ief-entity-submit, #preview-submit, #edit-submit-institutionen{
+  @include font-plex-regular;
+  @include primary-button;
+  @include small;
+}
+
+#edit-reset, #edit-clear {
+  @include font-plex-regular;
+  @include tertiary-button;
+  @include small;
+}
+
+.button-action{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0;
+  height: 48px;
+  padding: 7px 2em 7px 1em !important;
+  font-size: 14px !important;
+  &:before{
+    content: none;
+  }
+}

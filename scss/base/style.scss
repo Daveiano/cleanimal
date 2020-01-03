@@ -1,0 +1,14 @@
+@import "./../theme/theme_colors";
+
+// @todo: Structure in meaningful files. eg: layout.css, blocks.css, etc.
+// @see https://www.drupal.org/docs/develop/standards/css/css-file-organization-for-drupal-8
+
+// Shrink Header on Menu
+.padding-top {
+  padding-top: calc(32px + 96px);
+}
+
+// General Page
+.page-content {
+  margin-top: 40px;
+}

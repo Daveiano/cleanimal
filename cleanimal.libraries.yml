@@ -5,7 +5,12 @@ global-styling:
       css/base/style.css: {}
     layout:
       css/layout/layout.css: {}
+    component:
+      css/component/component.css: {}
+    state:
+      css/state/state.css: {}
     theme:
+      css/theme/theme.css: {}
       'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap': {type: external}
 
 global-js:

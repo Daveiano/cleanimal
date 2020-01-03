@@ -1,0 +1,83 @@
+// Editing Views in Backend.
+.views-edit-view {
+  form.form-edit{
+    .views-displays{
+      border: none;
+      .views-display-top{
+        background-color: $white;
+        border-bottom: none;
+        .secondary{
+          .tabs__tab, .add{
+            a{
+              @include tertiary-button;
+              height: auto;
+            }
+            &.is-active{
+              a{
+                @include primary-button;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+    .edit-display-settings{
+      margin: 0;
+      padding: 12px 12px 0 12px;
+      border: 1px solid $bright-grey;
+      border-top: none;
+      .views-display-column{
+        border: 1px solid $bright-grey;
+        .views-ui-display-tab-bucket{
+          h3{
+            text-transform: none;
+          }
+          .views-display-setting{
+            &:nth-of-type(even){
+              background-color: $white;
+            }
+          }
+          &.pager{
+            height: auto;
+            background-color: white;
+            display: block;
+            align-items: normal;
+            justify-content: normal;
+          }
+        }
+      }
+      details{
+        border: 1px solid $bright-grey;
+      }
+    }
+    .form-actions{
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+}
+
+// Preview Views.
+.views-preview-wrapper{
+  border: none;
+  .view-preview-form{
+    h2.view-preview-form__title{
+      border: none;
+      background-color: $white;
+    }
+  }
+}
+
+// Views Dropdown Widget.
+.views-ui-settings-bucket-operations, #views-display-extra-actions{
+  .dropbutton-toggle{
+    button{
+      .dropbutton-arrow{
+        background-position: 6px 3px !important;
+        background-size: 15px !important;
+      }
+    }
+  }
+}

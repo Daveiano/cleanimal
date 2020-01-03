@@ -1,0 +1,37 @@
+/* Base imports */
+@import "./mixins";
+@import "./../theme/theme_colors";
+
+/* Component imports */
+@import "./component_ui-dialog";
+@import "./component_toolbar";
+@import "./component_breadcrumb";
+@import "./component_tabs";
+@import "./component_blocks";
+@import "./component_regions";
+@import "./component_buttons";
+@import "./component_form_fields";
+@import "./component_accordion";
+@import "./component_drop_button";
+@import "./component_scroll_navigation";
+@import "./component_table";
+@import "./component_pager";
+
+/* Views component imports */
+@import "./component_views_exposed_form";
+@import "./component_views_bulk_operations";
+
+// Iframe
+iframe{
+  @include font-plex-regular;
+}
+
+// Revision Table Radio Button
+// @todo find a way to style Radio Buttons without label
+//  (maybe with an image https://stackoverflow.com/questions/22325990/styling-radio-button-without-label)
+// For now just show the standard radio buttons
+.diff-revisions{
+  input[type="radio"] {
+    display: block;
+  }
+}

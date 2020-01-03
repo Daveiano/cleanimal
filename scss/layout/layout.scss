@@ -1,0 +1,38 @@
+/* Base imports */
+@import "./../component/mixins";
+@import "./../theme/theme_colors";
+
+/* Layout imports */
+@import "./layout_node_add_edit";
+
+/* General layout rules */
+.fixed {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+}
+
+.js .paragraph-top {
+  grid-template-columns: 200px auto 1fr auto;
+}
+
+/* Use these in form display config for field groups to layout fields
+ * @todo: Add to readme and separate in own file.
+ */
+.field-group-html-element.flex{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > div {
+    flex: 1;
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.field-group-html-element.alignment-start{
+  align-items: flex-start;
+}

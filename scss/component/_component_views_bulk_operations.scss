@@ -1,0 +1,52 @@
+.views-form {
+  form.vbo-view-form {
+    #edit-header {
+      @include detailssummary;
+
+      #vbo-action-form-wrapper {
+        border-left: 1px solid $alternative-grey;
+        border-right: 1px solid $alternative-grey;
+        border-bottom: 1px solid $alternative-grey;
+
+        .vbo-multipage-selector {
+          border: 0;
+
+          legend {
+            position: relative;
+            top: auto;
+          }
+        }
+
+        .form-actions, .js-form-item {
+          @include general-padding;
+          margin: 0;
+        }
+
+        .js-form-type-select, .vbo-multipage-selector {
+          display: inline-block;
+        }
+
+        .js-form-item-select-all {
+          border-bottom: 1px solid $alternative-grey;
+        }
+
+        .form-actions {
+          background-color: $white;
+          @include general-padding;
+          margin: 0;
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      }
+
+      .js-form-wrapper:not(div[id~="vbo"]) {
+        display: flex;
+        align-items: flex-end;
+
+        .js-form-item {
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}

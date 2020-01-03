@@ -6,21 +6,25 @@
   }
 }
 
-/**
- * Grid system.
- */
-@mixin grid-parent() {
-  display: grid;
-  grid-template-columns: repeat(16, [col-start] 1fr);
-  grid-gap: 32px;
+@mixin input() {
   max-width: 100%;
+  padding: 7px 2em 7px 1em;
+  transition: none;
+  border: 2px solid $white;
+  border-radius: 2px;
+  background: $white;
+  box-shadow: none;
+  color: $black;
+  @include font-plex-regular;
+  &:focus {
+    border: solid 2px $primary-light;
+    outline: none;
+    box-shadow: none;
+    background-color: $white;
+  }
 }
 
-@mixin grid-item($start, $span) {
-  grid-column: col-start $start / span $span;
-  float: none;
-  width: auto;
-}
+/* From here its todo. */
 
 @mixin font-plex-light {
   font-family: 'IBM Plex Sans', sans-serif;

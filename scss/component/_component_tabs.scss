@@ -1,0 +1,47 @@
+nav.tabs {
+  margin: 0 2.5em;
+  nav{
+    ul.tabs.primary{
+      background: $white;
+      margin-top: 0;
+      width: max-content;
+      &:before{
+        background-color: #ffffff;
+      }
+      li{
+        background-color: white;
+        border-color: transparent !important;
+        &:after{
+          border-bottom: 1px solid $bright-grey;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          content: "";
+        }
+        a{
+          padding: 7px 2em 7px 1em !important;
+          @include font-plex-regular;
+          color: $grey;
+          text-decoration: none;
+        }
+        &.is-active {
+          &:after{
+            position: absolute;
+            right: 0;
+            bottom: 1px;
+            left: 0;
+            content: "";
+            @include gradient-purple-blue;
+            border-bottom: 2px solid transparent;
+          }
+          a{
+            @include font-plex-bold;
+            border-bottom: 1px solid transparent;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

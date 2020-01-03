@@ -1,0 +1,71 @@
+// Layout Form
+.layout-node-form {
+  .layout-region-node-secondary {
+    position: relative;
+    background: $white;
+    @include font-plex-regular;
+    > * {
+      &:first-child {
+        margin-top: 0;
+      }
+      padding: 1.5em;
+      background: white;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+  .layout-region-node-main {
+    /*.field-group-tabs-wrapper {
+      .horizontal-tabs{
+        border: none;
+        // Form Navigation
+        .horizontal-tabs-list {
+          background-color: transparent !important;
+          border-right: none;
+          display: flex;
+          .horizontal-tab-button{
+            background-color: transparent !important;
+            border-right: none;
+            flex-grow: 1;
+            a{
+              padding: 7px 2em 7px 1em;
+              @include font-plex-regular;
+              color: $grey;
+              strong{
+                font-weight: normal;
+              }
+              border-bottom: 1px solid $bright-grey;
+              &:hover{
+                background-color: transparent !important;
+              }
+            }
+            &.selected{
+              a{
+                @include font-plex-bold;
+                border-bottom: 2px solid;
+                @include gradient-purple-blue;
+                color: $black;
+                strong{
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+        // Form Content
+        .horizontal-tabs-panes{
+          .seven-details{
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+            .seven-details__wrapper{
+              background-color: white;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }*/
+  }
+}

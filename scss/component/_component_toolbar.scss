@@ -1,0 +1,19 @@
+#toolbar-bar {
+  @include gradient-background;
+  .toolbar-tab {
+    > a {
+      color: white;
+      &:before {
+        color: white;
+      }
+      &:focus, &:hover {
+        color: white !important;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+    > a.is-active {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

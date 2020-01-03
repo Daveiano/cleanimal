@@ -1,0 +1,238 @@
+/* Basic imports */
+/* From here its todo. */
+/*** Buttons ***/
+/* Theme imports */
+.layout-node-form .layout-region-node-secondary {
+  position: relative;
+  background: #f3f3f3;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29 !important;
+  letter-spacing: 0.2px;
+  font-size: 14px; }
+  @media screen and (max-width: 1440px) {
+    .layout-node-form .layout-region-node-secondary {
+      font-size: 10px !important; } }
+  .layout-node-form .layout-region-node-secondary > * {
+    padding: 1.5em;
+    background: white;
+    border: none;
+    border-radius: 0;
+    box-shadow: none; }
+    .layout-node-form .layout-region-node-secondary > *:first-child {
+      margin-top: 0; }
+
+.layout-node-form .layout-region-node-main {
+  /*.field-group-tabs-wrapper {
+      .horizontal-tabs{
+        border: none;
+        // Form Navigation
+        .horizontal-tabs-list {
+          background-color: transparent !important;
+          border-right: none;
+          display: flex;
+          .horizontal-tab-button{
+            background-color: transparent !important;
+            border-right: none;
+            flex-grow: 1;
+            a{
+              padding: 7px 2em 7px 1em;
+              @include font-plex-regular;
+              color: $grey;
+              strong{
+                font-weight: normal;
+              }
+              border-bottom: 1px solid $bright-grey;
+              &:hover{
+                background-color: transparent !important;
+              }
+            }
+            &.selected{
+              a{
+                @include font-plex-bold;
+                border-bottom: 2px solid;
+                @include gradient-purple-blue;
+                color: $black;
+                strong{
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+        // Form Content
+        .horizontal-tabs-panes{
+          .seven-details{
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+            .seven-details__wrapper{
+              background-color: white;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }*/ }
+
+.views-edit-view form.form-edit .views-displays {
+  border: none; }
+  .views-edit-view form.form-edit .views-displays .views-display-top {
+    background-color: #f3f3f3;
+    border-bottom: none; }
+    .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a {
+      color: #2d2376;
+      height: 48px;
+      background-color: white;
+      background-image: none;
+      border: 1px solid #00376a;
+      height: auto; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:hover {
+        color: white !important;
+        border-color: #00376a;
+        background-color: #00376a;
+        background-image: none;
+        box-shadow: none; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:focus {
+        z-index: 10;
+        border: none;
+        box-shadow: none;
+        outline: none; }
+    .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a {
+      color: #fff;
+      border-color: #00376a;
+      background-image: none;
+      text-shadow: none;
+      font-weight: 500;
+      -webkit-font-smoothing: none;
+      height: 48px;
+      background-color: #00376a;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.29 !important;
+      letter-spacing: 0.2px;
+      font-size: 14px;
+      height: auto; }
+      @media screen and (max-width: 1440px) {
+        .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a {
+          font-size: 10px !important; } }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:hover {
+        color: #fff !important;
+        border-color: #00b6ed;
+        background-color: #00b6ed;
+        background-image: none;
+        box-shadow: none; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:focus {
+        z-index: 10;
+        border: none;
+        box-shadow: none;
+        outline: none; }
+
+.views-edit-view form.form-edit .edit-display-settings {
+  margin: 0;
+  padding: 12px 12px 0 12px;
+  border: 1px solid #dcdcdc;
+  border-top: none; }
+  .views-edit-view form.form-edit .edit-display-settings .views-display-column {
+    border: 1px solid #dcdcdc; }
+    .views-edit-view form.form-edit .edit-display-settings .views-display-column .views-ui-display-tab-bucket h3 {
+      text-transform: none; }
+    .views-edit-view form.form-edit .edit-display-settings .views-display-column .views-ui-display-tab-bucket .views-display-setting:nth-of-type(even) {
+      background-color: #f3f3f3; }
+    .views-edit-view form.form-edit .edit-display-settings .views-display-column .views-ui-display-tab-bucket.pager {
+      height: auto;
+      background-color: white;
+      display: block;
+      align-items: normal;
+      justify-content: normal; }
+  .views-edit-view form.form-edit .edit-display-settings details {
+    border: 1px solid #dcdcdc; }
+
+.views-edit-view form.form-edit .form-actions {
+  background-color: transparent;
+  border: none;
+  padding: 0; }
+
+.views-preview-wrapper {
+  border: none; }
+  .views-preview-wrapper .view-preview-form h2.view-preview-form__title {
+    border: none;
+    background-color: #f3f3f3; }
+
+.views-ui-settings-bucket-operations .dropbutton-toggle button .dropbutton-arrow, #views-display-extra-actions .dropbutton-toggle button .dropbutton-arrow {
+  background-position: 6px 3px !important;
+  background-size: 15px !important; }
+
+/* General theming rules */
+* {
+  border-radius: 0 !important; }
+
+body.cke_editable {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29 !important;
+  letter-spacing: 0.2px;
+  font-size: 14px; }
+  @media screen and (max-width: 1440px) {
+    body.cke_editable {
+      font-size: 10px !important; } }
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29 !important;
+  letter-spacing: 0.2px;
+  font-size: 14px; }
+  @media screen and (max-width: 1440px) {
+    body {
+      font-size: 10px !important; } }
+
+header.content-header {
+  background-color: #171717;
+  color: #f3f3f3;
+  transition: max-height ease-in 300ms;
+  max-height: 210px;
+  min-height: 120px; }
+
+h1.page-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-stretch: normal;
+  line-height: 1.29 !important;
+  letter-spacing: normal;
+  font-size: 28px;
+  line-height: 1.29;
+  letter-spacing: normal; }
+  @media screen and (max-width: 1440px) {
+    h1.page-title {
+      font-size: 10px; } }
+
+a {
+  color: #2d2376; }
+  a:after {
+    transition: none;
+    border: none; }
+  a:hover {
+    color: #2d2376 !important; }
+    a:hover:after {
+      transition: none;
+      border: none; }
+
+.cron-description__run-cron .button {
+  top: 0em;
+  height: auto; }
+
+.add a .icon.add {
+  background-image: url("../../images/icons/icon-navigation-add.svg");
+  background-size: 18px;
+  background-position: -2px 0px; }
+
+.add a:hover .icon.add {
+  background-image: url("../../images/icons/icon-navigation-add.svg");
+  background-size: 18px !important;
+  background-position: -2px 0px !important; }
+
+.tabledrag-toggle-weight {
+  color: #2d2376; }
+  .tabledrag-toggle-weight:focus, .tabledrag-toggle-weight:hover {
+    color: #2d2376; }

@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean; node-sass -r ./src/scss/ -o ./css/ && postcss ./css/ --replace",
+    "build": "npm run clean; node-sass -r ./scss/ -o ./css/ && postcss ./css/ --replace",
     "clean": "rm -rf dist/assets; rm -rf css",
-    "dev": "node-sass --watch -r ./src/scss/ -o ./css/",
+    "dev": "node-sass --watch -r ./scss/ -o ./css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [

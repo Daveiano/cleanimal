@@ -6,13 +6,11 @@
 (function ($, Drupal) {
   'use strict';
 
-  var testfunction = function () {};
-
   Drupal.behaviors.cleanimal_scroll_navigation = {
     attach: function (context, settings) {
 
       // Smooth scroll to section.
-      $("#scroll-nav a").click(function (e) {
+      /*$("#scroll-nav a").click(function (e) {
         e.preventDefault();
 
         // TODO: Same as in lights.js.
@@ -115,7 +113,7 @@
           }
         });
 
-      }).scroll();
+      }).scroll();*/
 
     }
   }

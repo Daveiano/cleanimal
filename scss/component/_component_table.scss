@@ -1,0 +1,92 @@
+// General table styling
+table {
+  @include font-plex-regular;
+  thead{
+    height: 48px;
+    background-color: $white;
+    tr{
+      border-bottom: 1px solid $bright-grey;
+      th{
+        font-weight: 400;
+        border: none;
+        text-transform: none;
+        color: $grey;
+        position: relative;
+        a{
+          &:after{
+            transition: none;
+          }
+        }
+        &.is-active{
+          background-color: white;
+          &:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            border-top: 1px solid $white;
+          }
+          a{
+            color: $primary-dark;
+            font-weight: 500;
+            span{
+              &.tablesort{
+                &.tablesort--asc{
+                  background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
+                }
+                &.tablesort--desc{
+                  background-image: url(../../images/icons/icon-navigation-chevron-up.svg);
+                }
+              }
+            }
+            &:after{
+              @include gradient-purple-blue;
+            }
+            &:hover{
+              &:after{
+                @include gradient-purple-blue;
+                border-bottom: 2px solid;
+              }
+            }
+            &:focus{
+              color: $primary-dark;
+            }
+          }
+        }
+        &.select-all{
+          input[type="checkbox"] {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  tbody{
+    tr{
+      &:hover{
+        background-color: transparent;
+      }
+      td{
+        // TODO.
+        &.views-field-filename{
+          max-width: 300px;
+          overflow: hidden;
+        }
+        .js-form-wrapper{
+          .button{
+            @include primary-button;
+            @include small;
+            line-height: 26px;
+          }
+        }
+        .form-actions{
+          .js-form-submit{
+            @include primary-button;
+            @include small;
+          }
+        }
+      }
+    }
+  }
+}

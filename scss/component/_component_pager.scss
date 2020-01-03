@@ -1,0 +1,45 @@
+// Pager
+div.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  nav.pager {
+    position: relative;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pager__items{
+      .pager__item{
+        @include font-plex-regular;
+        color: $black;
+        &:hover{
+          border-bottom-width: 0;
+          border-bottom-color: transparent;
+        }
+        a{
+          @include font-plex-regular;
+          color: $black;
+          &:hover{
+            border-bottom-width: 0;
+            border-bottom-color: transparent;
+          }
+        }
+        &.is-active{
+          color: $black;
+          border-bottom-width: 4px;
+          border-bottom-color: $primary-dark;
+          a{
+            color: $black;
+            border-bottom-width: 4px;
+            border-bottom-color: $primary-dark;
+          }
+        }
+      }
+    }
+  }
+  .view-footer{
+    position: absolute;
+    left: 0;
+  }
+}

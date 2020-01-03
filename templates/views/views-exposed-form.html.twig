@@ -17,5 +17,18 @@
   #}
 {{ q }}
 {% endif %}
-
-{{ form }}
+<div class="form--inline clearfix">
+  <details open id="filters-columns" class="js-form-wrapper form-wrapper seven-details cleanimal-details">
+    <summary role="button" aria-controls="filters-columns" class="seven-details__summary">
+      {{ 'Filters'|trans }}
+    </summary>
+    <div class="filter-wrapper">
+      <div class="filters-wrapper">
+        {{ form|without("actions") }}
+      </div>
+      <div class="actions">
+        {{ form.actions }}
+      </div>
+    </div>
+  </details>
+</div>

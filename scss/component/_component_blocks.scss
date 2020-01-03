@@ -1,0 +1,59 @@
+#block.block-core.block-local-tasks-block {
+  background: $white;
+}
+
+.block-local-actions-block {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 40px 0;
+  ul {
+    li {
+      a {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+// Secondary Tabs Nav
+#block-cleanimal-secondary-local-tasks{
+  margin: 0 2.5em;
+  nav{
+    .is-horizontal{
+      ul{
+        &:before{
+          height: 0;
+        }
+        li{
+          margin: 0;
+          border-bottom: 1px solid $bright-grey;
+          border-right: none;
+          border-left: none;
+          a{
+            color: $grey;
+            &:focus{
+              text-decoration: none;
+            }
+          }
+          &.is-active{
+            border-bottom: none;
+            padding-bottom: 1px;
+            &:after{
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              content: "";
+              @include gradient-purple-blue;
+              border-bottom: 2px solid transparent;
+            }
+            a{
+              font-weight: 700;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

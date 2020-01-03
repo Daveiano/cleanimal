@@ -1,0 +1,2 @@
+.view #edit-header div[id^="edit-node-bulk-form"].hidden {
+  display: none !important; }

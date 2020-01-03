@@ -1,0 +1,55 @@
+// TODO
+@mixin chosen-singel() {
+  padding: 7px 2em 7px 1em;
+  transition: none;
+  border: 2px solid $white;
+  border-radius: 2px;
+  background: $white;
+  box-shadow: none;
+  color: $black;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  height: 36px;
+  @media screen and (max-width: 1440px){
+    font-size: 10px;
+    height: 30px;
+  }
+  div{
+    b{
+      background-image: url(../../../images/icons/icon-navigation-chevron-down.svg) !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: 19px 19px !important;
+    }
+  }
+}
+
+// Chosen Select field
+.chosen-container {
+  width: 100% !important;
+  &.chosen-with-drop{
+    background-color: black;
+    .chosen-single{
+      @include chosen-singel;
+    }
+  }
+  .chosen-single{
+    @include chosen-singel;
+  }
+  .chosen-drop{
+    border: none;
+    background: $white;
+  }
+  .chosen-results{
+    li{
+      &.highlighted{
+        background-color: $primary;
+        background-image: none;
+        color: #fff;
+      }
+    }
+  }
+}
