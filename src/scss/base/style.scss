@@ -1,10 +1,24 @@
-@import "./mixins";
-@import "./forms";
-@import "./views";
+$black: #171717;
+$white: #f3f3f3;
+$grey-dark: #434343;
+$primary: #00376a;
+$primary-light: #89d2f6;
+$primary-middle: #00b6ed;;
+$primary-dark: #2d2376;
+$secondary: #c3a201;
+$grey: #565656;
+$grey-light: #8c8c8c;
+$bright-grey: #dcdcdc;
+$alternative-grey: #cccccc;
 
-// TODO: Structure in meaningful files. eg: layout.css, blocks.css, etc.
+@import "./../components/mixins";
+@import "./../theme/forms";
+@import "./../theme/views";
 
-*{
+// @todo: Structure in meaningful files. eg: layout.css, blocks.css, etc.
+// @see https://www.drupal.org/docs/develop/standards/css/css-file-organization-for-drupal-8
+
+* {
   border-radius: 0 !important;
 }
 

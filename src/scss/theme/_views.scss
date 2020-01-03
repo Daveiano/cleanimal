@@ -25,9 +25,9 @@
   #edit-header{
     @include detailssummary;
     #vbo-action-form-wrapper{
-      border-left: 1px solid $alternativ-grey;
-      border-right: 1px solid $alternativ-grey;
-      border-bottom: 1px solid $alternativ-grey;
+      border-left: 1px solid $alternative-grey;
+      border-right: 1px solid $alternative-grey;
+      border-bottom: 1px solid $alternative-grey;
       .vbo-multipage-selector{
         border: 0;
         legend{
@@ -44,7 +44,7 @@
         display: inline-block;
       }
       .js-form-item-select-all{
-        border-bottom: 1px solid $alternativ-grey;
+        border-bottom: 1px solid $alternative-grey;
       }
       .form-actions{
         background-color: $white;

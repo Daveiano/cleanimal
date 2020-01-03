@@ -4,46 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean; webpack --mode production",
-    "clean": "rm -rf dist/assets",
-    "dev": "npm run clean; webpack --watch --mode development",
+    "build": "npm run clean; node-sass -r ./src/scss/ -o ./css/ && postcss ./css/ --replace",
+    "clean": "rm -rf dist/assets; rm -rf css",
+    "dev": "node-sass --watch -r ./src/scss/ -o ./css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "author": "dba <dba@e-fork.de>",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "4.3.1",
-    "prop-types": "15.7.2",
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
-    "react-icons": "3.5.0",
-    "react-redux": "6.0.0",
-    "redux": "4.0.1"
+    "browserlist": "1.0.1",
+    "react-icons": "3.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.2.3",
-    "@babel/core": "7.2.2",
-    "@babel/plugin-proposal-class-properties": "7.2.3",
-    "@babel/plugin-transform-react-jsx": "7.2.0",
-    "@babel/preset-env": "7.2.3",
-    "@babel/preset-react": "7.0.0",
-    "@babel/register": "7.0.0",
     "autoprefixer": "9.4.5",
-    "babel-loader": "8.0.5",
-    "css-loader": "2.1.0",
-    "eslint": "5.12.0",
-    "eslint-plugin-react": "7.12.4",
-    "file-loader": "3.0.1",
-    "mini-css-extract-plugin": "0.5.0",
     "node-sass": "4.11.0",
-    "nodemon": "1.18.9",
-    "postcss-easy-import": "3.0.0",
-    "postcss-loader": "3.0.0",
-    "sass-loader": "7.1.0",
-    "style-loader": "0.23.1",
-    "url-loader": "1.1.2",
-    "webpack": "4.41.5",
-    "webpack-cli": "3.2.1",
-    "webpack-dev-server": "3.1.14"
+    "postcss-cli": "6.1.3"
   }
 }

@@ -1,16 +1,3 @@
-$black: #171717;
-$white: #f3f3f3;
-$grey-dark: #434343;
-$primary: #00376a;
-$primary-light: #89d2f6;
-$primary-middle: #00b6ed;;
-$primary-dark: #2d2376;
-$secondary: #c3a201;
-$grey: #565656;
-$grey-light: #8c8c8c;
-$bright-grey: #dcdcdc;
-$alternativ-grey: #cccccc;
-
 @mixin clear-after() {
   &:after{
     content: "";
@@ -186,7 +173,7 @@ $alternativ-grey: #cccccc;
       letter-spacing: 0.16px;
       height: 32px;
       border-radius: 2px !important;
-      border: solid 1px $alternativ-grey;
+      border: solid 1px $alternative-grey;
       display: flex;
       align-items: center;
       &[aria-expanded="true"]{
@@ -196,14 +183,14 @@ $alternativ-grey: #cccccc;
       }
     }
     .filter-wrapper{
-      border-left: 1px solid $alternativ-grey;
-      border-right: 1px solid $alternativ-grey;
-      border-bottom: 1px solid $alternativ-grey;
+      border-left: 1px solid $alternative-grey;
+      border-right: 1px solid $alternative-grey;
+      border-bottom: 1px solid $alternative-grey;
       .filters-wrapper{
         @include general-padding;
         display: flex;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid $alternativ-grey;
+        border-bottom: 1px solid $alternative-grey;
         .filters, .columns{
           flex-grow: 1;
         }

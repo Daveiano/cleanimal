@@ -1,8 +1,12 @@
 global-styling:
   css:
+    # TODO: Color Config?
+    base:
+      css/base/style.css: {}
+    layout:
+      css/layout/layout.css: {}
     theme:
       'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap': {type: external}
-      dist/assets/style.css: {}
 
 global-js:
   js:

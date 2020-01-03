@@ -8,7 +8,50 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\NodeInterface;
+
+/**
+ * Implements theme_theme_suggestions_alter().
+ */
+function cleanimal_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  // @see https://www.drupal.org/forum/support/post-installation/2015-10-31/drupal-8-node-edit-template
+  if ($hook == 'node_edit_form') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $content_type = $node->bundle();
+    }
+    else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', $current_path);
+      $content_type = $path_args[3];
+    }
+    $suggestions[] = 'node_edit_form__' . $content_type;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cleanimal_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  if (array_key_exists('#id', $element)) {
+    $id = $element['#id'];
+
+    // Structure actions inside a fieldset.
+    if (strpos($id, 'edit-views-bulk-operations-bulk-form') !== FALSE) {
+      $suggestions[] = 'container__edit_views_bulk';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cleanimal_theme($existing, $type, $theme, $path) {
+  return [
+    'user_edit_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}
 
 /**
  * Implements hook_preprocess_html().
@@ -17,26 +60,44 @@ function cleanimal_preprocess_html(&$variables) {
   // Get route.
   $route_name = \Drupal::routeMatch()->getRouteName();
 
+  // Add route name as class.
   $variables['attributes']['class'][] = Html::cleanCssIdentifier(str_replace('.', '-', $route_name));
 
-  // Add create class.
+  // Add class for all node edit and add form pages.
   if ($route_name == 'node.add' || $route_name == 'entity.node.edit_form') {
     $variables['attributes']['class'][] = 'node-add-edit';
   }
+}
 
-  // Add node id to js settings.
-  $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof NodeInterface) {
-    $variables['#attached']['drupalSettings']['cleanimal']['nodeId'] = $node->id();
-    $variables['#attached']['drupalSettings']['cleanimal']['nodeType'] = $node->type->entity->label();
+/**
+ * Implements hook_preprocess().
+ */
+function cleanimal_preprocess_block(&$variables) {
+  // Add a class for identification to local_actions block.
+  if ($variables['plugin_id'] === 'local_actions_block') {
+    $variables['attributes']['class'][] = Html::getClass('block-' . $variables['plugin_id']);
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function cleanimal_form_user_form_alter(&$form, FormStateInterface $form_state) {
+  $form['#theme'] = ['user_edit_form'];
+  $form['#attributes']['class'][] = 'layout-node-form';
+  $form['#attributes']['class'][] = 'clearfix';
 }
 
 /**
  * Implements theme_form_alter().
  */
 function cleanimal_form_alter(&$form, &$form_state, $form_id) {
-  // TODO: Not usable as published theme.
+  /*
+   * Add the scroll navigation to forms.
+   *
+   * @todo: This is not usable as published theme. We need to find a easy
+   * condition for determining the use of scroll navigation.
+   */
   $form_ids_scroll_navigation = ['node_buch_form', 'node_artikel_form', 'user_form', 'node_institution_form', 'node_personen_form', 'node_personen_edit_form'];
   // Build and add the scroll navigation.
   if ((strpos($form_id, 'node_') !== FALSE || strpos($form_id, 'user_') !== FALSE)
@@ -76,50 +137,10 @@ EOT;
 }
 
 /**
- * Implements theme_preprocess_views_exposed_form().
- *
- * @todo: Check this.
- */
-function cleanimal_preprocess_views_exposed_form(array &$variables) {
-  $available_filters_norm = $variables["form"]["#info"];
-  $available_filters_results = [];
-  $form_elements_edit = array_keys($variables["form"]);
-
-  foreach ($available_filters_norm as $item) {
-    $available_filters_results[] = $item["value"];
-  }
-
-  foreach ($form_elements_edit as $key => $item) {
-    if (strpos($item, '#') !== FALSE || strpos($item, 'column_selector') !== FALSE) {
-      unset($form_elements_edit[$key]);
-      continue;
-    }
-
-    $found = FALSE;
-
-    foreach ($available_filters_results as $element) {
-
-      $found = strpos($item, $element);
-
-      if ($found !== FALSE) {
-        break;
-      }
-    }
-
-    if ($found === FALSE) {
-      unset($form_elements_edit[$key]);
-    }
-
-  }
-
-  $variables['form_elements_edit'] = $form_elements_edit;
-  $variables['implode_list'] = '"' . implode('", "', $form_elements_edit) . '"';
-}
-
-/**
- * Implemenets theme_preprocess_form_element().
+ * Implements theme_preprocess_form_element().
  */
 function cleanimal_preprocess_form_element(&$variables) {
+  // TODO: Checkbox logic.
   $element = $variables['element'];
   if (isset($element["#id"])) {
     if (
@@ -131,69 +152,5 @@ function cleanimal_preprocess_form_element(&$variables) {
     ) {
       $variables['label_display'] = 'after';
     }
-  }
-}
-
-/**
- * Implements theme_theme_suggestions_alter().
- */
-function cleanimal_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
-  if ($hook == 'node_edit_form') {
-    if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      $content_type = $node->bundle();
-    }
-    else {
-      $current_path = \Drupal::service('path.current')->getPath();
-      $path_args = explode('/', $current_path);
-      $content_type = $path_args[3];
-    }
-    $suggestions[] = 'node_edit_form__' . $content_type;
-  }
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
- *
- * TODO: Belongs to flexible views.
- */
-function cleanimal_theme_suggestions_container_alter(array &$suggestions, array $variables) {
-  $element = $variables['element'];
-  if (array_key_exists('#id', $element)) {
-    $id = $element['#id'];
-
-    // Structure actions inside a fieldset.
-    if (strpos($id, 'edit-views-bulk-operations-bulk-form') !== FALSE) {
-      $suggestions[] = 'container__edit_views_bulk';
-    }
-  }
-}
-
-/**
- * Implements hook_form_BASE_FORM_ID_alter().
- */
-function cleanimal_form_user_form_alter(&$form, FormStateInterface $form_state) {
-  $form['#theme'] = ['user_edit_form'];
-  $form['#attributes']['class'][] = 'layout-node-form';
-  $form['#attributes']['class'][] = 'clearfix';
-}
-
-/**
- * Implements hook_theme().
- */
-function cleanimal_theme($existing, $type, $theme, $path) {
-  return [
-    'user_edit_form' => [
-      'render element' => 'form',
-    ],
-  ];
-}
-
-/**
- * Implements hook_preprocess().
- */
-function cleanimal_preprocess_block(&$variables) {
-  // Add a class for identification to local_actions block.
-  if ($variables['plugin_id'] === 'local_actions_block') {
-    $variables['attributes']['class'][] = Html::getClass('block-' . $variables['plugin_id']);
   }
 }
