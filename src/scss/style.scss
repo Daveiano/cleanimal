@@ -2,8 +2,43 @@
 @import "./forms";
 @import "./views";
 
+// TODO: Structure in meaningful files. eg: layout.css, blocks.css, etc.
+
 *{
   border-radius: 0 !important;
+}
+
+body.cke_editable {
+  @include font-plex-regular;
+}
+
+body {
+  @include font-plex-regular;
+}
+
+body.node-add-edit {
+  header.content-header{
+    .layout-container {
+      @include grid-parent();
+      .region.region-header{
+        @include grid-item(1, 12);
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// Tabs on node edit/add pages.
+body.node-add-edit {
+  nav.tabs {
+    @include grid-parent();
+    max-width: none;
+    margin: 0 2.5em;
+    nav {
+      @include grid-item(3, 8);
+    }
+  }
 }
 
 h1.page-title {
@@ -19,78 +54,6 @@ header.content-header{
   transition: max-height ease-in 300ms;
   max-height: 210px;
   min-height: 120px;
-  &.small{
-    min-height: 120px;
-    .region-header-first{
-      .view-book-header-context{
-        img{
-          max-width: 25% !important;
-        }
-      }
-    }
-    .region-header-second{
-      .block-page-title-block{
-        .page-title{
-          max-width: 100%;
-        }
-      }
-    }
-    .region-header-third{
-      .views-element-container{
-        .view-book-header-context{
-          .view-content{
-            display: flex;
-            .views-row{
-              font-size: 12px;
-              margin-right: 15px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// 3-column header - this is project specific.
-body.node-add-edit{
-  header.content-header{
-    .layout-container {
-      @include grid-parent();
-      .region.region-header-first{
-        @include grid-item(1, 2);
-        display: flex;
-        align-items: center;
-        .view-book-header-context{
-          img{
-            max-width: 50%;
-            margin: 0 auto;
-            display: block;
-          }
-        }
-      }
-      .region.region-header-second{
-        @include grid-item(3, 9);
-        display: flex;
-        align-items: center;
-      }
-      .region.region-header-third{
-        @include grid-item(13, 4);
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
-}
-
-body:not(.node-add-edit) {
-  header.content-header {
-    .layout-container {
-      .region.region-header-second{
-        @include grid-item(1, 16);
-        padding-bottom: 24px;
-      }
-    }
-  }
 }
 
 // Primary Nav
@@ -98,6 +61,7 @@ body:not(.node-add-edit) {
   margin: 0 -2.5em;
   background: $white;
 }
+
 nav.tabs {
   margin: 0 2.5em;
   nav{
@@ -150,8 +114,7 @@ nav.tabs {
   background: $white;
 }
 
-// TODO: Replace backend theme name.
-#block-diaphanes-backend-local-actions{
+.block-local-actions-block {
   display: flex;
   justify-content: flex-end;
   margin: 0 0 40px 0;
@@ -160,18 +123,6 @@ nav.tabs {
       a {
         min-width: 150px;
       }
-    }
-  }
-}
-
-// Tabs on node edit/add pages.
-body.node-add-edit{
-  nav.tabs {
-    @include grid-parent();
-    max-width: none;
-    margin: 0 2.5em;
-    nav {
-      //@include grid-item(3, 8);
     }
   }
 }
@@ -191,14 +142,6 @@ body.node-add-edit{
 
 // Iframe
 iframe{
-  @include font-plex-regular;
-}
-
-body.cke_editable{
-  @include font-plex-regular;
-}
-
-body{
   @include font-plex-regular;
 }
 
@@ -402,6 +345,7 @@ a{
     }
   }
 }
+
 .js .paragraph-top {
   grid-template-columns: 200px auto 1fr auto;
 }

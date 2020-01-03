@@ -10,9 +10,7 @@ libraries:
 base theme: seven
 
 regions:
-  header_first: 'Header First column'
-  header_second: 'Header second column'
-  header_third: 'Header third column'
+  header: 'Header'
   pre_content: 'Pre-content'
   breadcrumb: Breadcrumb
   highlighted: Highlighted

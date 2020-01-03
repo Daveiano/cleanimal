@@ -5,7 +5,7 @@ dependencies:
     - cleanimal
 id: cleanimal_page_title
 theme: cleanimal
-region: header_first
+region: header
 weight: -2
 provider: null
 plugin: page_title_block

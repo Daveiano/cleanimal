@@ -187,3 +187,13 @@ function cleanimal_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_preprocess().
+ */
+function cleanimal_preprocess_block(&$variables) {
+  // Add a class for identification to local_actions block.
+  if ($variables['plugin_id'] === 'local_actions_block') {
+    $variables['attributes']['class'][] = Html::getClass('block-' . $variables['plugin_id']);
+  }
+}
