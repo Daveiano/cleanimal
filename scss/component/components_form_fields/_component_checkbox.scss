@@ -2,8 +2,6 @@
  * Checkboxes.
  * @see https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
  * @see https://boolie.org/css-checkbox-styling/
- *
- * @todo visualize disabled state.
  */
 .form-type-checkbox.form-item {
   display: flex;
@@ -34,5 +32,9 @@
   }
   input[type="checkbox"]:checked:hover+label::before {
     background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
+  }
+
+  input[type="checkbox"][disabled] + label::before {
+    background-image: url("../../images/icons/checkbox-box-disabled.svg") !important;
   }
 }

@@ -12,8 +12,9 @@ body.node-add-edit .page-content {
     body.node-add-edit .page-content .layout-node-form nav#scroll-nav.sticky {
       position: -webkit-sticky;
       position: sticky;
-      top: 320px;
-      height: 330px; }
+      top: 125px;
+      height: 330px;
+      margin-top: 70px; }
     body.node-add-edit .page-content .layout-node-form .layout-region-node-main {
       padding: 50px 2.5em 50px 2.5em;
       background: white; }
