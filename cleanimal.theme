@@ -133,15 +133,34 @@ EOT;
 function cleanimal_preprocess_form_element(&$variables) {
   // TODO: Checkbox logic.
   $element = $variables['element'];
-  if (isset($element["#id"])) {
-    if (
-      $element["#type"] === 'checkbox' &&
-      isset($element["#id"]) &&
-      strpos($element["#id"], 'edit-node-bulk-form') !== FALSE ||
-      strpos($element["#id"], 'edit-media-library-select-form') !== FALSE ||
-      strpos($element["#id"], 'edit-commerce-product-bulk-form') !== FALSE
-    ) {
-      $variables['label_display'] = 'after';
+  if ($element["#type"] === 'checkbox') {
+    // Add a class to the label if it should be shown.
+    if ($variables['label_display'] === 'after') {
+      $variables["label"]["#attributes"]['class'][] = 'show-label';
     }
+
+    // Add a label if there is none.
+    if (!$variables['label']['#title']) {
+      $variables['label']['#title'] = t('label-element');
+    }
+
+    // Position the label after the checkbox.
+    $variables['label_display'] = 'after';
+    $variables["label"]["#title_display"] = 'after';
+  }
+
+  if ($element["#type"] === 'radio') {
+    if ($variables['label_display'] === 'none') {
+      $variables["label"]["#attributes"]['class'][] = 'hide-label';
+    }
+
+    // Add a label if there is none.
+    if (!$variables['label']['#title']) {
+      $variables['label']['#title'] = t('label-element');
+    }
+
+    // Position the label after the checkbox.
+    $variables['label_display'] = 'after';
+    $variables["label"]["#title_display"] = 'after';
   }
 }

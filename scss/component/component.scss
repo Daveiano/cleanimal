@@ -27,13 +27,3 @@
 iframe{
   @include font-plex-regular;
 }
-
-// Revision Table Radio Button
-// @todo find a way to style Radio Buttons without label
-//  (maybe with an image https://stackoverflow.com/questions/22325990/styling-radio-button-without-label)
-// For now just show the standard radio buttons
-.diff-revisions{
-  input[type="radio"] {
-    display: block;
-  }
-}

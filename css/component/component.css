@@ -456,6 +456,70 @@ nav.tabs {
     background-image: none;
     color: #fff; }
 
+/**
+ * Checkboxes.
+ * @see https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+ * @see https://boolie.org/css-checkbox-styling/
+ *
+ * @todo visualize disabled state.
+ */
+.form-type-checkbox.form-item {
+  display: flex;
+  align-items: baseline; }
+  .form-type-checkbox.form-item input[type="checkbox"] {
+    display: none; }
+  .form-type-checkbox.form-item label:not(.show-label) {
+    font-size: 0; }
+  .form-type-checkbox.form-item label {
+    margin-bottom: 0; }
+  .form-type-checkbox.form-item input[type="checkbox"] + label::before {
+    width: 18px;
+    height: 18px;
+    background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
+    display: block;
+    content: "";
+    float: left;
+    margin-right: 5px; }
+  .form-type-checkbox.form-item input[type="checkbox"]:hover + label::before {
+    background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg"); }
+  .form-type-checkbox.form-item input[type="checkbox"]:checked + label::before {
+    background-image: url("../../images/icons/checkbox-box-02-selected.svg"); }
+  .form-type-checkbox.form-item input[type="checkbox"]:checked:hover + label::before {
+    background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg"); }
+
+.form-radios > .form-item.form-type-radio {
+  margin-top: 15px; }
+
+.form-item.form-type-radio input[type="radio"]:not([style="visibility: hidden;"]) {
+  display: none; }
+
+.form-item.form-type-radio label.hide-label {
+  font-size: 0; }
+
+.form-item.form-type-radio input[type="radio"]:not([style="visibility: hidden;"]) + label {
+  display: flex; }
+
+.form-item.form-type-radio input[type="radio"]:not([style="visibility: hidden;"]) + label::before {
+  width: 17.5px;
+  height: 17.5px;
+  background-image: url("../../images/icons/radio-button-piece-01-unselected.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  content: "";
+  float: left;
+  margin-right: 5px; }
+
+.form-item.form-type-radio input[type="radio"]:not([style="visibility: hidden;"]):hover + label::before {
+  background-image: url("../../images/icons/radio-button-piece-02-unselected-focus.svg"); }
+
+.form-item.form-type-radio input[type="radio"]:not([style="visibility: hidden;"]):checked + label::before {
+  content: "";
+  background-image: url("../../images/icons/radio-button-piece-03-selected.svg"); }
+
+.form-item.form-type-radio input[type="radio"]:not([style="visibility: hidden;"]):checked:hover + label::before {
+  background-image: url("../../images/icons/radio-button-piece-04-selected-focus.svg"); }
+
 .form-item label {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
@@ -1047,191 +1111,6 @@ select[multiple='multiple'] {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
-
-/*** Checkboxes Start ***/
-input[type="checkbox"] {
-  display: none; }
-
-input[type="checkbox"] + label {
-  display: flex;
-  align-items: center; }
-
-input[type="checkbox"] + label::before {
-  width: 18px;
-  height: 18px;
-  background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  content: "";
-  float: left;
-  margin-right: 5px; }
-
-input[type="checkbox"]:checked + label::before {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-02-selected.svg");
-  text-indent: 0; }
-
-input[type="checkbox"]:checked:focus + label::before {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
-  text-indent: 0; }
-
-input[type="checkbox"]:focus + label::before {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg");
-  text-indent: 0; }
-
-label + input[type="checkbox"] {
-  display: flex;
-  align-items: center; }
-
-label::before + input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  content: "";
-  float: left;
-  margin-right: 5px; }
-
-label::before + input[type="checkbox"]:checked {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-02-selected.svg");
-  text-indent: 0; }
-
-label::before + input[type="checkbox"]:checked:focus {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
-  text-indent: 0; }
-
-label::before + input[type="checkbox"]:focus {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg");
-  text-indent: 0; }
-
-.views-ui-edit-display-form table input[type="checkbox"], .views-ui-edit-display-form table input[type="radio"] {
-  display: block; }
-
-/*** Checkboxes End ***/
-/*Bring old checkboxes back*/
-body.user-admin-permissions input[type="checkbox"].form-checkbox,
-body.system-modules-list input[type="checkbox"].form-checkbox,
-body.language-content-settings-page input[type="checkbox"].form-checkbox,
-body.system-theme-settings-theme input[type="checkbox"].form-checkbox,
-body.update-module-update input[type="checkbox"].form-checkbox,
-body.system-modules-uninstall input[type="checkbox"].form-checkbox {
-  display: flex !important; }
-
-body.user-admin-permissions input[type="checkbox"] + label,
-body.system-modules-list input[type="checkbox"] + label,
-body.language-content-settings-page input[type="checkbox"] + label,
-body.system-theme-settings-theme input[type="checkbox"] + label,
-body.update-module-update input[type="checkbox"] + label,
-body.system-modules-uninstall input[type="checkbox"] + label {
-  display: flex;
-  align-items: center; }
-
-body.user-admin-permissions input[type="checkbox"] + label::before,
-body.system-modules-list input[type="checkbox"] + label::before,
-body.language-content-settings-page input[type="checkbox"] + label::before,
-body.system-theme-settings-theme input[type="checkbox"] + label::before,
-body.update-module-update input[type="checkbox"] + label::before,
-body.system-modules-uninstall input[type="checkbox"] + label::before {
-  width: 18px;
-  height: 18px;
-  background-image: url("../../images/icons/checkbox-box-01-unselected.svg");
-  display: none;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  content: "";
-  float: left;
-  margin-right: 5px; }
-
-body.user-admin-permissions input[type="checkbox"]:checked + label::before,
-body.system-modules-list input[type="checkbox"]:checked + label::before,
-body.language-content-settings-page input[type="checkbox"]:checked + label::before,
-body.system-theme-settings-theme input[type="checkbox"]:checked + label::before,
-body.update-module-update input[type="checkbox"]:checked + label::before,
-body.system-modules-uninstall input[type="checkbox"]:checked + label::before {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-02-selected.svg");
-  text-indent: 0; }
-
-body.user-admin-permissions input[type="checkbox"]:checked:focus + label::before,
-body.system-modules-list input[type="checkbox"]:checked:focus + label::before,
-body.language-content-settings-page input[type="checkbox"]:checked:focus + label::before,
-body.system-theme-settings-theme input[type="checkbox"]:checked:focus + label::before,
-body.update-module-update input[type="checkbox"]:checked:focus + label::before,
-body.system-modules-uninstall input[type="checkbox"]:checked:focus + label::before {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
-  text-indent: 0; }
-
-body.user-admin-permissions input[type="checkbox"]:focus + label::before,
-body.system-modules-list input[type="checkbox"]:focus + label::before,
-body.language-content-settings-page input[type="checkbox"]:focus + label::before,
-body.system-theme-settings-theme input[type="checkbox"]:focus + label::before,
-body.update-module-update input[type="checkbox"]:focus + label::before,
-body.system-modules-uninstall input[type="checkbox"]:focus + label::before {
-  content: "";
-  background-image: url("../../images/icons/checkbox-box-04-focus-unselected.svg");
-  text-indent: 0; }
-
-body.user-admin-permissions .views-ui-edit-display-form table input[type="checkbox"], body.user-admin-permissions .views-ui-edit-display-form table input[type="radio"],
-body.system-modules-list .views-ui-edit-display-form table input[type="checkbox"],
-body.system-modules-list .views-ui-edit-display-form table input[type="radio"],
-body.language-content-settings-page .views-ui-edit-display-form table input[type="checkbox"],
-body.language-content-settings-page .views-ui-edit-display-form table input[type="radio"],
-body.system-theme-settings-theme .views-ui-edit-display-form table input[type="checkbox"],
-body.system-theme-settings-theme .views-ui-edit-display-form table input[type="radio"],
-body.update-module-update .views-ui-edit-display-form table input[type="checkbox"],
-body.update-module-update .views-ui-edit-display-form table input[type="radio"],
-body.system-modules-uninstall .views-ui-edit-display-form table input[type="checkbox"],
-body.system-modules-uninstall .views-ui-edit-display-form table input[type="radio"] {
-  display: block; }
-
-/*** Custom Radiobutton Start ***/
-.form-radios > .form-item {
-  margin-top: 15px; }
-
-.views-field-node-bulk-form .js-form-type-checkbox .visually-hidden, .views-field-commerce-product-bulk-form .js-form-type-checkbox .visually-hidden, .filterable-option .js-form-type-checkbox .visually-hidden {
-  position: relative !important;
-  clip: auto;
-  width: auto;
-  height: auto;
-  word-wrap: initial;
-  text-indent: -9999px;
-  white-space: nowrap;
-  overflow: hidden;
-  top: 5px; }
-
-/* Create a custom radio button */
-input[type="radio"] {
-  display: none; }
-
-input[type="radio"] + label {
-  display: flex; }
-
-input[type="radio"] + label::before {
-  width: 17.5px;
-  height: 17.5px;
-  background-image: url("../../images/icons/radio-button-piece-01-unselected.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  content: "";
-  float: left;
-  margin-right: 5px; }
-
-input[type="radio"]:checked + label::before {
-  content: "";
-  background-image: url("../../images/icons/radio-button-piece-03-selected.svg"); }
 
 .seven-details {
   position: relative;
@@ -1848,6 +1727,3 @@ iframe {
   @media screen and (max-width: 1440px) {
     iframe {
       font-size: 10px !important; } }
-
-.diff-revisions input[type="radio"] {
-  display: block; }

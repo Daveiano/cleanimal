@@ -1,0 +1,45 @@
+.form-radios > .form-item.form-type-radio {
+  margin-top: 15px;
+}
+
+.form-item.form-type-radio {
+  // :not([style="visibility: hidden;"]) is a bug fix for when a radio gets
+  // hidden, like on the revisions page if you have diff installed (comparing
+  // different revisions).
+  input[type="radio"]:not([style="visibility: hidden;"]) {
+    display:none;
+  }
+
+  label.hide-label {
+    font-size: 0;
+  }
+
+  input[type="radio"]:not([style="visibility: hidden;"]) + label{
+    display: flex;
+  }
+
+  input[type="radio"]:not([style="visibility: hidden;"]) + label::before {
+    width: 17.5px;
+    height: 17.5px;
+    background-image: url("../../images/icons/radio-button-piece-01-unselected.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    content: "";
+    float: left;
+    margin-right: 5px;
+  }
+
+  input[type="radio"]:not([style="visibility: hidden;"]):hover + label::before {
+    background-image: url("../../images/icons/radio-button-piece-02-unselected-focus.svg");
+  }
+
+  input[type="radio"]:not([style="visibility: hidden;"]):checked + label::before {
+    content: "";
+    background-image: url("../../images/icons/radio-button-piece-03-selected.svg");
+  }
+
+  input[type="radio"]:not([style="visibility: hidden;"]):checked:hover + label::before {
+    background-image: url("../../images/icons/radio-button-piece-04-selected-focus.svg");
+  }
+}
