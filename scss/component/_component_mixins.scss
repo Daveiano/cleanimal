@@ -1,3 +1,5 @@
+@import "./../theme/theme_mixins";
+
 @mixin clear-after() {
   &:after{
     content: "";
@@ -24,66 +26,6 @@
   }
 }
 
-/* From here its todo. */
-
-@mixin font-plex-light {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 300;
-  @media screen and (max-width: 1440px) {
-    font-size: 10px;
-  }
-}
-
-@mixin font-plex-regular {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 400;
-  line-height: 1.29 !important;
-  letter-spacing: 0.2px;
-  font-size: 14px;
-  @media screen and (max-width: 1440px) {
-    font-size: 10px !important;
-  }
-}
-
-@mixin font-plex-medium {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.29 !important;
-  letter-spacing: normal;
-  @media screen and (max-width: 1440px) {
-    font-size: 10px;
-  }
-}
-
-@mixin font-plex-semi-bold {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 600;
-}
-
-@mixin font-plex-bold {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 700;
-  @media screen and (max-width: 1440px) {
-    font-size: 10px;
-  }
-}
-
-@mixin gradient-purple-blue {
-  border-image-source: linear-gradient(to right, $primary, $secondary);
-  border-image-slice: 1;
-}
-
-@mixin gradient-background {
-  background-image: linear-gradient(to right, $primary, $secondary);
-}
-
-
-@mixin general-padding {
-  padding: 7px 2em 7px 1em !important;
-}
-
-/*** Buttons ***/
 // General Button
 @mixin primary-button {
   color: #fff;
@@ -160,7 +102,7 @@
 }
 
 // Detail Summary
-@mixin detailssummary {
+@mixin details {
   .cleanimal-details{
     border: none;
     &:first-child{

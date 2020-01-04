@@ -1,34 +1,30 @@
 body.node-add-edit {
+  .region.region-pre-content{
+    // Tabs on node edit/add pages.
+    // TODO: If scroll nav then a padding.
+    nav.tabs {
+      &.scroll-nav-active {
+        // TODO: Why 1em?
+        margin-left: calc(15% - 1em);
+      }
+    }
+  }
   .page-content {
     margin: 0;
-    // Tabs on node edit/add pages.
-    nav.tabs {
-      max-width: none;
-      margin: 0 2.5em;
-      nav {
-
-      }
-    }
-    header.content-header {
-      .layout-container {
-        .region.region-header {
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
     .layout-node-form {
       margin: 0 -2.5em;
       display: flex;
+      // Reasonable min-height to make the form full height.
+      min-height: 75vh;
       nav#scroll-nav {
         &.sticky {
           position: sticky;
-          top: 250px;
+          top: 320px;
           height: 330px;
         }
       }
       .layout-region-node-main {
-        padding: 0 2.5em 50px 2.5em;
+        padding: 50px 2.5em 50px 2.5em;
         background: white;
       }
       .layout-region-node-secondary {

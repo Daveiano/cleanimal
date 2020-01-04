@@ -6,7 +6,6 @@
  */
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -92,47 +91,39 @@ function cleanimal_form_user_form_alter(&$form, FormStateInterface $form_state) 
  * Implements theme_form_alter().
  */
 function cleanimal_form_alter(&$form, &$form_state, $form_id) {
-  /*
-   * Add the scroll navigation to forms.
-   *
-   * @todo: This is not usable as published theme. We need to find a easy
-   * condition for determining the use of scroll navigation.
-   */
-  $form_ids_scroll_navigation = ['node_buch_form', 'node_artikel_form', 'user_form', 'node_institution_form', 'node_personen_form', 'node_personen_edit_form'];
-  // Build and add the scroll navigation.
-  if ((strpos($form_id, 'node_') !== FALSE || strpos($form_id, 'user_') !== FALSE)
-    && $form_id !== 'node_type_edit_form'
-    && $form_id !== 'node_type_add_form'
-    && (strpos($form_id, '_edit_form') !== FALSE || strpos($form_id, '_add_form') !== FALSE || in_array($form_id, $form_ids_scroll_navigation))) {
-    $entity = $form_state->getFormObject()->getEntity();
-    // TODO: Throws error when creating a new content type.
-    $form_display = EntityFormDisplay::collectRenderDisplay($entity, 'default');
-    $field_groups = $form_display->getThirdPartySettings('field_group');
-    $base_group = str_replace(['node_', '_edit_form', '_add_form', '_form'], [''], $form_id);
+  // Add the scroll navigation to forms.
+  // TODO: For what do we need the entity_id?
+  //$entity = $form_state->getFormObject()->getEntity();
+  if ($field_groups = $form["#fieldgroups"]) {
+    if ($base_group = $field_groups['group_cleanimal_scrollnav']) {
+      //$form['#attributes']['class'][] = 'node-edit-' . $entity->id();
 
-    $form['#attributes']['class'][] = 'node-edit-' . $entity->id();
+      // TODO: Create a template for this.
+      $scroll_navigation = '<ul>';
 
-    $scroll_navigation = '<ul>';
+      for ($i = 0; $i < count($base_group->children); $i++) {
+        $child = $field_groups[$base_group->children[$i]];
+        // TODO: Disable id in backend config.
+        $child_id = Html::getId($child->group_name);
+        $field_groups[$base_group->children[$i]]->format_settings['id'] = $child_id;
+        $field_groups[$base_group->children[$i]]->format_settings['classes'] .= ' scroll-nav-content';
+        // TODO: Do we need this?
+        $field_groups[$base_group->children[$i]]->format_settings['label_element_classes'] .= ' scroll-nav-link ' . $child_id;
 
-    for ($i = 0; $i < count($field_groups['group_' . $base_group]['children']); $i++) {
-      $child = $field_groups['group_' . $base_group]['children'][$i];
-
-      if (strpos($child, 'group_') !== FALSE) {
         $scroll_navigation .= <<<EOT
-          <li>
-            <a href="#{$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['format_settings']['id']}">
-              {$field_groups[$field_groups['group_' . $base_group]['children'][$i]]['label']}
-            </a>
-          </li>
+      <li>
+        <a href="#{$child_id}">
+          {$child->label}
+        </a>
+      </li>
 EOT;
       }
+
+      $scroll_navigation .= '</ul>';
+
+      $form['cleanimal_scroll_navigation']['#markup'] = $scroll_navigation;
+      $form['#attached']['library'][] = 'cleanimal/scroll_navigation';
     }
-
-    $scroll_navigation .= '</ul>';
-
-    $form['cleanimal_scroll_navigation']['#markup'] = $scroll_navigation;
-
-    $form['#attached']['library'][] = 'cleanimal/scroll_navigation';
   }
 }
 

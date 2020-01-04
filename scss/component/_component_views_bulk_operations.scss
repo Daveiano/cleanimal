@@ -1,7 +1,7 @@
 .views-form {
   form.vbo-view-form {
     #edit-header {
-      @include detailssummary;
+      @include details;
 
       #vbo-action-form-wrapper {
         border-left: 1px solid $alternative-grey;

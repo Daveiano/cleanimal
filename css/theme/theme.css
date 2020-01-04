@@ -1,6 +1,4 @@
 /* Basic imports */
-/* From here its todo. */
-/*** Buttons ***/
 /* Theme imports */
 .layout-node-form .layout-region-node-secondary {
   position: relative;
@@ -22,58 +20,51 @@
     .layout-node-form .layout-region-node-secondary > *:first-child {
       margin-top: 0; }
 
-.layout-node-form .layout-region-node-main {
-  /*.field-group-tabs-wrapper {
-      .horizontal-tabs{
-        border: none;
-        // Form Navigation
-        .horizontal-tabs-list {
-          background-color: transparent !important;
-          border-right: none;
-          display: flex;
-          .horizontal-tab-button{
-            background-color: transparent !important;
-            border-right: none;
-            flex-grow: 1;
-            a{
-              padding: 7px 2em 7px 1em;
-              @include font-plex-regular;
-              color: $grey;
-              strong{
-                font-weight: normal;
-              }
-              border-bottom: 1px solid $bright-grey;
-              &:hover{
-                background-color: transparent !important;
-              }
-            }
-            &.selected{
-              a{
-                @include font-plex-bold;
-                border-bottom: 2px solid;
-                @include gradient-purple-blue;
-                color: $black;
-                strong{
-                  font-weight: 600;
-                }
-              }
-            }
-          }
-        }
-        // Form Content
-        .horizontal-tabs-panes{
-          .seven-details{
-            border: none;
-            padding-left: 0;
-            padding-right: 0;
-            .seven-details__wrapper{
-              background-color: white;
-              padding: 0;
-            }
-          }
-        }
-      }
-    }*/ }
+.layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs {
+  border: none; }
+  .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list {
+    background-color: transparent !important;
+    border-right: none;
+    display: flex; }
+    .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button {
+      background-color: transparent !important;
+      border-right: none;
+      flex-grow: 1; }
+      .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a {
+        padding: 7px 2em 7px 1em;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 400;
+        line-height: 1.29 !important;
+        letter-spacing: 0.2px;
+        font-size: 14px;
+        color: #565656;
+        border-bottom: 1px solid #dcdcdc; }
+        @media screen and (max-width: 1440px) {
+          .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a {
+            font-size: 10px !important; } }
+        .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a strong {
+          font-weight: normal; }
+        .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a:hover {
+          background-color: transparent !important; }
+      .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected a {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 700;
+        border-bottom: 2px solid;
+        border-image-source: linear-gradient(to right, #00376a, #c3a201);
+        border-image-slice: 1;
+        color: #171717; }
+        @media screen and (max-width: 1440px) {
+          .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected a {
+            font-size: 10px; } }
+        .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected a strong {
+          font-weight: 600; }
+  .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-panes .seven-details {
+    border: none;
+    padding-left: 0;
+    padding-right: 0; }
+    .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-panes .seven-details .seven-details__wrapper {
+      background-color: white;
+      padding: 0; }
 
 .views-edit-view form.form-edit .views-displays {
   border: none; }
@@ -189,10 +180,12 @@ body {
 
 header.content-header {
   background-color: #171717;
-  color: #f3f3f3;
-  transition: max-height ease-in 300ms;
-  max-height: 210px;
-  min-height: 120px; }
+  color: #f3f3f3; }
+  header.content-header .layout-container .region.region-header {
+    transition: max-height ease-in 300ms;
+    min-height: 120px;
+    display: flex;
+    align-items: center; }
 
 h1.page-title {
   font-family: 'IBM Plex Sans', sans-serif;

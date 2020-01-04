@@ -1,25 +1,21 @@
 /* Base imports */
-/* From here its todo. */
-/*** Buttons ***/
 /* Layout imports */
+body.node-add-edit .region.region-pre-content nav.tabs.scroll-nav-active {
+  margin-left: calc(15% - 1em); }
+
 body.node-add-edit .page-content {
   margin: 0; }
-  body.node-add-edit .page-content nav.tabs {
-    max-width: none;
-    margin: 0 2.5em; }
-  body.node-add-edit .page-content header.content-header .layout-container .region.region-header {
-    display: flex;
-    align-items: center; }
   body.node-add-edit .page-content .layout-node-form {
     margin: 0 -2.5em;
-    display: flex; }
+    display: flex;
+    min-height: 75vh; }
     body.node-add-edit .page-content .layout-node-form nav#scroll-nav.sticky {
       position: -webkit-sticky;
       position: sticky;
-      top: 250px;
+      top: 320px;
       height: 330px; }
     body.node-add-edit .page-content .layout-node-form .layout-region-node-main {
-      padding: 0 2.5em 50px 2.5em;
+      padding: 50px 2.5em 50px 2.5em;
       background: white; }
     body.node-add-edit .page-content .layout-node-form .layout-region-node-secondary {
       padding: 0 2.5em; }

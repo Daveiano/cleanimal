@@ -1,6 +1,4 @@
 /* Base imports */
-/* From here its todo. */
-/*** Buttons ***/
 /* Component imports */
 .ui-dialog .ui-dialog-titlebar {
   background: none !important;
@@ -1397,58 +1395,52 @@ input[type="radio"]:checked + label::before {
   border-top: none !important;
   border-right: none !important; }
 
-.layout-node-form nav#scroll-nav ul {
-  list-style: none;
-  padding: 0;
-  padding-right: 32px;
-  margin: 0; }
-  .layout-node-form nav#scroll-nav ul li {
-    height: 40px;
-    display: flex;
-    align-items: center; }
-    .layout-node-form nav#scroll-nav ul li a {
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-weight: 400;
-      line-height: 1.29 !important;
-      letter-spacing: 0.2px;
-      font-size: 14px;
-      color: #565656;
+.layout-node-form nav#scroll-nav {
+  width: 15%; }
+  .layout-node-form nav#scroll-nav ul {
+    list-style: none;
+    padding: 0;
+    padding-right: 32px;
+    margin: 0; }
+    .layout-node-form nav#scroll-nav ul li {
       height: 40px;
-      line-height: 3;
-      width: 100%; }
-      @media screen and (max-width: 1440px) {
-        .layout-node-form nav#scroll-nav ul li a {
-          font-size: 10px !important; } }
-      .layout-node-form nav#scroll-nav ul li a:hover, .layout-node-form nav#scroll-nav ul li a:focus {
-        text-decoration: none; }
-      .layout-node-form nav#scroll-nav ul li a:after {
-        content: "";
-        bottom: 0;
-        border-bottom: 1px solid #dcdcdc;
-        height: 1px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        display: block; }
-      .layout-node-form nav#scroll-nav ul li a.active {
-        color: #171717;
-        font-weight: 700; }
-        .layout-node-form nav#scroll-nav ul li a.active:after {
-          border-image-source: linear-gradient(to right, #00376a, #c3a201);
-          border-image-slice: 1;
-          border-bottom: 2px solid; }
+      display: flex;
+      align-items: center;
+      padding-left: 2.5em; }
+      .layout-node-form nav#scroll-nav ul li a {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 400;
+        line-height: 1.29 !important;
+        letter-spacing: 0.2px;
+        font-size: 14px;
+        color: #565656;
+        height: 40px;
+        line-height: 3;
+        width: 100%; }
+        @media screen and (max-width: 1440px) {
+          .layout-node-form nav#scroll-nav ul li a {
+            font-size: 10px !important; } }
+        .layout-node-form nav#scroll-nav ul li a:hover, .layout-node-form nav#scroll-nav ul li a:focus {
+          text-decoration: none; }
+        .layout-node-form nav#scroll-nav ul li a:after {
+          content: "";
+          border-bottom: 1px solid #dcdcdc;
+          height: 1px;
+          width: calc(100% + 2.5em);
+          display: block;
+          margin-left: -2.5em; }
+        .layout-node-form nav#scroll-nav ul li a.active {
+          color: #171717;
+          font-weight: 700; }
+          .layout-node-form nav#scroll-nav ul li a.active:after {
+            border-image-source: linear-gradient(to right, #00376a, #c3a201);
+            border-image-slice: 1;
+            border-bottom: 2px solid; }
 
 .layout-node-form .layout-region-node-main > div .scroll-nav-content {
   padding-top: 150px; }
   .layout-node-form .layout-region-node-main > div .scroll-nav-content:first-child {
     padding-top: 0; }
-
-.layout-node-form .layout-region-node-main .field-group-html-element h4 {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 700; }
-  @media screen and (max-width: 1440px) {
-    .layout-node-form .layout-region-node-main .field-group-html-element h4 {
-      font-size: 10px; } }
 
 table {
   font-family: 'IBM Plex Sans', sans-serif;

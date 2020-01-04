@@ -9,6 +9,13 @@
   Drupal.behaviors.cleanimal_scroll_navigation = {
     attach: function (context, settings) {
 
+      // Add class to tabs if scroll navigation is active so we can add a margin
+      // show it at the same x-position like the main content.
+      if ($("body").hasClass('node-add-edit') && $("#scroll-nav").length) {
+        $(".region.region-pre-content nav.tabs").addClass("scroll-nav-active");
+      }
+
+      // TODO: Review.
       // Smooth scroll to section.
       /*$("#scroll-nav a").click(function (e) {
         e.preventDefault();

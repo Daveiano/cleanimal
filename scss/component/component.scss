@@ -1,6 +1,8 @@
 /* Base imports */
-@import "./mixins";
+@import "./component_mixins";
+@import "./../theme/theme_mixins";
 @import "./../theme/theme_colors";
+@import "./../layout/layout_mixins";
 
 /* Component imports */
 @import "./component_ui-dialog";

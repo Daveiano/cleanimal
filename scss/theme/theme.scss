@@ -1,6 +1,7 @@
 /* Basic imports */
 @import "./theme_colors";
-@import "../component/mixins";
+@import "../component/component_mixins";
+@import "./theme_mixins";
 
 /* Theme imports */
 @import "./theme_node_add_edit";
@@ -22,9 +23,14 @@ body {
 header.content-header {
   background-color: $black;
   color: $white;
-  transition: max-height ease-in 300ms;
-  max-height: 210px;
-  min-height: 120px;
+  .layout-container {
+    .region.region-header {
+      transition: max-height ease-in 300ms;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 h1.page-title {

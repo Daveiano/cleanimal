@@ -1,7 +1,7 @@
 .views-exposed-form {
   .form--inline {
     border: none;
-    @include detailssummary;
+    @include details;
     .js-form-item{
       width: 15%;
       input, select{

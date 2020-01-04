@@ -16,8 +16,9 @@
     }
   }
   .layout-region-node-main {
-    /*.field-group-tabs-wrapper {
-      .horizontal-tabs{
+    .field-group-tabs-wrapper {
+      // TODO: Review and add vertical tabs styling.
+      .horizontal-tabs {
         border: none;
         // Form Navigation
         .horizontal-tabs-list {
@@ -66,6 +67,6 @@
           }
         }
       }
-    }*/
+    }
   }
 }

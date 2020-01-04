@@ -24,6 +24,7 @@ global-js:
 
 scroll_navigation:
   js:
-    js/scroll-navigation.js: {}
+    js/cleanimal-scroll-navigation.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
