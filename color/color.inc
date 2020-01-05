@@ -5,6 +5,7 @@
  * Color schemes.
  *
  * TODO: Somehow we need to calculate the values for the light/dark variants.
+ * TODO: Preview.
  */
 
 $info = [
@@ -32,4 +33,11 @@ $info = [
 ];
 
 // CSS files (excluding @import) to rewrite with new color scheme.
-$info['css'] = ['dist/assets/style.css'];
+// TODO: Extract all color relevant selectors to a color.css and just use this.
+$info['css'] = [
+  'css/base/style.css',
+  'css/component/component.css',
+  'css/layout/layout.css',
+  'css/state/state.css',
+  'css/theme/theme.css',
+];
