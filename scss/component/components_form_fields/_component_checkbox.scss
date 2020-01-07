@@ -6,6 +6,7 @@
 .form-type-checkbox.form-item {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   input[type="checkbox"] {
     display:none;
   }
@@ -14,6 +15,10 @@
   }
   label {
     margin-bottom: 0;
+  }
+  .description {
+    flex: 0 0 100%;
+    margin: 0.75em 0 0 1.75em;
   }
   input[type="checkbox"] + label::before {
     width: 18px;
@@ -33,8 +38,10 @@
   input[type="checkbox"]:checked:hover+label::before {
     background-image: url("../../images/icons/checkbox-box-05-focus-selected.svg");
   }
-
   input[type="checkbox"][disabled] + label::before {
     background-image: url("../../images/icons/checkbox-box-disabled.svg") !important;
+  }
+  input[type="checkbox"][disabled]:checked + label::before {
+    background-image: url("../../images/icons/checkbox-box-disabled-selected.svg") !important;
   }
 }

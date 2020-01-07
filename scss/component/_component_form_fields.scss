@@ -266,57 +266,51 @@ select[multiple='multiple'] {
 }
 
 // Media Widget
-.media-library-widget{
+.media-library-widget {
   border: none;
   border-top: 1px solid $bright-grey;
   border-bottom: 1px solid $bright-grey;
   background-color: transparent !important;
-  .js-media-library-selection{
-    .media-library-item{
-      padding-bottom: 0;
-      width: 100%;
-      &:before{
+  .js-media-library-selection {
+    .media-library-item {
+      padding-bottom: 40px;
+      &:before {
         border: none;
       }
-      .js-form-wrapper{
+      .media-library-item__remove.button {
+        position: absolute;
+        top: auto;
+        right: auto;
+        width: 20px !important;
+        height: 20px;
+        background: url("../../images/icons/delete.svg") no-repeat;
+        border: none;
+        bottom: 5px;
+        /* TODO: center below image */
+        transform: translateX(-50%);
+        left: 50%;
+      }
+      article {
         display: flex;
-        flex-direction: column-reverse;
-        .js-form-submit{
-          position: relative;
-          top: auto;
-          right: auto;
-          width: 20px !important;
-          height: 20px;
-          margin: 0;
-          background: url("../../images/icons/delete.svg");
-          background-repeat: no-repeat;
-          border: none;
-          margin-top: 15px;
-          left: 118px;
-
-        }
-        article{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-left: 20px;
-          .media-library-item__preview{
-            width: 50%;
-            padding-bottom: 0;
-            .field--name-thumbnail{
-              background: none;
-              border: 1px solid $bright-grey;
-              img{
-                width: 100%;
-              }
+        flex-direction: row;
+        align-items: center;
+        margin-left: 20px;
+        .media-library-item__preview {
+          width: 50%;
+          padding-bottom: 0;
+          .field--name-thumbnail {
+            background: none;
+            border: 1px solid $bright-grey;
+            img {
+              width: 100%;
             }
           }
-          .media-library-item__attributes{
-            width: 50%;
-            position: relative;
-            .media-library-item__name{
-              margin-left: 15px;
-            }
+        }
+        .media-library-item__attributes {
+          width: 50%;
+          position: relative;
+          .media-library-item__name {
+            margin-left: 15px;
           }
         }
       }

@@ -1,80 +1,50 @@
 // Modal
-.ui-dialog{
-  .ui-dialog-titlebar{
-    background: none !important;
-    background-color: $black !important;
-    button{
+.ui-dialog {
+  .ui-dialog-titlebar {
+    background: $black none !important;
+    button {
       border-width: 1px;
-      .ui-icon-closethick{
-        background: none;
-        background-image: url("../../images/icons/icon-navigation-close_white.svg");
+      .ui-icon-closethick {
         background-size: 20px;
-        background-position: center;
+        background: url("../../images/icons/icon-navigation-close_white.svg") center;
       }
     }
   }
-  .ui-dialog-content{
-    .media-library-wrapper{
-      .media-library-content{
-        .media-library-add-form-wrapper{
-          background-color: $white;
-          border: none;
+  .ui-dialog-buttonset {
+    button {
+      @include tertiary-button;
+    }
+    button.button--primary {
+      @include primary-button;
+    }
+  }
+  .ui-dialog-content {
+    .media-library-wrapper {
+      .media-library-content {
+        #media-library-add-form-wrapper {
+          /* Add new media form item */
         }
-        .views-element-container{
-          .media-library-view{
-            .view-filters{
-              .views-exposed-form{
-                .form--inline{
-                  border: none;
-                  .js-form-item{
+        .views-element-container {
+          > .view {
+            .view-filters {
+              .views-exposed-form {
+                .form--inline {
+                  .js-form-item {
                     width: auto;
                   }
-                  .media-library-view--form-actions{
-                    input{
+                  .media-library-view--form-actions {
+                    input {
                       @include primary-button;
-                      @include small;
                     }
                   }
                 }
               }
             }
-            .view-content{
-              .views-form{
-                .media-library-views-form{
-                  .media-library-item{
+            .view-content {
+              .views-form {
+                .media-library-views-form {
+                  .media-library-item {
                     position: relative;
-                    .js-click-to-select-checkbox{
-                      display: block;
-                      width: 15px;
-                      height: 15px;
-                      top: auto;
-                      right: 15px;
-                      bottom: 13px;
-                      .field-content{
-                        width: 15px;
-                        height: 15px;
-                        display: block;
-                        .js-form-type-checkbox{
-                          width: 15px;
-                          height: 15px;
-                          label{
-                            &:before{
-                              min-width: 16px;
-                            }
-                          }
-                          .visually-hidden{
-                            position: relative !important;
-                            clip: auto;
-                            width: auto;
-                            height: auto;
-                            word-wrap: initial;
-                            text-indent: 9999px;
-                            white-space: nowrap;
-                            overflow: hidden;
-                          }
-                        }
-                      }
-                    }
                   }
                 }
               }
@@ -84,9 +54,7 @@
       }
     }
   }
-  .ui-dialog-buttonpane{
-    background-color: $white;
-    button{
-    }
+  .ui-dialog-buttonpane {
+    background: $white;
   }
 }

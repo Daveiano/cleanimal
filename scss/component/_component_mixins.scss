@@ -34,7 +34,8 @@
   text-shadow: none;
   font-weight: 500;
   -webkit-font-smoothing: none;
-  height: 48px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   background-color: $primary;
   @include font-plex-regular;
   &:hover{
@@ -52,9 +53,11 @@
   }
 }
 
+/* TODO: Change label to secondary button */
 @mixin tertiary-button {
   color: $primary-dark;
-  height: 48px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   background-color: white;
   background-image: none;
   border: 1px solid $primary;
@@ -93,12 +96,15 @@
     text-decoration: none;
     box-shadow: none;
     color: #ff0000 !important;
+    border: none;
+    background: none;
   }
 }
 
 // Button Helper
 @mixin small {
-  height: 32px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 // Detail Summary

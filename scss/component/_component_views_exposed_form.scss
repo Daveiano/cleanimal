@@ -10,7 +10,6 @@
     }
     .form-actions{
       input{
-        @include primary-button;
         @include small;
       }
     }

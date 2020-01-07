@@ -11,13 +11,15 @@
  */
 #}
 <form{{ attributes }}>
-  <nav id="scroll-nav" class="sticky">
-    {{ form.cleanimal_scroll_navigation }}
-  </nav>
+  {% if form.cleanimal_scroll_navigation %}
+    <nav id="scroll-nav" class="sticky">
+      {{ form.cleanimal_scroll_navigation }}
+    </nav>
+  {% endif %}
   <div class="layout-region layout-region-node-main">
     {{ form|without('advanced', 'footer', 'actions', 'cleanimal_scroll_navigation') }}
   </div>
-  <div class="layout-region layout-region-node-secondary sticky">
+  <div class="layout-region layout-region-node-secondary">
     {{ form.actions }}
     {{ form.footer }}
     {{ form.advanced }}

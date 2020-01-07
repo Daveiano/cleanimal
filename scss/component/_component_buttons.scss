@@ -1,32 +1,23 @@
 // Buttons
-.button--primary{
+button, input[type="submit"], a.button {
+  @include font-plex-regular;
+  @include tertiary-button;
+}
+
+a.button--primary, input.button--primary{
+  @include font-plex-regular;
   @include primary-button;
 }
 
-.button--danger, #edit-delete-translation, #edit-cancel, #edit-actions-cancel, #edit-reset-alphabetical{
+a.button--danger, input[type="submit"].button--danger {
   @include delete-button;
 }
 
-#edit-submit{
-  @include font-plex-regular;
-  @include primary-button;
-}
-
-#edit-preview{
-  @include font-plex-regular;
-  @include tertiary-button;
-}
-
-#edit-submit-content, #edit-submit--2 ,#edit-submit-files, #edit-submit-media-library--WbaIvT_NYBM, #edit-submit-media-library, .ief-entity-submit, #preview-submit, #edit-submit-institutionen{
-  @include font-plex-regular;
-  @include primary-button;
-  @include small;
-}
-
-#edit-reset, #edit-clear {
-  @include font-plex-regular;
-  @include tertiary-button;
-  @include small;
+/* If its the only button */
+.form-actions {
+  input[type="submit"]:only-child {
+    @include primary-button;
+  }
 }
 
 .button-action{
