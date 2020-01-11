@@ -18,14 +18,23 @@
 {{ q }}
 {% endif %}
 <div class="form--inline clearfix">
-  <details open id="filters-columns" class="js-form-wrapper form-wrapper seven-details cleanimal-details">
+  <details open class="js-form-wrapper form-wrapper seven-details cleanimal-details">
     <summary role="button" aria-controls="filters-columns" class="seven-details__summary">
       {{ 'Filters'|trans }}
     </summary>
-    <div class="filter-wrapper">
-      <div class="filters-wrapper">
-        {{ form|without("actions") }}
-      </div>
+    <div class="exposed-form-wrapper">
+      {% if form.flexible_tables_fieldset %}
+        <div class="filters-wrapper columns-present">
+          {{ form|without("actions", "flexible_tables_fieldset") }}
+        </div>
+        <div class="column-wrapper">
+          {{ form.flexible_tables_fieldset }}
+        </div>
+      {% else %}
+        <div class="filters-wrapper">
+          {{ form|without("actions") }}
+        </div>
+      {% endif %}
       <div class="actions">
         {{ form.actions }}
       </div>

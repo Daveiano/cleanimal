@@ -10,14 +10,14 @@
       }
     }
   }
-  .ui-dialog-buttonset {
+  /*.ui-dialog-buttonset {
     button {
       @include tertiary-button;
     }
     button.button--primary {
       @include primary-button;
     }
-  }
+  }*/
   .ui-dialog-content {
     .media-library-wrapper {
       .media-library-content {

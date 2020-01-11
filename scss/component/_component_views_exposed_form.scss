@@ -2,15 +2,85 @@
   .form--inline {
     border: none;
     @include details;
-    .js-form-item{
-      width: 15%;
+    .exposed-form-wrapper {
+      border-left: 1px solid $alternative-grey;
+      border-right: 1px solid $alternative-grey;
+      border-bottom: 1px solid $alternative-grey;
+      display: flex;
+      flex-wrap: wrap;
+      .filters-wrapper {
+        border-bottom: 1px solid $alternative-grey;
+        flex: 1;
+        @include general-padding;
+        display: flex;
+        &.columns-present .filter-wrap {
+          width: auto;
+        }
+      }
+      .column-wrapper {
+        border-bottom: 1px solid $alternative-grey;
+        flex: 1;
+        @include general-padding;
+        .details-wrapper {
+          .form-type-select {
+            select {
+              min-width: 230px;
+            }
+          }
+          .form-item.move-buttons {
+            div[class^="move"] {
+              font-size: 0 !important;
+              position: relative;
+              border: none !important;
+              background-color: $white !important;
+              &:before{
+                background: url("../../images/icons/icon-navigation-chevron-down.svg") center no-repeat;
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+              }
+              &.move-right:before{
+                transform: rotate(-90deg);
+              }
+              &.move-left:before{
+                transform: rotate(90deg);
+              }
+              &.move-top:before{
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+      .actions {
+        flex: 0 0 100%;
+        .form-actions{
+          background-color: $white;
+          @include general-padding;
+          margin: 0;
+          display: flex;
+          flex-direction: row-reverse;
+          input{
+            @include small;
+          }
+        }
+      }
+    }
+    .js-form-item {
       input, select{
         width: 100%;
       }
     }
-    .form-actions{
-      input{
-        @include small;
+  }
+  &.manual-selection-form {
+    .form--inline {
+      .exposed-form-wrapper {
+        .filters-wrapper {
+          display: block;
+        }
       }
     }
   }

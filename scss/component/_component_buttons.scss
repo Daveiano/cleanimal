@@ -1,23 +1,28 @@
 // Buttons
+.form-actions {
+  /*  */
+  button {
+    @include font-plex-regular;
+    @include tertiary-button;
+  }
+  /* If its the only button */
+  input[type="submit"]:only-child {
+    @include primary-button;
+  }
+}
+
 button, input[type="submit"], a.button {
   @include font-plex-regular;
   @include tertiary-button;
 }
 
-a.button--primary, input.button--primary{
+a.button--primary, input.button--primary, button.button--primary, .button--primary {
   @include font-plex-regular;
   @include primary-button;
 }
 
-a.button--danger, input[type="submit"].button--danger {
+button[type="button"].button--danger, a.button--danger, input[type="submit"].button--danger {
   @include delete-button;
-}
-
-/* If its the only button */
-.form-actions {
-  input[type="submit"]:only-child {
-    @include primary-button;
-  }
 }
 
 .button-action{

@@ -24,8 +24,7 @@
     transition: none;
     border: 1px solid $white;
     border-radius: 0;
-    background: none;
-    background-color: $white;
+    background: $white;
     text-shadow: none;
     -webkit-appearance: none;
     -webkit-font-smoothing: none;
@@ -33,7 +32,7 @@
       border-radius: 0;
       border: solid 1px $primary-light !important;
       outline: none;
-      background-color: $white;
+      background: $white;
     }
     &:hover {
       box-shadow: none;
@@ -41,7 +40,7 @@
     option {
       @include font-plex-regular;
       &:hover {
-        background-color: $primary-dark;
+        background-color: $primary-light;
       }
       &:focus {
         outline: none;

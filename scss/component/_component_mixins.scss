@@ -114,7 +114,7 @@
     &:first-child{
       border: none;
     }
-    summary{
+    summary {
       background-color: $white;
       color: $black;
       font-size: 14px;
@@ -132,95 +132,6 @@
         border-radius: 0 !important;
         border-top-left-radius: 2px !important;
         border-top-right-radius: 2px !important;
-      }
-    }
-    .filter-wrapper{
-      border-left: 1px solid $alternative-grey;
-      border-right: 1px solid $alternative-grey;
-      border-bottom: 1px solid $alternative-grey;
-      .filters-wrapper{
-        @include general-padding;
-        display: flex;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid $alternative-grey;
-        .filters, .columns{
-          flex-grow: 1;
-        }
-        .filters{
-          flex-basis: 60%;
-          .active-filters{
-            .filter-wrap{
-              margin: 0;
-              width: 100%;
-            }
-          }
-          .select-filters{
-            .form-item{
-              width: auto !important;
-            }
-          }
-        }
-        .columns{
-          flex-basis: 40%;
-          .js-form-item-available-columns, .js-form-item-selected-columns{
-            width: auto !important;
-            #flexible-table-selected-columns, #flexible-table-available-columns{
-              min-width: 200px;
-            }
-            label{
-              font-size: 12px;
-              line-height: 16px;
-              letter-spacing: 0.32px;
-              color: $grey;
-            }
-            select{
-              overflow: auto;
-              &.form-select{
-                padding: 7px 10px 7px 2px;
-                background-color: white;
-                border: 1px solid $bright-grey;
-                option{
-                  padding: 7px 5px;
-                  &:hover{
-                    color: black;
-                    background-color: #f0f0f0;
-                  }
-                  &:checked{
-                    color: white !important;
-                    background-color: $primary !important;
-                  }
-                }
-              }
-            }
-          }
-          .move-buttons{
-            .move-right, .move-left, .move-top, .move-down{
-              background-repeat: no-repeat;
-              background-position: center;
-              background-color: $white;
-              font-size: 0 !important;
-            }
-            .move-right{
-              background-image: url("../../images/icons/right-24.svg") !important;
-            }
-            .move-left{
-              background-image: url("../../images/icons/left-24.svg") !important;
-            }
-            .move-top{
-              background-image: url("../../images/icons/icon-navigation-chevron-up.svg") !important;
-            }
-            .move-down{
-              background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
-            }
-          }
-        }
-      }
-      .form-actions{
-        background-color: $white;
-        @include general-padding;
-        margin: 0;
-        display: flex;
-        flex-direction: row-reverse;
       }
     }
   }

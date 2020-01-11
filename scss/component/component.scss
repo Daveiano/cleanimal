@@ -27,3 +27,7 @@
 iframe{
   @include font-plex-regular;
 }
+
+.seven-details:first-child {
+  border-top: none;
+}
