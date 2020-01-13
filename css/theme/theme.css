@@ -8,13 +8,7 @@
   font-weight: 400;
   line-height: 1.29 !important;
   letter-spacing: 0.2px;
-  font-size: 14px;
-  /*.form-actions {
-      a:not(.button--danger) {
-        vertical-align: top;
-        @include tertiary-button;
-      }
-    }*/ }
+  font-size: 14px; }
   @media screen and (max-width: 1440px) {
     .layout-node-form .layout-region-node-secondary {
       font-size: 10px !important; } }
@@ -32,6 +26,7 @@
   .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list {
     background-color: transparent !important;
     border-right: none;
+    border-bottom: none;
     display: flex; }
     .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-list .horizontal-tab-button {
       background-color: transparent !important;
@@ -69,9 +64,15 @@
     border: none;
     padding-left: 0;
     padding-right: 0; }
+    .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-panes .seven-details:before {
+      content: '';
+      background: none; }
     .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs .horizontal-tabs-panes .seven-details .seven-details__wrapper {
       background-color: white;
       padding: 0; }
+
+.entity-meta__header {
+  background-color: white; }
 
 .views-edit-view form.form-edit .views-displays {
   border: none; }

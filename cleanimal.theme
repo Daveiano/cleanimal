@@ -92,11 +92,10 @@ function cleanimal_form_user_form_alter(&$form, FormStateInterface $form_state) 
  */
 function cleanimal_form_alter(&$form, &$form_state, $form_id) {
   // Add the scroll navigation to forms.
-  // TODO: For what do we need the entity_id?
-  //$entity = $form_state->getFormObject()->getEntity();
-  if ($field_groups = $form["#fieldgroups"]) {
+  if (isset($form["#fieldgroups"])) {
+    $field_groups = $form["#fieldgroups"];
+
     if ($base_group = $field_groups['group_cleanimal_scrollnav']) {
-      //$form['#attributes']['class'][] = 'node-edit-' . $entity->id();
 
       // TODO: Create a template for this.
       $scroll_navigation = '<ul>';
@@ -131,7 +130,6 @@ EOT;
  * Implements theme_preprocess_form_element().
  */
 function cleanimal_preprocess_form_element(&$variables) {
-  // TODO: Checkbox logic.
   $element = $variables['element'];
   if ($element["#type"] === 'checkbox') {
     // Add a class to the label if it should be shown.

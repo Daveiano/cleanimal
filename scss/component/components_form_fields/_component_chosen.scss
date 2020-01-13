@@ -1,5 +1,5 @@
 // TODO
-@mixin chosen-singel() {
+@mixin chosen-single() {
   padding: 7px 2em 7px 1em;
   transition: none;
   border: 2px solid $white;
@@ -13,13 +13,13 @@
   letter-spacing: 0.2px;
   font-size: 14px;
   height: 36px;
-  @media screen and (max-width: 1440px){
+  @media screen and (max-width: 1440px) {
     font-size: 10px;
     height: 30px;
   }
-  div{
-    b{
-      background-image: url(../../../images/icons/icon-navigation-chevron-down.svg) !important;
+  div {
+    b {
+      background-image: url(../../images/icons/icon-navigation-chevron-down.svg) !important;
       background-repeat: no-repeat !important;
       background-position: center !important;
       background-size: 19px 19px !important;
@@ -29,27 +29,32 @@
 
 // Chosen Select field
 .chosen-container {
-  width: 100% !important;
-  &.chosen-with-drop{
+  &.chosen-with-drop {
     background-color: black;
-    .chosen-single{
-      @include chosen-singel;
+    .chosen-single {
+      @include chosen-single;
     }
   }
-  .chosen-single{
-    @include chosen-singel;
+  .chosen-single {
+    @include chosen-single;
   }
-  .chosen-drop{
+  .chosen-drop {
     border: none;
     background: $white;
   }
-  .chosen-results{
-    li{
-      &.highlighted{
+  .chosen-results {
+    li {
+      &.highlighted {
         background-color: $primary;
         background-image: none;
         color: #fff;
       }
     }
+  }
+}
+
+body.node-add-edit {
+  .chosen-container {
+    width: 100% !important;
   }
 }

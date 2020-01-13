@@ -1,14 +1,14 @@
 nav.tabs {
   margin: 0 2.5em;
-  nav{
-    ul.tabs.primary{
+  nav {
+    ul.tabs.primary {
       background: $white;
       margin-top: 0;
       width: max-content;
-      &:before{
+      &:before {
         background-color: #ffffff;
       }
-      li{
+      li {
         background-color: white;
         border-color: transparent !important;
         &:after{

@@ -16,6 +16,11 @@
         &.columns-present .filter-wrap {
           width: auto;
         }
+        .filter-wrap {
+          .chosen-container {
+            margin-left: 10px;
+          }
+        }
       }
       .column-wrapper {
         border-bottom: 1px solid $alternative-grey;
@@ -34,7 +39,7 @@
               border: none !important;
               background-color: $white !important;
               &:before{
-                background: url("../../images/icons/icon-navigation-chevron-down.svg") center no-repeat;
+                background: url(../../images/icons/icon-navigation-chevron-down.svg) center no-repeat;
                 content: "";
                 position: absolute;
                 top: 0;
