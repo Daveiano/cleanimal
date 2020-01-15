@@ -27,7 +27,6 @@
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
@@ -211,7 +210,6 @@ nav.tabs {
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
@@ -273,7 +271,6 @@ a.button--primary, input.button--primary, button.button--primary, .button--prima
   background-image: none;
   text-shadow: none;
   font-weight: 500;
-  -webkit-font-smoothing: none;
   padding-top: 14px;
   padding-bottom: 14px;
   background-color: #00376a;
@@ -318,8 +315,7 @@ button[type="button"].button--danger, a.button--danger, input[type="submit"].but
   text-shadow: none;
   line-height: normal;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-font-smoothing: none; }
+  -moz-appearance: none; }
   @media screen and (max-width: 1440px) {
     button[type="button"].button--danger, a.button--danger, input[type="submit"].button--danger {
       font-size: 10px !important; } }
@@ -504,8 +500,7 @@ body.node-add-edit .chosen-container {
   border-radius: 0;
   background: #f3f3f3;
   text-shadow: none;
-  -webkit-appearance: none;
-  -webkit-font-smoothing: none; }
+  -webkit-appearance: none; }
   .form-item select:focus {
     border-radius: 0;
     border: solid 1px #89d2f6 !important;
@@ -571,7 +566,6 @@ select[multiple='multiple'] {
   background-image: none;
   text-shadow: none;
   font-weight: 500;
-  -webkit-font-smoothing: none;
   padding-top: 14px;
   padding-bottom: 14px;
   background-color: #00376a;
@@ -602,7 +596,6 @@ select[multiple='multiple'] {
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
@@ -700,7 +693,6 @@ select[multiple='multiple'] {
   background-image: none;
   text-shadow: none;
   font-weight: 500;
-  -webkit-font-smoothing: none;
   padding-top: 14px;
   padding-bottom: 14px;
   background-color: #00376a;
@@ -731,7 +723,6 @@ select[multiple='multiple'] {
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
@@ -800,7 +791,6 @@ select[multiple='multiple'] {
   background-image: none;
   text-shadow: none;
   font-weight: 500;
-  -webkit-font-smoothing: none;
   padding-top: 14px;
   padding-bottom: 14px;
   background-color: #00376a;
@@ -836,7 +826,6 @@ select[multiple='multiple'] {
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
@@ -1348,7 +1337,6 @@ table {
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
@@ -1380,7 +1368,6 @@ table {
     background-image: none;
     text-shadow: none;
     font-weight: 500;
-    -webkit-font-smoothing: none;
     padding-top: 14px;
     padding-bottom: 14px;
     background-color: #00376a;
