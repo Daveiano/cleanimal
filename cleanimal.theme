@@ -95,27 +95,30 @@ function cleanimal_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form["#fieldgroups"])) {
     $field_groups = $form["#fieldgroups"];
 
-    if ($base_group = $field_groups['group_cleanimal_scrollnav']) {
+    if (isset($field_groups['group_cleanimal_scrollnav'])) {
+      $base_group = $field_groups['group_cleanimal_scrollnav'];
 
       // TODO: Create a template for this.
       $scroll_navigation = '<ul>';
 
       for ($i = 0; $i < count($base_group->children); $i++) {
-        $child = $field_groups[$base_group->children[$i]];
-        // TODO: Disable id in backend config.
-        $child_id = Html::getId($child->group_name);
-        $field_groups[$base_group->children[$i]]->format_settings['id'] = $child_id;
-        $field_groups[$base_group->children[$i]]->format_settings['classes'] .= ' scroll-nav-content';
-        // TODO: Do we need this?
-        $field_groups[$base_group->children[$i]]->format_settings['label_element_classes'] .= ' scroll-nav-link ' . $child_id;
+        if (substr($base_group->children[$i], 0, 5) === 'group') {
+          $child = $field_groups[$base_group->children[$i]];
+          // TODO: Disable id in backend config.
+          $child_id = Html::getId($child->group_name);
+          $field_groups[$base_group->children[$i]]->format_settings['id'] = $child_id;
+          $field_groups[$base_group->children[$i]]->format_settings['classes'] .= ' scroll-nav-content';
+          // TODO: Do we need this?
+          $field_groups[$base_group->children[$i]]->format_settings['label_element_classes'] .= ' scroll-nav-link ' . $child_id;
 
-        $scroll_navigation .= <<<EOT
-      <li>
-        <a href="#{$child_id}">
-          {$child->label}
-        </a>
-      </li>
+          $scroll_navigation .= <<<EOT
+        <li>
+          <a href="#{$child_id}">
+            {$child->label}
+          </a>
+        </li>
 EOT;
+        }
       }
 
       $scroll_navigation .= '</ul>';
@@ -138,7 +141,7 @@ function cleanimal_preprocess_form_element(&$variables) {
     }
 
     // Add a label if there is none.
-    if (!$variables['label']['#title']) {
+    if (!isset($variables['label']['#title'])) {
       $variables['label']['#title'] = t('label-element');
     }
 
