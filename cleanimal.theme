@@ -140,8 +140,10 @@ function cleanimal_preprocess_form_element(&$variables) {
       $variables["label"]["#attributes"]['class'][] = 'show-label';
     }
 
+    $test = $variables;
+
     // Add a label if there is none.
-    if (!isset($variables['label']['#title'])) {
+    if (!($variables['label']) || !isset($variables['label']['#title']) || $variables['label']['#title'] === '') {
       $variables['label']['#title'] = t('label-element');
     }
 
