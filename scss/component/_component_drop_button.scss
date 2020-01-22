@@ -1,4 +1,11 @@
 .dropbutton-wrapper {
+  &.dropbutton-single {
+    .dropbutton-action {
+      a, input {
+        border-right: 1px solid $primary-dark;
+      }
+    }
+  }
   .dropbutton-widget {
     border: none !important;
     border-radius: 0 !important;

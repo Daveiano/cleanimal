@@ -1139,6 +1139,9 @@ select[multiple='multiple'] {
 .layout-region.layout-region-node-secondary .seven-details[open] .seven-details__wrapper.details-wrapper {
   padding: 0 1.5em 1em 1.5em; }
 
+.dropbutton-wrapper.dropbutton-single .dropbutton-action a, .dropbutton-wrapper.dropbutton-single .dropbutton-action input {
+  border-right: 1px solid #2d2376; }
+
 .dropbutton-wrapper .dropbutton-widget {
   border: none !important;
   border-radius: 0 !important;
