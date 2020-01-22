@@ -1152,6 +1152,8 @@ select[multiple='multiple'] {
     .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-action {
       width: auto;
       min-width: 100px; }
+      .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-action:first-child a, .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-action:first-child input {
+        border-right: none; }
       .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-action a, .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-action input {
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 400;
@@ -1183,7 +1185,6 @@ select[multiple='multiple'] {
         width: 100% !important; }
     .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-toggle button {
       border: 1px solid #2d2376;
-      border-left: 0;
       background-color: white; }
       .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-toggle button:hover, .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-toggle button:active, .dropbutton-wrapper .dropbutton-widget .dropbutton .dropbutton-toggle button:focus {
         color: #2d2376;
