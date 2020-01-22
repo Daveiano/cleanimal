@@ -22,6 +22,7 @@
   .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .js-form-item {
     width: auto; }
   .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -176,7 +177,6 @@ nav.tabs {
       font-size: 10px !important; } }
 
 .form-actions {
-  /*  */
   /* If its the only button */ }
   .form-actions button {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -184,6 +184,7 @@ nav.tabs {
     line-height: 1.29 !important;
     letter-spacing: 0.2px;
     font-size: 14px;
+    margin: 0 15px 10px 0;
     color: #2d2376;
     padding-top: 14px;
     padding-bottom: 14px;
@@ -205,6 +206,7 @@ nav.tabs {
       box-shadow: none;
       outline: none; }
   .form-actions input[type="submit"]:only-child {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -233,12 +235,16 @@ nav.tabs {
       box-shadow: none;
       outline: none; }
 
+.button:first-child {
+  margin: 0 15px 10px 0; }
+
 button, input[type="submit"], a.button {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   line-height: 1.29 !important;
   letter-spacing: 0.2px;
   font-size: 14px;
+  margin: 0 15px 10px 0;
   color: #2d2376;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -266,6 +272,7 @@ a.button--primary, input.button--primary, button.button--primary, .button--prima
   line-height: 1.29 !important;
   letter-spacing: 0.2px;
   font-size: 14px;
+  margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
   background-image: none;
@@ -561,6 +568,7 @@ select[multiple='multiple'] {
 
 .field--type-text-long .js-form-submit, .field--type-link .js-form-submit, .field--type-entity-reference-revisions .js-form-submit {
   margin-top: 10px;
+  margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
   background-image: none;
@@ -591,6 +599,7 @@ select[multiple='multiple'] {
     box-shadow: none;
     outline: none; }
   .field--type-text-long .js-form-submit:focus, .field--type-link .js-form-submit:focus, .field--type-entity-reference-revisions .js-form-submit:focus {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -688,6 +697,7 @@ select[multiple='multiple'] {
   border: none !important; }
 
 .field--type-entity-reference .js-form-submit {
+  margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
   background-image: none;
@@ -718,6 +728,7 @@ select[multiple='multiple'] {
     box-shadow: none;
     outline: none; }
   .field--type-entity-reference .js-form-submit:focus {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -763,6 +774,7 @@ select[multiple='multiple'] {
   display: flex;
   align-items: center; }
   .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a {
+    margin: 0 15px 10px 0;
     color: #2d2376;
     padding-top: 14px;
     padding-bottom: 14px;
@@ -786,6 +798,7 @@ select[multiple='multiple'] {
     width: 100%; }
 
 .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit {
+  margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
   background-image: none;
@@ -821,6 +834,7 @@ select[multiple='multiple'] {
   align-items: center;
   justify-content: flex-end; }
   .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -1332,6 +1346,7 @@ table {
     max-width: 300px;
     overflow: hidden; }
   table tbody tr td .js-form-wrapper .button {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;
@@ -1363,6 +1378,7 @@ table {
       box-shadow: none;
       outline: none; }
   table tbody tr td .form-actions .js-form-submit {
+    margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
     background-image: none;

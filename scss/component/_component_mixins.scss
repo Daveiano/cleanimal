@@ -28,6 +28,7 @@
 
 // General Button
 @mixin primary-button {
+  margin: 0 15px 10px 0;
   color: #fff;
   border-color: $primary;
   background-image: none;
@@ -54,6 +55,7 @@
 
 /* TODO: Change label to secondary button */
 @mixin tertiary-button {
+  margin: 0 15px 10px 0;
   color: $primary-dark;
   padding-top: 14px;
   padding-bottom: 14px;

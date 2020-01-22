@@ -80,6 +80,7 @@
     background-color: #f3f3f3;
     border-bottom: none; }
     .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a {
+      margin: 0 15px 10px 0;
       color: #2d2376;
       padding-top: 14px;
       padding-bottom: 14px;
@@ -99,6 +100,7 @@
         box-shadow: none;
         outline: none; }
     .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a {
+      margin: 0 15px 10px 0;
       color: #fff;
       border-color: #00376a;
       background-image: none;

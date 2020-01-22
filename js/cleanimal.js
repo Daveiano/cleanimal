@@ -14,6 +14,9 @@
       if ($("body").hasClass("node-add-edit") && $(".status-messages-wrap").length) {
         $(".status-messages-wrap").prependTo(".layout-region.layout-region-node-main");
       }
+      if ($("body").hasClass("node-add-edit") && $(".region.region-help").length) {
+        $(".region.region-help").prependTo(".layout-region.layout-region-node-main");
+      }
     }
   };
 

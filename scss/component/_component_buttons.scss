@@ -1,6 +1,5 @@
 // Buttons
 .form-actions {
-  /*  */
   button {
     @include font-plex-regular;
     @include tertiary-button;
@@ -9,6 +8,10 @@
   input[type="submit"]:only-child {
     @include primary-button;
   }
+}
+
+.button:first-child {
+  margin: 0 15px 10px 0;
 }
 
 button, input[type="submit"], a.button {
@@ -25,7 +28,7 @@ button[type="button"].button--danger, a.button--danger, input[type="submit"].but
   @include delete-button;
 }
 
-.button-action{
+.button-action {
   display: flex;
   align-items: center;
   text-align: center;
