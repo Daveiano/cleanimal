@@ -25,12 +25,11 @@
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -40,16 +39,16 @@
       .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input {
         font-size: 10px !important; } }
     .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:focus {
-      z-index: 10;
-      border: none;
+    .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:focus, .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
   .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-content .views-form .media-library-views-form .media-library-item {
     position: relative; }
   .ui-dialog .ui-dialog-buttonpane {
@@ -128,7 +127,8 @@ nav.tabs {
 
 .block-local-actions-block {
   display: flex;
-  justify-content: flex-end;
+  /* TODO: Make this configurable to flex-end like in design? */
+  justify-content: flex-start;
   margin: 0 0 40px 0; }
   .block-local-actions-block ul li a {
     min-width: 150px; }
@@ -188,33 +188,31 @@ nav.tabs {
     color: #2d2376;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: white;
-    background-image: none;
+    background: white none;
     border: 1px solid #00376a; }
     @media screen and (max-width: 1440px) {
       .form-actions button {
         font-size: 10px !important; } }
     .form-actions button:hover {
-      color: white !important;
+      color: white;
       border-color: #00376a;
-      background-color: #00376a;
-      background-image: none;
+      background: #00376a none;
       box-shadow: none; }
-    .form-actions button:focus {
-      z-index: 10;
-      border: none;
+    .form-actions button:focus, .form-actions button:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #2d2376;
+      background: white none;
+      border: 1px solid #00376a; }
   .form-actions input[type="submit"]:only-child {
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -224,16 +222,16 @@ nav.tabs {
       .form-actions input[type="submit"]:only-child {
         font-size: 10px !important; } }
     .form-actions input[type="submit"]:only-child:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    .form-actions input[type="submit"]:only-child:focus {
-      z-index: 10;
-      border: none;
+    .form-actions input[type="submit"]:only-child:focus, .form-actions input[type="submit"]:only-child:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
 
 .button:first-child {
   margin: 0 15px 10px 0; }
@@ -248,23 +246,22 @@ button, input[type="submit"], a.button {
   color: #2d2376;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: white;
-  background-image: none;
+  background: white none;
   border: 1px solid #00376a; }
   @media screen and (max-width: 1440px) {
     button, input[type="submit"], a.button {
       font-size: 10px !important; } }
   button:hover, input[type="submit"]:hover, a.button:hover {
-    color: white !important;
+    color: white;
     border-color: #00376a;
-    background-color: #00376a;
-    background-image: none;
+    background: #00376a none;
     box-shadow: none; }
-  button:focus, input[type="submit"]:focus, a.button:focus {
-    z-index: 10;
-    border: none;
+  button:focus, button:active, input[type="submit"]:focus, input[type="submit"]:active, a.button:focus, a.button:active {
+    outline: none;
     box-shadow: none;
-    outline: none; }
+    color: #2d2376;
+    background: white none;
+    border: 1px solid #00376a; }
 
 a.button--primary, input.button--primary, button.button--primary, .button--primary {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -275,12 +272,11 @@ a.button--primary, input.button--primary, button.button--primary, .button--prima
   margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
-  background-image: none;
   text-shadow: none;
   font-weight: 500;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: #00376a;
+  background: #00376a none;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   line-height: 1.29 !important;
@@ -293,16 +289,16 @@ a.button--primary, input.button--primary, button.button--primary, .button--prima
     a.button--primary, input.button--primary, button.button--primary, .button--primary {
       font-size: 10px !important; } }
   a.button--primary:hover, input.button--primary:hover, button.button--primary:hover, .button--primary:hover {
-    color: #fff !important;
+    color: #fff;
     border-color: #00b6ed;
-    background-color: #00b6ed;
-    background-image: none;
+    background: #00b6ed none;
     box-shadow: none; }
-  a.button--primary:focus, input.button--primary:focus, button.button--primary:focus, .button--primary:focus {
-    z-index: 10;
-    border: none;
+  a.button--primary:focus, a.button--primary:active, input.button--primary:focus, input.button--primary:active, button.button--primary:focus, button.button--primary:active, .button--primary:focus, .button--primary:active {
+    outline: none;
     box-shadow: none;
-    outline: none; }
+    color: #fff;
+    border-color: #00376a;
+    background: #00376a none; }
 
 button[type="button"].button--danger, a.button--danger, input[type="submit"].button--danger {
   color: #ff0000;
@@ -571,12 +567,11 @@ select[multiple='multiple'] {
   margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
-  background-image: none;
   text-shadow: none;
   font-weight: 500;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: #00376a;
+  background: #00376a none;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   line-height: 1.29 !important;
@@ -588,26 +583,25 @@ select[multiple='multiple'] {
     .field--type-text-long .js-form-submit, .field--type-link .js-form-submit, .field--type-entity-reference-revisions .js-form-submit {
       font-size: 10px !important; } }
   .field--type-text-long .js-form-submit:hover, .field--type-link .js-form-submit:hover, .field--type-entity-reference-revisions .js-form-submit:hover {
-    color: #fff !important;
+    color: #fff;
     border-color: #00b6ed;
-    background-color: #00b6ed;
-    background-image: none;
+    background: #00b6ed none;
     box-shadow: none; }
-  .field--type-text-long .js-form-submit:focus, .field--type-link .js-form-submit:focus, .field--type-entity-reference-revisions .js-form-submit:focus {
-    z-index: 10;
-    border: none;
+  .field--type-text-long .js-form-submit:focus, .field--type-text-long .js-form-submit:active, .field--type-link .js-form-submit:focus, .field--type-link .js-form-submit:active, .field--type-entity-reference-revisions .js-form-submit:focus, .field--type-entity-reference-revisions .js-form-submit:active {
+    outline: none;
     box-shadow: none;
-    outline: none; }
+    color: #fff;
+    border-color: #00376a;
+    background: #00376a none; }
   .field--type-text-long .js-form-submit:focus, .field--type-link .js-form-submit:focus, .field--type-entity-reference-revisions .js-form-submit:focus {
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -619,16 +613,16 @@ select[multiple='multiple'] {
       .field--type-text-long .js-form-submit:focus, .field--type-link .js-form-submit:focus, .field--type-entity-reference-revisions .js-form-submit:focus {
         font-size: 10px !important; } }
     .field--type-text-long .js-form-submit:focus:hover, .field--type-link .js-form-submit:focus:hover, .field--type-entity-reference-revisions .js-form-submit:focus:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    .field--type-text-long .js-form-submit:focus:focus, .field--type-link .js-form-submit:focus:focus, .field--type-entity-reference-revisions .js-form-submit:focus:focus {
-      z-index: 10;
-      border: none;
+    .field--type-text-long .js-form-submit:focus:focus, .field--type-text-long .js-form-submit:focus:active, .field--type-link .js-form-submit:focus:focus, .field--type-link .js-form-submit:focus:active, .field--type-entity-reference-revisions .js-form-submit:focus:focus, .field--type-entity-reference-revisions .js-form-submit:focus:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
   .field--type-text-long .js-form-submit:hover, .field--type-link .js-form-submit:hover, .field--type-entity-reference-revisions .js-form-submit:hover {
     margin-top: 10px; }
 
@@ -700,12 +694,11 @@ select[multiple='multiple'] {
   margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
-  background-image: none;
   text-shadow: none;
   font-weight: 500;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: #00376a;
+  background: #00376a none;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   line-height: 1.29 !important;
@@ -717,26 +710,25 @@ select[multiple='multiple'] {
     .field--type-entity-reference .js-form-submit {
       font-size: 10px !important; } }
   .field--type-entity-reference .js-form-submit:hover {
-    color: #fff !important;
+    color: #fff;
     border-color: #00b6ed;
-    background-color: #00b6ed;
-    background-image: none;
+    background: #00b6ed none;
     box-shadow: none; }
-  .field--type-entity-reference .js-form-submit:focus {
-    z-index: 10;
-    border: none;
+  .field--type-entity-reference .js-form-submit:focus, .field--type-entity-reference .js-form-submit:active {
+    outline: none;
     box-shadow: none;
-    outline: none; }
+    color: #fff;
+    border-color: #00376a;
+    background: #00376a none; }
   .field--type-entity-reference .js-form-submit:focus {
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -748,16 +740,16 @@ select[multiple='multiple'] {
       .field--type-entity-reference .js-form-submit:focus {
         font-size: 10px !important; } }
     .field--type-entity-reference .js-form-submit:focus:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    .field--type-entity-reference .js-form-submit:focus:focus {
-      z-index: 10;
-      border: none;
+    .field--type-entity-reference .js-form-submit:focus:focus, .field--type-entity-reference .js-form-submit:focus:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
 
 .field--type-entity-reference .js-form-wrapper input {
   width: auto !important;
@@ -778,22 +770,21 @@ select[multiple='multiple'] {
     color: #2d2376;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: white;
-    background-image: none;
+    background: white none;
     border: 1px solid #00376a;
     padding-top: 6px;
     padding-bottom: 6px; }
     .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:hover, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:hover {
-      color: white !important;
+      color: white;
       border-color: #00376a;
-      background-color: #00376a;
-      background-image: none;
+      background: #00376a none;
       box-shadow: none; }
-    .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:focus {
-      z-index: 10;
-      border: none;
+    .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:active, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #2d2376;
+      background: white none;
+      border: 1px solid #00376a; }
   .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a {
     width: 100%; }
 
@@ -801,12 +792,11 @@ select[multiple='multiple'] {
   margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
-  background-image: none;
   text-shadow: none;
   font-weight: 500;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: #00376a;
+  background: #00376a none;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   line-height: 1.29 !important;
@@ -818,16 +808,16 @@ select[multiple='multiple'] {
     .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit {
       font-size: 10px !important; } }
   .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit:hover {
-    color: #fff !important;
+    color: #fff;
     border-color: #00b6ed;
-    background-color: #00b6ed;
-    background-image: none;
+    background: #00b6ed none;
     box-shadow: none; }
-  .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit:focus {
-    z-index: 10;
-    border: none;
+  .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit:active {
+    outline: none;
     box-shadow: none;
-    outline: none; }
+    color: #fff;
+    border-color: #00376a;
+    background: #00376a none; }
 
 .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline {
   display: flex;
@@ -837,12 +827,11 @@ select[multiple='multiple'] {
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -854,16 +843,16 @@ select[multiple='multiple'] {
       .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input {
         font-size: 10px !important; } }
     .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input:focus {
-      z-index: 10;
-      border: none;
+    .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
 
 /*Inline entity form*/
 .field--type-entity-reference fieldset.js-form-wrapper.form-wrapper .fieldset-wrapper .form-item input, .field--type-entity-reference fieldset.js-form-wrapper.form-wrapper .fieldset-wrapper .form-wrapper input {
@@ -1139,9 +1128,6 @@ select[multiple='multiple'] {
 .layout-region.layout-region-node-secondary .seven-details[open] .seven-details__wrapper.details-wrapper {
   padding: 0 1.5em 1em 1.5em; }
 
-.dropbutton-wrapper.dropbutton-single .dropbutton-action a, .dropbutton-wrapper.dropbutton-single .dropbutton-action input {
-  border-right: 1px solid #2d2376; }
-
 .dropbutton-wrapper .dropbutton-widget {
   border: none !important;
   border-radius: 0 !important;
@@ -1240,6 +1226,9 @@ select[multiple='multiple'] {
           box-shadow: none; }
       .dropbutton-wrapper .dropbutton-widget .dropbutton .secondary-action:last-child {
         border-bottom: 1px solid #2d2376; }
+
+.dropbutton-wrapper.dropbutton-single .dropbutton-widget .dropbutton .dropbutton-action a, .dropbutton-wrapper.dropbutton-single .dropbutton-widget .dropbutton .dropbutton-action input {
+  border-right: 1px solid #2d2376; }
 
 .dropbutton-wrapper.open .dropbutton-widget .dropbutton .dropbutton-toggle button .dropbutton-arrow {
   background-position: 4px 3px; }
@@ -1353,12 +1342,11 @@ table {
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -1371,26 +1359,25 @@ table {
       table tbody tr td .js-form-wrapper .button {
         font-size: 10px !important; } }
     table tbody tr td .js-form-wrapper .button:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    table tbody tr td .js-form-wrapper .button:focus {
-      z-index: 10;
-      border: none;
+    table tbody tr td .js-form-wrapper .button:focus, table tbody tr td .js-form-wrapper .button:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
   table tbody tr td .form-actions .js-form-submit {
     margin: 0 15px 10px 0;
     color: #fff;
     border-color: #00376a;
-    background-image: none;
     text-shadow: none;
     font-weight: 500;
     padding-top: 14px;
     padding-bottom: 14px;
-    background-color: #00376a;
+    background: #00376a none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     line-height: 1.29 !important;
@@ -1402,16 +1389,16 @@ table {
       table tbody tr td .form-actions .js-form-submit {
         font-size: 10px !important; } }
     table tbody tr td .form-actions .js-form-submit:hover {
-      color: #fff !important;
+      color: #fff;
       border-color: #00b6ed;
-      background-color: #00b6ed;
-      background-image: none;
+      background: #00b6ed none;
       box-shadow: none; }
-    table tbody tr td .form-actions .js-form-submit:focus {
-      z-index: 10;
-      border: none;
+    table tbody tr td .form-actions .js-form-submit:focus, table tbody tr td .form-actions .js-form-submit:active {
+      outline: none;
       box-shadow: none;
-      outline: none; }
+      color: #fff;
+      border-color: #00376a;
+      background: #00376a none; }
 
 div.pager {
   display: flex;

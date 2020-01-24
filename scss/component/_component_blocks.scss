@@ -4,7 +4,8 @@
 
 .block-local-actions-block {
   display: flex;
-  justify-content: flex-end;
+  /* TODO: Make this configurable to flex-end like in design? */
+  justify-content: flex-start;
   margin: 0 0 40px 0;
   ul {
     li {
