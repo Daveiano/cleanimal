@@ -138,9 +138,9 @@ function cleanimal_preprocess_form_element(&$variables) {
     }
 
     // Add a label if there is none.
-    if (!$variables['label']['#title']) {
+    /*if (!$variables['label']['#title']) {
       $variables['label']['#title'] = t('label-element');
-    }
+    }*/
 
     // Position the label after the checkbox.
     $variables['label_display'] = 'after';
