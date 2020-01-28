@@ -43,6 +43,11 @@
       border-color: #00b6ed;
       background: #00b6ed none;
       box-shadow: none; }
+    .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:focus:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
     .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:focus, .ui-dialog .ui-dialog-content .media-library-wrapper .media-library-content .views-element-container > .view .view-filters .views-exposed-form .form--inline .media-library-view--form-actions input:active {
       outline: none;
       box-shadow: none;
@@ -198,6 +203,11 @@ nav.tabs {
       border-color: #00376a;
       background: #00376a none;
       box-shadow: none; }
+    .form-actions button:focus:hover {
+      color: white;
+      border-color: #00376a;
+      background: #00376a none;
+      box-shadow: none; }
     .form-actions button:focus, .form-actions button:active {
       outline: none;
       box-shadow: none;
@@ -222,6 +232,11 @@ nav.tabs {
       .form-actions input[type="submit"]:only-child {
         font-size: 10px !important; } }
     .form-actions input[type="submit"]:only-child:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
+    .form-actions input[type="submit"]:only-child:focus:hover {
       color: #fff;
       border-color: #00b6ed;
       background: #00b6ed none;
@@ -252,6 +267,11 @@ button, input[type="submit"], a.button {
     button, input[type="submit"], a.button {
       font-size: 10px !important; } }
   button:hover, input[type="submit"]:hover, a.button:hover {
+    color: white;
+    border-color: #00376a;
+    background: #00376a none;
+    box-shadow: none; }
+  button:focus:hover, input[type="submit"]:focus:hover, a.button:focus:hover {
     color: white;
     border-color: #00376a;
     background: #00376a none;
@@ -289,6 +309,11 @@ a.button--primary, input.button--primary, button.button--primary, .button--prima
     a.button--primary, input.button--primary, button.button--primary, .button--primary {
       font-size: 10px !important; } }
   a.button--primary:hover, input.button--primary:hover, button.button--primary:hover, .button--primary:hover {
+    color: #fff;
+    border-color: #00b6ed;
+    background: #00b6ed none;
+    box-shadow: none; }
+  a.button--primary:focus:hover, input.button--primary:focus:hover, button.button--primary:focus:hover, .button--primary:focus:hover {
     color: #fff;
     border-color: #00b6ed;
     background: #00b6ed none;
@@ -563,7 +588,6 @@ select[multiple='multiple'] {
   width: auto; }
 
 .field--type-text-long .js-form-submit, .field--type-link .js-form-submit, .field--type-entity-reference-revisions .js-form-submit {
-  margin-top: 10px;
   margin: 0 15px 10px 0;
   color: #fff;
   border-color: #00376a;
@@ -583,6 +607,11 @@ select[multiple='multiple'] {
     .field--type-text-long .js-form-submit, .field--type-link .js-form-submit, .field--type-entity-reference-revisions .js-form-submit {
       font-size: 10px !important; } }
   .field--type-text-long .js-form-submit:hover, .field--type-link .js-form-submit:hover, .field--type-entity-reference-revisions .js-form-submit:hover {
+    color: #fff;
+    border-color: #00b6ed;
+    background: #00b6ed none;
+    box-shadow: none; }
+  .field--type-text-long .js-form-submit:focus:hover, .field--type-link .js-form-submit:focus:hover, .field--type-entity-reference-revisions .js-form-submit:focus:hover {
     color: #fff;
     border-color: #00b6ed;
     background: #00b6ed none;
@@ -617,14 +646,17 @@ select[multiple='multiple'] {
       border-color: #00b6ed;
       background: #00b6ed none;
       box-shadow: none; }
+    .field--type-text-long .js-form-submit:focus:focus:hover, .field--type-link .js-form-submit:focus:focus:hover, .field--type-entity-reference-revisions .js-form-submit:focus:focus:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
     .field--type-text-long .js-form-submit:focus:focus, .field--type-text-long .js-form-submit:focus:active, .field--type-link .js-form-submit:focus:focus, .field--type-link .js-form-submit:focus:active, .field--type-entity-reference-revisions .js-form-submit:focus:focus, .field--type-entity-reference-revisions .js-form-submit:focus:active {
       outline: none;
       box-shadow: none;
       color: #fff;
       border-color: #00376a;
       background: #00376a none; }
-  .field--type-text-long .js-form-submit:hover, .field--type-link .js-form-submit:hover, .field--type-entity-reference-revisions .js-form-submit:hover {
-    margin-top: 10px; }
 
 .field--type-text-long .field-add-more-submit, .field--type-link .field-add-more-submit, .field--type-entity-reference-revisions .field-add-more-submit {
   width: auto !important;
@@ -714,6 +746,11 @@ select[multiple='multiple'] {
     border-color: #00b6ed;
     background: #00b6ed none;
     box-shadow: none; }
+  .field--type-entity-reference .js-form-submit:focus:hover {
+    color: #fff;
+    border-color: #00b6ed;
+    background: #00b6ed none;
+    box-shadow: none; }
   .field--type-entity-reference .js-form-submit:focus, .field--type-entity-reference .js-form-submit:active {
     outline: none;
     box-shadow: none;
@@ -740,6 +777,11 @@ select[multiple='multiple'] {
       .field--type-entity-reference .js-form-submit:focus {
         font-size: 10px !important; } }
     .field--type-entity-reference .js-form-submit:focus:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
+    .field--type-entity-reference .js-form-submit:focus:focus:hover {
       color: #fff;
       border-color: #00b6ed;
       background: #00b6ed none;
@@ -779,6 +821,11 @@ select[multiple='multiple'] {
       border-color: #00376a;
       background: #00376a none;
       box-shadow: none; }
+    .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:focus:hover, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:focus:hover {
+      color: white;
+      border-color: #00376a;
+      background: #00376a none;
+      box-shadow: none; }
     .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations input:active, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:focus, .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-entity-operations a:active {
       outline: none;
       box-shadow: none;
@@ -808,6 +855,11 @@ select[multiple='multiple'] {
     .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit {
       font-size: 10px !important; } }
   .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit:hover {
+    color: #fff;
+    border-color: #00b6ed;
+    background: #00b6ed none;
+    box-shadow: none; }
+  .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper table.ief-entity-table tbody tr td .ief-form input.js-form-submit:focus:hover {
     color: #fff;
     border-color: #00b6ed;
     background: #00b6ed none;
@@ -843,6 +895,11 @@ select[multiple='multiple'] {
       .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input {
         font-size: 10px !important; } }
     .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
+    .field--type-entity-reference > div .js-form-wrapper .seven-details__wrapper .container-inline > input:focus:hover {
       color: #fff;
       border-color: #00b6ed;
       background: #00b6ed none;
@@ -1070,6 +1127,33 @@ select[multiple='multiple'] {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+/* Date range fields */
+.field--type-daterange fieldset {
+  padding: 35px 0 0 0;
+  border: 0; }
+  .field--type-daterange fieldset .fieldset-wrapper {
+    display: flex;
+    align-items: center; }
+    .field--type-daterange fieldset .fieldset-wrapper h4.label {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.29 !important;
+      letter-spacing: 0.2px;
+      font-size: 14px;
+      height: 16px;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: 0.3px;
+      color: #565656;
+      margin-bottom: 8px;
+      margin-right: 20px;
+      margin-bottom: 0; }
+      @media screen and (max-width: 1440px) {
+        .field--type-daterange fieldset .fieldset-wrapper h4.label {
+          font-size: 10px !important; } }
+    .field--type-daterange fieldset .fieldset-wrapper .container-inline {
+      margin-right: 40px; }
 
 .seven-details {
   position: relative;
@@ -1363,6 +1447,11 @@ table {
       border-color: #00b6ed;
       background: #00b6ed none;
       box-shadow: none; }
+    table tbody tr td .js-form-wrapper .button:focus:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
     table tbody tr td .js-form-wrapper .button:focus, table tbody tr td .js-form-wrapper .button:active {
       outline: none;
       box-shadow: none;
@@ -1389,6 +1478,11 @@ table {
       table tbody tr td .form-actions .js-form-submit {
         font-size: 10px !important; } }
     table tbody tr td .form-actions .js-form-submit:hover {
+      color: #fff;
+      border-color: #00b6ed;
+      background: #00b6ed none;
+      box-shadow: none; }
+    table tbody tr td .form-actions .js-form-submit:focus:hover {
       color: #fff;
       border-color: #00b6ed;
       background: #00b6ed none;

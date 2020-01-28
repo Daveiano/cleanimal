@@ -2,16 +2,20 @@
 @import "./components_form_fields/component_checkbox";
 @import "./components_form_fields/component_radios";
 
+@mixin label () {
+  @include font-plex-regular;
+  height: 16px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.3px;
+  color: $grey;
+  margin-bottom: 8px;
+}
+
 // General Styling for Every Field (e.g. Backgroundcolor, Height, Font...)
 .form-item {
   label {
-    @include font-plex-regular;
-    height: 16px;
-    font-size: 12px;
-    line-height: 1.33;
-    letter-spacing: 0.3px;
-    color: $grey;
-    margin-bottom: 8px;
+    @include label();
   }
   // General Select Field
   @media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1440px) {
@@ -77,15 +81,11 @@ select[multiple='multiple'] {
 
 .field--type-text-long, .field--type-link, .field--type-entity-reference-revisions {
   .js-form-submit{
-    margin-top: 10px;
     @include primary-button;
     @include small;
     &:focus{
       @include primary-button;
       @include small;
-    }
-    &:hover{
-      margin-top: 10px;
     }
   }
   .field-add-more-submit{
@@ -509,5 +509,25 @@ select[multiple='multiple'] {
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
     transform:rotate(360deg);
+  }
+}
+
+/* Date range fields */
+.field--type-daterange {
+  fieldset {
+    padding: 35px 0 0 0;
+    border: 0;
+    .fieldset-wrapper {
+      display: flex;
+      align-items: center;
+      h4.label {
+        @include label();
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+      .container-inline {
+        margin-right: 40px;
+      }
+    }
   }
 }

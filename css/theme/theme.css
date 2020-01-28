@@ -92,6 +92,11 @@
         border-color: #00376a;
         background: #00376a none;
         box-shadow: none; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:focus:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:focus:hover {
+        color: white;
+        border-color: #00376a;
+        background: #00376a none;
+        box-shadow: none; }
       .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:active, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:active {
         outline: none;
         box-shadow: none;
@@ -117,6 +122,11 @@
         .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a {
           font-size: 10px !important; } }
       .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:hover {
+        color: #fff;
+        border-color: #00b6ed;
+        background: #00b6ed none;
+        box-shadow: none; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:focus:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:focus:hover {
         color: #fff;
         border-color: #00b6ed;
         background: #00b6ed none;
@@ -192,7 +202,7 @@ header.content-header {
   color: #f3f3f3; }
   header.content-header .layout-container .region.region-header {
     transition: max-height ease-in 300ms;
-    min-height: 120px;
+    min-height: 65px;
     display: flex;
     align-items: center; }
 

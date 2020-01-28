@@ -43,6 +43,12 @@
     background: $primary-middle none;
     box-shadow: none;
   }
+  &:focus:hover {
+    color: #fff;
+    border-color: $primary-middle;
+    background: $primary-middle none;
+    box-shadow: none;
+  }
   &:focus, &:active {
     outline: none;
     box-shadow: none;
@@ -61,6 +67,12 @@
   background: white none;
   border: 1px solid $primary;
   &:hover {
+    color: white;
+    border-color: $primary;
+    background: $primary none;
+    box-shadow: none;
+  }
+  &:focus:hover {
     color: white;
     border-color: $primary;
     background: $primary none;
