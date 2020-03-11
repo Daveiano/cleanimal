@@ -57,4 +57,21 @@
   .ui-dialog-buttonpane {
     background: $white;
   }
+  // Media Library.
+  form.media-image-edit-form.media-form {
+    .form-managed-file-wrapper {
+      .image-widget {
+        display: flex;
+        flex-flow: column;
+        .image-preview {
+          width: 100%;
+          box-sizing: border-box;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
 }
