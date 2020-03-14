@@ -58,13 +58,13 @@
     position: relative; }
   .ui-dialog .ui-dialog-buttonpane {
     background: #f3f3f3; }
-  .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget {
+  .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .media-library-add-form__media, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .image-widget, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .media-library-add-form__media, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .image-widget, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .media-library-add-form__media, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .image-widget, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .media-library-add-form__media {
     display: flex;
     flex-flow: column; }
-    .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget .image-preview {
+    .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget .image-preview, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget .media-library-add-form__preview, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .media-library-add-form__media .image-preview, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .media-library-add-form__media .media-library-add-form__preview, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .image-widget .image-preview, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .image-widget .media-library-add-form__preview, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .media-library-add-form__media .image-preview, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .media-library-add-form__media .media-library-add-form__preview, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .image-widget .image-preview, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .image-widget .media-library-add-form__preview, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .media-library-add-form__media .image-preview, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .media-library-add-form__media .media-library-add-form__preview, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .image-widget .image-preview, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .image-widget .media-library-add-form__preview, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .media-library-add-form__media .image-preview, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .media-library-add-form__media .media-library-add-form__preview {
       width: 100%;
       box-sizing: border-box; }
-      .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget .image-preview img {
+      .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget .image-preview img, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .image-widget .media-library-add-form__preview img, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .media-library-add-form__media .image-preview img, .ui-dialog form.media-image-edit-form.media-form .form-managed-file-wrapper .media-library-add-form__media .media-library-add-form__preview img, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .image-widget .image-preview img, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .image-widget .media-library-add-form__preview img, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .media-library-add-form__media .image-preview img, .ui-dialog form.media-image-edit-form.media-form .media-library-add-form__added-media .media-library-add-form__media .media-library-add-form__preview img, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .image-widget .image-preview img, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .image-widget .media-library-add-form__preview img, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .media-library-add-form__media .image-preview img, .ui-dialog form.media-library-add-form .form-managed-file-wrapper .media-library-add-form__media .media-library-add-form__preview img, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .image-widget .image-preview img, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .image-widget .media-library-add-form__preview img, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .media-library-add-form__media .image-preview img, .ui-dialog form.media-library-add-form .media-library-add-form__added-media .media-library-add-form__media .media-library-add-form__preview img {
         width: 100%;
         height: auto; }
 
@@ -91,6 +91,8 @@ nav.tabs {
   nav.tabs nav ul.tabs.primary {
     background: #f3f3f3;
     margin-top: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content; }
     nav.tabs nav ul.tabs.primary:before {
       background-color: #ffffff; }
@@ -953,7 +955,8 @@ select[multiple='multiple'] {
       border: none;
       bottom: 5px;
       /* TODO: center below image */
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
       left: 50%; }
     .media-library-widget .js-media-library-selection .media-library-item .media-library-edit__link {
       position: absolute;
@@ -964,7 +967,8 @@ select[multiple='multiple'] {
       border: none;
       bottom: 5px;
       /* TODO: center below image */
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
       left: 40%;
       font-size: 0; }
     .media-library-widget .js-media-library-selection .media-library-item article {
@@ -1145,15 +1149,10 @@ select[multiple='multiple'] {
   100% {
     -webkit-transform: rotate(360deg); } }
 
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg); } }
-
 @keyframes spin {
   100% {
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 /* Date range fields */
 .field--type-daterange fieldset {
@@ -1218,7 +1217,8 @@ select[multiple='multiple'] {
     width: 10px;
     content: " ";
     background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
@@ -1631,11 +1631,14 @@ div.pager {
           width: 100%;
           height: 100%; }
         .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper .details-wrapper .form-item.move-buttons div[class^="move"].move-right:before {
-          transform: rotate(-90deg); }
+          -webkit-transform: rotate(-90deg);
+                  transform: rotate(-90deg); }
         .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper .details-wrapper .form-item.move-buttons div[class^="move"].move-left:before {
-          transform: rotate(90deg); }
+          -webkit-transform: rotate(90deg);
+                  transform: rotate(90deg); }
         .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper .details-wrapper .form-item.move-buttons div[class^="move"].move-top:before {
-          transform: rotate(180deg); }
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg); }
     .views-exposed-form .form--inline .exposed-form-wrapper .actions {
       flex: 0 0 100%; }
       .views-exposed-form .form--inline .exposed-form-wrapper .actions .form-actions {

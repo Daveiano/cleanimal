@@ -58,12 +58,12 @@
     background: $white;
   }
   // Media Library.
-  form.media-image-edit-form.media-form {
-    .form-managed-file-wrapper {
-      .image-widget {
+  form.media-image-edit-form.media-form, form.media-library-add-form {
+    .form-managed-file-wrapper, .media-library-add-form__added-media {
+      .image-widget, .media-library-add-form__media {
         display: flex;
         flex-flow: column;
-        .image-preview {
+        .image-preview, .media-library-add-form__preview {
           width: 100%;
           box-sizing: border-box;
           img {
