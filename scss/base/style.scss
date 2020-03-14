@@ -12,3 +12,9 @@
 .page-content {
   margin-top: 40px;
 }
+
+// Dropzone fix.
+.field--type-image .form-managed-file-wrapper--dropzone.has-file:before {
+  background: none;
+  border: none;
+}
