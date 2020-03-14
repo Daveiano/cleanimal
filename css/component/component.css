@@ -793,7 +793,7 @@ select[multiple='multiple'] {
       border-color: #00376a;
       background: #00376a none; }
 
-.field--type-entity-reference .js-form-wrapper input {
+.field--type-entity-reference .js-form-wrapper input[type="submit"] {
   width: auto !important;
   float: right; }
 
