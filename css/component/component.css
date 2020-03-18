@@ -1607,15 +1607,18 @@ div.pager {
       flex: 1;
       padding: 7px 2em 7px 2em !important;
       display: flex;
-      align-items: flex-end; }
+      align-items: flex-start; }
       .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters {
         flex-wrap: wrap; }
         .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-item, .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-wrapper {
           width: calc(25% - 0.5em);
           border: 0; }
+        .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-item-items-per-page {
+          margin-right: 75%; }
       .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.columns-present .filter-wrap {
         width: auto; }
       .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper > details.form-item.seven-details[open] .details-wrapper {
+        border: 1px solid #bfbfbf;
         padding-top: 0.5em; }
         .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper > details.form-item.seven-details[open] .details-wrapper > * {
           max-width: 100%; }

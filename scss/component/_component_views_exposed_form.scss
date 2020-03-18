@@ -13,12 +13,15 @@
         flex: 1;
         @include general-padding;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
         &.many-filters {
           flex-wrap: wrap;
           > .form-item, > .form-wrapper {
             width: calc(25% - 0.5em);
             border: 0;
+          }
+          > .form-item-items-per-page {
+            margin-right: 75%;
           }
         }
         &.columns-present .filter-wrap {
@@ -27,6 +30,7 @@
         > details.form-item.seven-details {
           &[open] {
             .details-wrapper {
+              border: 1px solid #bfbfbf;
               padding-top: 0.5em;
               > * {
                 max-width: 100%;
