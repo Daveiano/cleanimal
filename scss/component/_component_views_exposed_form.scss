@@ -13,7 +13,7 @@
         flex: 1;
         @include general-padding;
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
         &.many-filters {
           flex-wrap: wrap;
           > .form-item, > .form-wrapper {

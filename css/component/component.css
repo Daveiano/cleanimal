@@ -1607,7 +1607,7 @@ div.pager {
       flex: 1;
       padding: 7px 2em 7px 2em !important;
       display: flex;
-      align-items: flex-start; }
+      align-items: flex-end; }
       .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters {
         flex-wrap: wrap; }
         .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-item, .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-wrapper {
