@@ -17,6 +17,10 @@
       if ($("body").hasClass("node-add-edit") && $(".region.region-help").length) {
         $(".region.region-help").prependTo(".layout-region.layout-region-node-main");
       }
+
+      if ($('.filters-wrapper') && $('.filters-wrapper > div').length > 5) {
+        $('.filters-wrapper').addClass('many-filters');
+      }
     }
   };
 

@@ -1606,9 +1606,19 @@ div.pager {
       border-bottom: 1px solid #cccccc;
       flex: 1;
       padding: 7px 2em 7px 2em !important;
-      display: flex; }
+      display: flex;
+      align-items: flex-start; }
+      .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters {
+        flex-wrap: wrap; }
+        .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-item, .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.many-filters > .form-wrapper {
+          width: calc(25% - 0.5em);
+          border: 0; }
       .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper.columns-present .filter-wrap {
         width: auto; }
+      .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper > details.form-item.seven-details[open] .details-wrapper {
+        padding-top: 0.5em; }
+        .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper > details.form-item.seven-details[open] .details-wrapper > * {
+          max-width: 100%; }
       .views-exposed-form .form--inline .exposed-form-wrapper .filters-wrapper .filter-wrap .chosen-container {
         margin-left: 10px; }
     .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper {
