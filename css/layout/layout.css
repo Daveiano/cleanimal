@@ -28,7 +28,8 @@ body.node-add-edit .page-content {
       left: 0;
       width: 100%;
       background: white;
-      padding: 15px 2.5rem 0 2.5rem; }
+      padding: 15px 2.5rem 0 2.5rem;
+      border-top: 5px solid #dcdcdc; }
       body.node-add-edit .page-content .layout-node-form .layout-region-form-actions .form-actions {
         display: flex;
         align-items: center;

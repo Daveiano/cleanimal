@@ -994,6 +994,17 @@ select[multiple='multiple'] {
         .media-library-widget .js-media-library-selection .media-library-item article .media-library-item__attributes .media-library-item__name {
           margin-left: 15px; }
 
+.field-multiple-table tbody tr.paragraphs-features__add-in-between__row input.button--small {
+  width: auto;
+  margin: 10px auto 5px auto; }
+
+.field-multiple-table tbody tr.draggable td.field-multiple-drag {
+  padding-top: 25px; }
+
+.field-multiple-table tbody tr.draggable td .paragraphs-dropbutton-wrapper .dropbutton-wrapper.dropbutton-multiple.open .dropbutton-widget .dropbutton .secondary-action {
+  border-left: none;
+  border-bottom: none; }
+
 .field-multiple-table tbody tr.draggable .paragraph-top .paragraphs-actions .paragraphs-icon-button.paragraphs-icon-button-collapse {
   border: none;
   background-color: transparent;
@@ -1031,10 +1042,6 @@ select[multiple='multiple'] {
   .field-multiple-table tbody tr.draggable .paragraph-top .paragraphs-actions .paragraphs-dropdown .paragraphs-dropdown-toggle:focus {
     background-color: #f3f3f3;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3); }
-
-.field--widget-entity-reference-paragraphs table tbody tr td .paragraphs-dropbutton-wrapper .dropbutton-wrapper.dropbutton-multiple.open .dropbutton-widget .dropbutton .secondary-action {
-  border-left: none;
-  border-bottom: none; }
 
 .field--widget-autocomplete-deluxe label {
   font-family: 'IBM Plex Sans', sans-serif;
