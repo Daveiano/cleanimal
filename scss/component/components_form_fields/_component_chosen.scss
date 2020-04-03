@@ -28,9 +28,12 @@
 }
 
 // Chosen Select field
-.chosen-container {
+.chosen-container, .chosen-container-multi {
+  @include input();
+  padding: 0;
+  border: none;
   &.chosen-with-drop {
-    background-color: black;
+    //background-color: black;
     .chosen-single {
       @include chosen-single;
     }
@@ -48,6 +51,44 @@
         background-color: $primary;
         background-image: none;
         color: #fff;
+      }
+    }
+  }
+  ul.chosen-choices {
+    @include input();
+    padding: 0;
+    li.search-choice {
+      @include font-plex-regular;
+      background-color: $primary !important;
+      background-image: none;
+      box-shadow: none;
+      color: white !important;
+      line-height: 13px;
+      margin: 3px 0 3px 5px;
+      padding: 4px 25px 4px 8px !important;
+      position: relative;
+      border-radius: 12px !important;
+      background-image: none !important;
+      box-shadow: none !important;
+      border: 1px solid $primary !important;
+      .search-choice-close{
+        background: none;
+        background-image: url("../../images/icons/close_white.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        height: 15px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        width: 15px;
+        padding: 0px;
+        border: 1px solid transparent;
+        border-radius: 30px !important;
+        &:hover{
+          border: 1px solid $primary-dark;
+          background-color: $primary-dark;
+        }
       }
     }
   }
