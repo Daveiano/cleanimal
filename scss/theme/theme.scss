@@ -93,3 +93,11 @@ a {
     color: $primary-dark;
   }
 }
+
+// Paragraphs.
+.field--type-entity-reference-revisions.field--widget-paragraphs {
+  .paragraph-type-label {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
