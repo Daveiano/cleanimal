@@ -20,6 +20,11 @@
     box-shadow: none; }
     .layout-node-form .layout-region-node-secondary > *:first-child {
       margin-top: 0; }
+  .layout-node-form .layout-region-node-secondary .entity-content-form-footer {
+    padding-bottom: 0; }
+    .layout-node-form .layout-region-node-secondary .entity-content-form-footer .form-item {
+      margin-bottom: 0;
+      padding-left: 1.5rem; }
 
 .layout-node-form .layout-region-node-main .field-group-tabs-wrapper .horizontal-tabs {
   border: none; }
