@@ -3,6 +3,7 @@ div.pager {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   nav.pager {
     position: relative;
     background-color: $white;

@@ -1608,7 +1608,8 @@ table {
 div.pager {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
   div.pager nav.pager {
     position: relative;
     background-color: #f3f3f3;
