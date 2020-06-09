@@ -28,50 +28,62 @@
 
 // General Button
 @mixin primary-button {
+  margin: 0 15px 10px 0;
   color: #fff;
   border-color: $primary;
-  background-image: none;
   text-shadow: none;
   font-weight: 500;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: $primary;
+  background: $primary none;
   @include font-plex-regular;
-  &:hover{
-    color: #fff !important;
+  &:hover {
+    color: #fff;
     border-color: $primary-middle;
-    background-color: $primary-middle;
-    background-image: none;
+    background: $primary-middle none;
     box-shadow: none;
   }
-  &:focus{
-    z-index: 10;
-    border: none;
+  &:focus:hover {
+    color: #fff;
+    border-color: $primary-middle;
+    background: $primary-middle none;
     box-shadow: none;
+  }
+  &:focus, &:active {
     outline: none;
+    box-shadow: none;
+    color: #fff;
+    border-color: $primary;
+    background: $primary none;
   }
 }
 
 /* TODO: Change label to secondary button */
 @mixin tertiary-button {
+  margin: 0 15px 10px 0;
   color: $primary-dark;
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: white;
-  background-image: none;
+  background: white none;
   border: 1px solid $primary;
-  &:hover{
-    color: white !important;
+  &:hover {
+    color: white;
     border-color: $primary;
-    background-color: $primary;
-    background-image: none;
+    background: $primary none;
     box-shadow: none;
   }
-  &:focus{
-    z-index: 10;
-    border: none;
+  &:focus:hover {
+    color: white;
+    border-color: $primary;
+    background: $primary none;
     box-shadow: none;
+  }
+  &:focus, &:active {
     outline: none;
+    box-shadow: none;
+    color: $primary-dark;
+    background: white none;
+    border: 1px solid $primary;
   }
 }
 
@@ -90,7 +102,7 @@
   line-height: normal;
   -webkit-appearance: none;
   -moz-appearance: none;
-  &:hover{
+  &:hover {
     text-decoration: none;
     box-shadow: none;
     color: #ff0000 !important;

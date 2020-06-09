@@ -80,33 +80,38 @@
     background-color: #f3f3f3;
     border-bottom: none; }
     .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a {
+      margin: 0 15px 10px 0;
       color: #2d2376;
       padding-top: 14px;
       padding-bottom: 14px;
-      background-color: white;
-      background-image: none;
+      background: white none;
       border: 1px solid #00376a;
       height: auto; }
       .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:hover {
-        color: white !important;
+        color: white;
         border-color: #00376a;
-        background-color: #00376a;
-        background-image: none;
+        background: #00376a none;
         box-shadow: none; }
-      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:focus {
-        z-index: 10;
-        border: none;
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:focus:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:focus:hover {
+        color: white;
+        border-color: #00376a;
+        background: #00376a none;
+        box-shadow: none; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab a:active, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add a:active {
+        outline: none;
         box-shadow: none;
-        outline: none; }
+        color: #2d2376;
+        background: white none;
+        border: 1px solid #00376a; }
     .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a {
+      margin: 0 15px 10px 0;
       color: #fff;
       border-color: #00376a;
-      background-image: none;
       text-shadow: none;
       font-weight: 500;
       padding-top: 14px;
       padding-bottom: 14px;
-      background-color: #00376a;
+      background: #00376a none;
       font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 400;
       line-height: 1.29 !important;
@@ -117,16 +122,21 @@
         .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a {
           font-size: 10px !important; } }
       .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:hover {
-        color: #fff !important;
+        color: #fff;
         border-color: #00b6ed;
-        background-color: #00b6ed;
-        background-image: none;
+        background: #00b6ed none;
         box-shadow: none; }
-      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:focus {
-        z-index: 10;
-        border: none;
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:focus:hover, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:focus:hover {
+        color: #fff;
+        border-color: #00b6ed;
+        background: #00b6ed none;
+        box-shadow: none; }
+      .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .tabs__tab.is-active a:active, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:focus, .views-edit-view form.form-edit .views-displays .views-display-top .secondary .add.is-active a:active {
+        outline: none;
         box-shadow: none;
-        outline: none; }
+        color: #fff;
+        border-color: #00376a;
+        background: #00376a none; }
 
 .views-edit-view form.form-edit .edit-display-settings {
   margin: 0;
@@ -192,7 +202,7 @@ header.content-header {
   color: #f3f3f3; }
   header.content-header .layout-container .region.region-header {
     transition: max-height ease-in 300ms;
-    min-height: 120px;
+    min-height: 65px;
     display: flex;
     align-items: center; }
 
@@ -238,3 +248,7 @@ a {
   color: #2d2376; }
   .tabledrag-toggle-weight:focus, .tabledrag-toggle-weight:hover {
     color: #2d2376; }
+
+.field--type-entity-reference-revisions.field--widget-paragraphs .paragraph-type-label {
+  font-size: 1.25rem;
+  font-weight: bold; }

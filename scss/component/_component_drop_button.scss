@@ -12,6 +12,11 @@
       .dropbutton-action {
         width: auto;
         min-width: 100px;
+        &:first-child {
+          a, input {
+            border-right: none;
+          }
+        }
         a, input {
           @include font-plex-regular;
           border: 1px solid $primary-dark;
@@ -42,7 +47,6 @@
       .dropbutton-toggle {
         button {
           border: 1px solid $primary-dark;
-          border-left: 0;
           background-color: white;
           &:hover, &:active, &:focus {
             color: $primary-dark;
@@ -95,6 +99,13 @@
         &:last-child {
           border-bottom: 1px solid $primary-dark;
         }
+      }
+    }
+  }
+  &.dropbutton-single .dropbutton-widget .dropbutton {
+    .dropbutton-action {
+      a, input {
+        border-right: 1px solid $primary-dark;
       }
     }
   }

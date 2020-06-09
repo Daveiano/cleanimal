@@ -26,7 +26,7 @@ header.content-header {
   .layout-container {
     .region.region-header {
       transition: max-height ease-in 300ms;
-      min-height: 120px;
+      min-height: 65px;
       display: flex;
       align-items: center;
     }
@@ -91,5 +91,13 @@ a {
   color: $primary-dark;
   &:focus, &:hover {
     color: $primary-dark;
+  }
+}
+
+// Paragraphs.
+.field--type-entity-reference-revisions.field--widget-paragraphs {
+  .paragraph-type-label {
+    font-size: 1.25rem;
+    font-weight: bold;
   }
 }
