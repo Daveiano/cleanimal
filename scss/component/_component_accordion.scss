@@ -2,9 +2,6 @@
 .seven-details{
   position: relative;
   background-color: white !important;
-  &:first-child{
-    border: none;
-  }
   &:before{
     width: 10px;
     content: " ";

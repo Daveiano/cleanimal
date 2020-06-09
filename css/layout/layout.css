@@ -32,7 +32,8 @@ body.node-add-edit .page-content {
   grid-template-columns: 200px auto 1fr auto; }
 
 /* Use these in form display config for field groups to layout fields
- * @todo: Add to readme and separate in own file.
+ * @todo: Separate in own file?
+ * @todo: Add class to label and set to 100% width.
  */
 .field-group-html-element.flex {
   width: 100%;

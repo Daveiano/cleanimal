@@ -109,9 +109,6 @@
 @mixin details {
   .cleanimal-details{
     border: none;
-    &:first-child{
-      border: none;
-    }
     summary {
       background-color: $white;
       color: $black;
