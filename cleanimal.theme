@@ -88,6 +88,19 @@ function cleanimal_form_user_form_alter(&$form, FormStateInterface $form_state) 
 }
 
 /**
+ * Implements theme_form_BASE_FORM_ID_alter().
+ */
+function cleanimal_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $test = $form;
+  if (isset($form['promote'])) {
+    $form['promote']['#group'] = 'footer';
+  }
+  if (isset($form['sticky'])) {
+    $form['sticky']['#group'] = 'footer';
+  }
+}
+
+/**
  * Implements theme_form_alter().
  */
 function cleanimal_form_alter(&$form, &$form_state, $form_id) {
