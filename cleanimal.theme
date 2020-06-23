@@ -58,6 +58,11 @@ function cleanimal_theme($existing, $type, $theme, $path) {
 function cleanimal_preprocess_html(&$variables) {
   // Get route.
   $route_name = \Drupal::routeMatch()->getRouteName();
+  $route_parameters = \Drupal::routeMatch()->getParameter('node_type');
+
+  if ($route_parameters) {
+    $variables['attributes']['class'][] = 'node-add-edit-' . $route_parameters->id();
+  }
 
   // Add route name as class.
   $variables['attributes']['class'][] = Html::cleanCssIdentifier(str_replace('.', '-', $route_name));
