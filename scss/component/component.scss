@@ -25,6 +25,14 @@
 @import "./component_views_bulk_operations";
 
 // Iframe
-iframe{
+iframe {
   @include font-plex-regular;
+}
+
+.js-media-library-widget-toggle-weight.media-library-widget__toggle-weight {
+  display: none;
+}
+
+.tabledrag-toggle-weight-wrapper {
+  display: none;
 }

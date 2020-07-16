@@ -1016,6 +1016,23 @@ select[multiple='multiple'] {
 .field--type-entity-reference.field--widget-inline-entity-form-complex-table-view-mode .ief-form.ief-form-row.js-form-wrapper.form-wrapper .form-item .container-inline, .field--type-entity-reference.field--widget-inline-entity-form-complex-table-view-mode .ief-form.ief-form-row.js-form-wrapper.form-wrapper .form-wrapper .container-inline {
   display: block; }
 
+.field--type-entity-reference.field--widget-inline-entity-form-complex .form-wrapper .fieldset-wrapper table.ief-entity-table tr td .ief-form.ief-form-row {
+  padding: 1rem;
+  margin: 0 -1rem;
+  border: 2px solid grey;
+  background: rgba(0, 0, 0, 0.05); }
+  .field--type-entity-reference.field--widget-inline-entity-form-complex .form-wrapper .fieldset-wrapper table.ief-entity-table tr td .ief-form.ief-form-row input[type="text"] {
+    background-color: white; }
+
+.field--type-entity-reference.field--widget-inline-entity-form-complex .form-wrapper .fieldset-wrapper table.ief-entity-table .ief-form.ief-form-row .field-group-html-element.flex .field--type-entity-reference.field--widget-media-library-widget {
+  flex-direction: column;
+  height: 100%;
+  align-self: flex-end;
+  display: flex;
+  flex-grow: 1; }
+  .field--type-entity-reference.field--widget-inline-entity-form-complex .form-wrapper .fieldset-wrapper table.ief-entity-table .ief-form.ief-form-row .field-group-html-element.flex .field--type-entity-reference.field--widget-media-library-widget .media-library-item--grid {
+    width: auto; }
+
 .media-library-widget {
   border: none;
   border-top: 1px solid #dcdcdc;
@@ -1054,8 +1071,7 @@ select[multiple='multiple'] {
     .media-library-widget .js-media-library-selection .media-library-item article {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-left: 20px; }
+      align-items: center; }
       .media-library-widget .js-media-library-selection .media-library-item article .media-library-item__preview {
         width: 100%;
         padding-bottom: 0; }
@@ -1812,3 +1828,9 @@ iframe {
   @media screen and (max-width: 1440px) {
     iframe {
       font-size: 10px !important; } }
+
+.js-media-library-widget-toggle-weight.media-library-widget__toggle-weight {
+  display: none; }
+
+.tabledrag-toggle-weight-wrapper {
+  display: none; }
