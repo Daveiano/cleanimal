@@ -1284,6 +1284,13 @@ select[multiple='multiple'] {
     .field--type-daterange fieldset .fieldset-wrapper .container-inline {
       margin-right: 40px; }
 
+/* Color Fields */
+div.form-item.form-type-color input[type="color"] {
+  width: auto;
+  min-height: 40px;
+  min-width: 70px;
+  padding: 0; }
+
 .seven-details {
   position: relative;
   background-color: white !important; }

@@ -591,3 +591,13 @@ select[multiple='multiple'] {
     }
   }
 }
+
+/* Color Fields */
+div.form-item.form-type-color {
+  input[type="color"] {
+    width: auto;
+    min-height: 40px;
+    min-width: 70px;
+    padding: 0;
+  }
+}
