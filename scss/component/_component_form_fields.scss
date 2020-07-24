@@ -577,20 +577,21 @@ select[multiple='multiple'] {
   fieldset {
     padding: 35px 0 0 0;
     border: 0;
+    background-color: transparent;
     .fieldset-wrapper {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       h4.label {
         @include label();
         margin-right: 20px;
         margin-bottom: 0;
       }
-      .container-inline {
-        margin-right: 40px;
-      }
     }
   }
 }
+
+
 
 /* Color Fields */
 div.form-item.form-type-color {
