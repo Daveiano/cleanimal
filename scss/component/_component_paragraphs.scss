@@ -1,0 +1,55 @@
+/* TODO: All paragraphs related styling should go here */
+
+.field--type-entity-reference-revisions.field--widget-paragraphs {
+  .paragraph-type-icon {
+    //display: none;
+  }
+  .paragraph-type-label {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
+
+/* Paragraphs Editor Enhancements  */
+.field--type-entity-reference-revisions.field--widget-paragraphs {
+  tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper {
+    .button--small {
+      @include primary-button;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.ui-dialog.ui-dialog-off-canvas.paragraphs-ee-off-canvas.paragraphs-ee-off-canvas--browser {
+  .ui-front.ui-dialog-content.ui-widget-content#drupal-off-canvas .paragraphs-add-dialog.paragraphs-add-dialog--categorized {
+    .dialog-header {
+      .filter {
+        input {
+          color: $white;
+          margin-bottom: 10px;
+        }
+        .search-description label {
+          display: flex;
+        }
+      }
+    }
+    div.button-group {
+      .category-title {
+        font-size: 2rem;
+        margin-top: 2rem;
+      }
+      ul.paragraphs-add-dialog-list {
+        li.paragraphs-add-dialog-row{
+          button.field-add-more-submit {
+            .paragraphs-button--icon{
+              background-size: contain;
+              background-color: white;
+              background-position: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

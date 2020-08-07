@@ -24,6 +24,8 @@
 @import "./component_views_exposed_form";
 @import "./component_views_bulk_operations";
 
+@import "./component_paragraphs";
+
 // Iframe
 iframe {
   @include font-plex-regular;

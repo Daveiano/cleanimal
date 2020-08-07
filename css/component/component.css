@@ -91,6 +91,8 @@ nav.tabs {
   nav.tabs nav ul.tabs.primary {
     background: #f3f3f3;
     margin-top: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content; }
     nav.tabs nav ul.tabs.primary:before {
       background-color: #ffffff; }
@@ -1050,7 +1052,8 @@ select[multiple='multiple'] {
       border: none;
       bottom: 5px;
       /* TODO: center below image */
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
       left: 50%; }
     .media-library-widget .js-media-library-selection .media-library-item .media-library-edit__link {
       position: absolute;
@@ -1061,7 +1064,8 @@ select[multiple='multiple'] {
       border: none;
       bottom: 5px;
       /* TODO: center below image */
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
       left: 40%;
       font-size: 0; }
     .media-library-widget .js-media-library-selection .media-library-item article {
@@ -1248,15 +1252,10 @@ select[multiple='multiple'] {
   100% {
     -webkit-transform: rotate(360deg); } }
 
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg); } }
-
 @keyframes spin {
   100% {
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 /* Date range fields */
 .field--type-daterange fieldset {
@@ -1326,7 +1325,8 @@ div.form-item.form-type-color input[type="color"] {
     width: 10px;
     content: " ";
     background-image: url(../../images/icons/icon-navigation-chevron-down.svg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
@@ -1751,11 +1751,14 @@ div.pager {
           width: 100%;
           height: 100%; }
         .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper .details-wrapper .form-item.move-buttons div[class^="move"].move-right:before {
-          transform: rotate(-90deg); }
+          -webkit-transform: rotate(-90deg);
+                  transform: rotate(-90deg); }
         .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper .details-wrapper .form-item.move-buttons div[class^="move"].move-left:before {
-          transform: rotate(90deg); }
+          -webkit-transform: rotate(90deg);
+                  transform: rotate(90deg); }
         .views-exposed-form .form--inline .exposed-form-wrapper .column-wrapper .details-wrapper .form-item.move-buttons div[class^="move"].move-top:before {
-          transform: rotate(180deg); }
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg); }
     .views-exposed-form .form--inline .exposed-form-wrapper .actions {
       flex: 0 0 100%; }
       .views-exposed-form .form--inline .exposed-form-wrapper .actions .form-actions {
@@ -1822,6 +1825,64 @@ div.pager {
   align-items: flex-end; }
   .views-form form.vbo-view-form #edit-header .js-form-wrapper:not(div[id~="vbo"]) .js-form-item {
     margin-right: 0.5em; }
+
+/* TODO: All paragraphs related styling should go here */
+.field--type-entity-reference-revisions.field--widget-paragraphs .paragraph-type-label {
+  font-size: 1.25rem;
+  font-weight: bold; }
+
+/* Paragraphs Editor Enhancements  */
+.field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small {
+  margin: 0 15px 10px 0;
+  color: #fff;
+  border-color: #00376a;
+  text-shadow: none;
+  font-weight: 500;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background: #00376a none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.29 !important;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px; }
+  @media screen and (max-width: 1440px) {
+    .field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small {
+      font-size: 10px !important; } }
+  .field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small:hover {
+    color: #fff;
+    border-color: #00b6ed;
+    background: #00b6ed none;
+    box-shadow: none; }
+  .field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small:focus:hover {
+    color: #fff;
+    border-color: #00b6ed;
+    background: #00b6ed none;
+    box-shadow: none; }
+  .field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small:focus, .field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small:active {
+    outline: none;
+    box-shadow: none;
+    color: #fff;
+    border-color: #00376a;
+    background: #00376a none; }
+
+.ui-dialog.ui-dialog-off-canvas.paragraphs-ee-off-canvas.paragraphs-ee-off-canvas--browser .ui-front.ui-dialog-content.ui-widget-content#drupal-off-canvas .paragraphs-add-dialog.paragraphs-add-dialog--categorized .dialog-header .filter input {
+  color: #f3f3f3;
+  margin-bottom: 10px; }
+
+.ui-dialog.ui-dialog-off-canvas.paragraphs-ee-off-canvas.paragraphs-ee-off-canvas--browser .ui-front.ui-dialog-content.ui-widget-content#drupal-off-canvas .paragraphs-add-dialog.paragraphs-add-dialog--categorized .dialog-header .filter .search-description label {
+  display: flex; }
+
+.ui-dialog.ui-dialog-off-canvas.paragraphs-ee-off-canvas.paragraphs-ee-off-canvas--browser .ui-front.ui-dialog-content.ui-widget-content#drupal-off-canvas .paragraphs-add-dialog.paragraphs-add-dialog--categorized div.button-group .category-title {
+  font-size: 2rem;
+  margin-top: 2rem; }
+
+.ui-dialog.ui-dialog-off-canvas.paragraphs-ee-off-canvas.paragraphs-ee-off-canvas--browser .ui-front.ui-dialog-content.ui-widget-content#drupal-off-canvas .paragraphs-add-dialog.paragraphs-add-dialog--categorized div.button-group ul.paragraphs-add-dialog-list li.paragraphs-add-dialog-row button.field-add-more-submit .paragraphs-button--icon {
+  background-size: contain;
+  background-color: white;
+  background-position: center; }
 
 iframe {
   font-family: 'IBM Plex Sans', sans-serif;

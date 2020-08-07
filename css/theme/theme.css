@@ -253,7 +253,3 @@ a {
   color: #2d2376; }
   .tabledrag-toggle-weight:focus, .tabledrag-toggle-weight:hover {
     color: #2d2376; }
-
-.field--type-entity-reference-revisions.field--widget-paragraphs .paragraph-type-label {
-  font-size: 1.25rem;
-  font-weight: bold; }
