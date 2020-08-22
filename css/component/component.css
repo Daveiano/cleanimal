@@ -1257,6 +1257,31 @@ select[multiple='multiple'] {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.field--type-datetime fieldset {
+  padding: 0;
+  border: 0;
+  background-color: transparent; }
+  .field--type-datetime fieldset legend {
+    position: relative; }
+    .field--type-datetime fieldset legend span {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.29 !important;
+      letter-spacing: 0.2px;
+      font-size: 14px;
+      height: 16px;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: 0.3px;
+      color: #565656;
+      margin-bottom: 8px;
+      font-weight: normal;
+      text-transform: none;
+      display: block; }
+      @media screen and (max-width: 1440px) {
+        .field--type-datetime fieldset legend span {
+          font-size: 10px !important; } }
+
 /* Date range fields */
 .field--type-daterange fieldset {
   padding: 35px 0 0 0;

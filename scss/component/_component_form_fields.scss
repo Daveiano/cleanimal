@@ -450,16 +450,6 @@ select[multiple='multiple'] {
   }
 }
 
-.field--widget-entity-reference-paragraphs {
-  table{
-    tbody{
-      tr{
-
-      }
-    }
-  }
-}
-
 // Autocomplete Deluxe
 .field--widget-autocomplete-deluxe{
   label{
@@ -569,6 +559,23 @@ select[multiple='multiple'] {
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
     transform:rotate(360deg);
+  }
+}
+
+.field--type-datetime {
+  fieldset {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    legend {
+      position: relative;
+      span {
+        @include label();
+        font-weight: normal;
+        text-transform: none;
+        display: block;
+      }
+    }
   }
 }
 
