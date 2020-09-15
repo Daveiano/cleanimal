@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements theme_theme_suggestions_alter().
@@ -58,10 +59,10 @@ function cleanimal_theme($existing, $type, $theme, $path) {
 function cleanimal_preprocess_html(&$variables) {
   // Get route.
   $route_name = \Drupal::routeMatch()->getRouteName();
-  $route_parameters = \Drupal::routeMatch()->getParameter('node_type');
+  $route_parameter_node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($route_parameters) {
-    $variables['attributes']['class'][] = 'node-add-edit-' . $route_parameters->id();
+  if ($route_parameter_node instanceof NodeInterface) {
+    $variables['attributes']['class'][] = 'node-add-edit-' . $route_parameter_node->bundle();
   }
 
   // Add route name as class.
@@ -156,8 +157,6 @@ function cleanimal_preprocess_form_element(&$variables) {
     if ($variables['label_display'] === 'after') {
       $variables["label"]["#attributes"]['class'][] = 'show-label';
     }
-
-    $test = $variables;
 
     // Add a label if there is none.
     if (!($variables['label']) || !isset($variables['label']['#title']) || $variables['label']['#title'] === '') {
