@@ -514,7 +514,7 @@ button[type="button"].button--danger, a.button--danger, input[type="submit"].but
           border: 1px solid #2d2376;
           background-color: #2d2376; }
 
-body.node-add-edit .chosen-container {
+body.node-add-edit .layout-container .chosen-container {
   width: 100% !important; }
 
 /**
