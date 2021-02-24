@@ -1290,7 +1290,8 @@ select[multiple='multiple'] {
   .field--type-daterange fieldset .fieldset-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    flex-wrap: wrap; }
     .field--type-daterange fieldset .fieldset-wrapper h4.label {
       font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 400;
@@ -1308,6 +1309,9 @@ select[multiple='multiple'] {
       @media screen and (max-width: 1440px) {
         .field--type-daterange fieldset .fieldset-wrapper h4.label {
           font-size: 10px !important; } }
+    .field--type-daterange fieldset .fieldset-wrapper .description {
+      flex: 1 0 100%;
+      width: 100%; }
 
 /* Color Fields */
 div.form-item.form-type-color input[type="color"] {
