@@ -13,7 +13,18 @@
 }
 
 .js .paragraph-top {
-  grid-template-columns: 200px auto 1fr auto;
+  display: flex;
+  .paragraph-summary {
+    display: none;
+  }
+  @media screen and (min-width: 920px) {
+    display: grid;
+    grid-template-columns: 350px auto 1fr auto;
+    .paragraph-summary {
+      display: block;
+    }
+  }
+
 }
 
 /* Use these in form display config for field groups to layout fields

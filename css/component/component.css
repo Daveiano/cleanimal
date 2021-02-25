@@ -1857,8 +1857,10 @@ div.pager {
 
 /* TODO: All paragraphs related styling should go here */
 .field--type-entity-reference-revisions.field--widget-paragraphs .paragraph-type-label {
-  font-size: 1.25rem;
   font-weight: bold; }
+  @media screen and (min-width: 920px) {
+    .field--type-entity-reference-revisions.field--widget-paragraphs .paragraph-type-label {
+      font-size: 1.25rem; } }
 
 /* Paragraphs Editor Enhancements  */
 .field--type-entity-reference-revisions.field--widget-paragraphs tr.paragraphs_ee__add-in-between__row .paragraphs_ee__add-in-between__wrapper .button--small {

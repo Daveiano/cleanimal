@@ -5,8 +5,10 @@
     //display: none;
   }
   .paragraph-type-label {
-    font-size: 1.25rem;
     font-weight: bold;
+    @media screen and (min-width: 920px) {
+      font-size: 1.25rem;
+    }
   }
 }
 

@@ -42,7 +42,15 @@ body.node-add-edit .page-content {
   width: 100%; }
 
 .js .paragraph-top {
-  grid-template-columns: 200px auto 1fr auto; }
+  display: flex; }
+  .js .paragraph-top .paragraph-summary {
+    display: none; }
+  @media screen and (min-width: 920px) {
+    .js .paragraph-top {
+      display: grid;
+      grid-template-columns: 350px auto 1fr auto; }
+      .js .paragraph-top .paragraph-summary {
+        display: block; } }
 
 /* Use these in form display config for field groups to layout fields
  * @todo: Separate in own file?
