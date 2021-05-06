@@ -60,7 +60,10 @@ body.node-add-edit .page-content {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .field-group-html-element.flex > h3 {
+    flex: 0 0 100%; }
   .field-group-html-element.flex > div {
     flex: 1;
     margin-right: 15px; }

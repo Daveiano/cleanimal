@@ -36,6 +36,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  // Dirty label fix.
+  > h3 {
+    flex: 0 0 100%;
+  }
   > div {
     flex: 1;
     margin-right: 15px;
