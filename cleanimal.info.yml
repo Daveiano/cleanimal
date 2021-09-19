@@ -1,7 +1,6 @@
 name: Cleanimal
 type: theme
 description: 'Clean and minimalistic Drupal backend theme.'
-core: 8.x
 core_version_requirement: ^8 || ^9
 
 libraries:
